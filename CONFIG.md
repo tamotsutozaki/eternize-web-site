@@ -1,0 +1,107 @@
+# Eternize — Configuração e Placeholders
+
+Tudo que precisa ser trocado **antes de subir pra produção**. Cada item está marcado no código com comentário `// MOCK` ou `{/* MOCK */}` pra fácil localização (busque por "MOCK" no projeto).
+
+---
+
+## 1. Dados de contato (CRÍTICO)
+
+Arquivo: `lib/config.ts`
+
+| Placeholder | Valor atual (MOCK) | Onde aparece |
+|---|---|---|
+| `whatsappNumber` | `5519999999999` | Botão flutuante, todos os CTAs, links de encomenda |
+| `instagramHandle` | `eternize.art` | Footer, página /contato |
+| `instagramUrl` | `https://instagram.com/eternize.art` | Footer, página /contato |
+| `email` | `contato@eternize.art` | Footer, página /contato |
+
+> **Importante:** o número de WhatsApp deve estar no formato internacional **sem `+` ou espaços**, ex: `5519988887777`.
+
+---
+
+## 2. Imagens placeholder (TROCAR ANTES DE LANÇAR)
+
+### 2.1 Portfólio
+- Arquivo: `lib/portfolio.ts`
+- Hoje usa `https://placedog.net/640/640?id=N` em todos os 10 itens.
+- Substituir cada `imagens: ["..."]` por caminho local em `/public/images/portfolio/<slug>.jpg` (recomendado) ou URL Cloudinary.
+- Aspecto recomendado: **1:1 (quadrado)**, **mínimo 800x800px**, JPG otimizado (~150KB).
+
+### 2.2 Foto da Isabella
+- Arquivos: `app/page.tsx` (preview Sobre), `app/sobre/page.tsx` (hero).
+- Hoje usa `https://randomuser.me/api/portraits/women/44.jpg` (placeholder de pessoa).
+- Substituir por foto real da Isabella pintando ou em estúdio. Aspecto recomendado: **4:5 retrato**, **mínimo 800x1000px**.
+- Salvar em `/public/images/sobre/isabella.jpg`.
+
+### 2.3 Hero da home
+- Arquivo: `components/Hero.tsx`
+- Foto à direita do hero — hoje placedog. Trocar por foto destaque de uma peça pronta sobre fundo simples.
+
+### 2.4 Como Funciona
+- Arquivo: `app/como-funciona/page.tsx`
+- 5 imagens, uma por passo. Trocar cada uma por foto contextual (foto sendo escolhida, conversa, Isabella pintando, peça quase pronta, peça embalada).
+
+### 2.5 OG/Social image
+- Arquivo: `app/layout.tsx`
+- Hoje usa `/brand/eternize-cafe.png`. Considerar criar imagem específica 1200x630px com peça em destaque + logo.
+
+---
+
+## 3. Textos placeholder (REVISAR COM ISABELLA)
+
+| Local | O que tem agora | O que precisa |
+|---|---|---|
+| `/sobre` — 3 parágrafos | Texto genérico marcado `MOCK` | Texto real da Isabella em primeira pessoa |
+| `/sobre` — pull quote | Texto sugerido do briefing | Confirmar ou ajustar com Isabella |
+| `/` — preview Sobre | Citação curta de 2 linhas | Confirmar com Isabella |
+| `lib/portfolio.ts` — `descricao` de cada peça | Inventado | Trocar pelas histórias reais conforme entregas |
+| `lib/portfolio.ts` — `DEPOIMENTOS` | 5 depoimentos inventados | Substituir por reais (com permissão dos clientes) |
+
+---
+
+## 4. Tracking (FASE PÓS-LANÇAMENTO)
+
+Não há código de tracking instalado. Quando os IDs estiverem prontos:
+
+- **Google Analytics 4** — ID a fornecer (`G-XXXXXXXXXX`).
+- **Meta Pixel** — ID a fornecer.
+- **Google Search Console** — meta tag de verificação.
+
+Sugerido: usar `next/script` no `app/layout.tsx` com `strategy="afterInteractive"`.
+
+---
+
+## 5. Domínio e Vercel
+
+- Domínio: `eternize.art` (já comprado).
+- Vercel: criar projeto e conectar ao repo.
+- Configurar redirect `www → não-www` (ou contrário).
+- HTTPS automático Vercel.
+
+---
+
+## 6. Logos disponíveis
+
+Já estão em `/public/brand/`:
+
+- `logo.svg`, `wordmark.svg`, `logo-mark.svg` — versões SVG monocromáticas (tema-aware via `currentColor`).
+- `eternize-cafe.png` — versão com silhuetas marrom + caramelo (recomendada para tema claro).
+- `eternize-cappuccino.png` — versão com silhuetas creme + caramelo (recomendada para tema escuro).
+
+> O componente `<EternizeLogo />` (em `components/EternizeLogo.tsx`) usa SVG inline e herda a cor do CSS `currentColor` — funciona automaticamente nos dois temas. As PNGs são para casos onde se queira a versão com as silhuetas dog+cat (ex: imagens OG, WhatsApp avatar).
+
+---
+
+## Checklist final antes de produção
+
+- [ ] WhatsApp number trocado em `lib/config.ts`
+- [ ] Instagram + e-mail trocados em `lib/config.ts`
+- [ ] Pelo menos 5 fotos reais no portfólio
+- [ ] Foto real da Isabella nas páginas Home (preview) e Sobre
+- [ ] Texto da Isabella em `/sobre` substituído
+- [ ] 3-5 depoimentos reais em `lib/portfolio.ts`
+- [ ] OG image específica criada (opcional mas recomendado)
+- [ ] GA4 + Meta Pixel instalados
+- [ ] Domínio `eternize.art` apontado pra Vercel
+- [ ] Lighthouse 90+ em todas as métricas
+- [ ] Testes em iPhone SE, iPhone 14 Pro, iPad e desktop 1440px

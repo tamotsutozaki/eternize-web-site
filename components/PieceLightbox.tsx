@@ -1,0 +1,113 @@
+"use client";
+import { useEffect } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Peca } from "@/lib/portfolio";
+import { whatsappLink } from "@/lib/config";
+
+export default function PieceLightbox({
+  peca,
+  onClose,
+}: {
+  peca: Peca;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [onClose]);
+
+  const message = `Olá! Vi o retrato do ${peca.nomePet} no site e quero encomendar um parecido (tamanho ${peca.tamanho}).`;
+
+  return (
+    <motion.div
+      role="dialog"
+      aria-modal="true"
+      onClick={onClose}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.22, ease: "easeOut" }}
+      className="fixed inset-0 z-[80] bg-[var(--brand-ink)]/85 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
+    >
+      <motion.div
+        onClick={(e) => e.stopPropagation()}
+        initial={{ opacity: 0, scale: 0.94, y: 16 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.96, y: 8 }}
+        transition={{ type: "spring", stiffness: 320, damping: 28, mass: 0.7 }}
+        className="relative w-full max-w-4xl bg-[var(--bg)] rounded-2xl overflow-hidden shadow-2xl grid md:grid-cols-2"
+      >
+        <motion.button
+          type="button"
+          onClick={onClose}
+          aria-label="Fechar"
+          whileTap={{ scale: 0.92 }}
+          className="cursor-pointer absolute top-3 right-3 md:top-4 md:right-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--fg)] border border-[var(--border-strong)] shadow-[var(--shadow-card)] hover:bg-[var(--bg-deep)] hover:text-[var(--bg-deep-text)] hover:border-[var(--bg-deep)] transition-colors duration-200"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            aria-hidden
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </motion.button>
+
+        <div className="relative aspect-square md:aspect-auto md:min-h-[480px] bg-[var(--bg-alt)]">
+          <Image
+            src={peca.imagens[0]}
+            alt={`Retrato de ${peca.nomePet}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+          />
+        </div>
+
+        <div className="p-8 md:p-10 flex flex-col">
+          <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
+            {peca.tamanho}
+            {peca.ano ? ` · ${peca.ano}` : ""}
+          </span>
+          <h3 className="font-script text-5xl md:text-6xl mt-2 leading-none">
+            {peca.nomePet}
+          </h3>
+          {peca.descricao && (
+            <p className="mt-6 text-[var(--fg-soft)] leading-relaxed">
+              {peca.descricao}
+            </p>
+          )}
+          {peca.multiplosPets && peca.multiplosPets > 1 && (
+            <p className="mt-4 text-sm text-[var(--fg-mute)]">
+              Peça com {peca.multiplosPets} pets na mesma bolacha.
+            </p>
+          )}
+          <div className="mt-auto pt-8">
+            <motion.a
+              href={whatsappLink(message)}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileTap={{ scale: 0.97 }}
+              className="flex w-full items-center justify-center rounded-full bg-[var(--bg-deep)] text-[var(--bg-deep-text)] px-5 py-3 text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
+            >
+              Quero um igual
+            </motion.a>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
