@@ -6,7 +6,7 @@ type Props = {
   className?: string;
 };
 
-const RATIO = 1024 / 709;
+const RATIO = 1;
 
 export default function BrandLogo({
   width = 140,

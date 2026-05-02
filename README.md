@@ -163,18 +163,6 @@ Detalhamento completo em [`CONFIG.md`](./CONFIG.md).
 
 ---
 
-## Deploy na Vercel
-
-1. Push do repositório no GitHub.
-2. [vercel.com](https://vercel.com) → **New Project** → importar o repo.
-3. Vercel detecta Next.js automaticamente. Aceitar defaults.
-4. Deploy — sai uma URL `*.vercel.app`.
-5. Domínio próprio: Settings → Domains → adicionar e seguir as instruções de DNS.
-
-HTTPS é automático.
-
----
-
 ## Roadmap
 
 Funcionalidades fora do escopo do MVP, candidatas a próximas fases:

@@ -40,8 +40,8 @@ export default function Footer() {
             <Image
               src="/brand/eternize-cappuccino.png"
               alt="Eternize"
-              width={1024}
-              height={709}
+              width={1080}
+              height={1080}
               className="h-auto w-[220px]"
             />
             <p className="mt-6 text-[var(--brand-cream)]/80 max-w-sm leading-relaxed">
