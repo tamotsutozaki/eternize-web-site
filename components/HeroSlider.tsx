@@ -1,7 +1,7 @@
 "use client";
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion, PanInfo } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export type Slide = {
   src: string;
@@ -15,15 +15,10 @@ type Props = {
   autoplayMs?: number;
 };
 
-const SWIPE_THRESHOLD = 60;
-const VELOCITY_THRESHOLD = 400;
-const CLICK_DRAG_THRESHOLD = 8;
-
 export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [paused, setPaused] = useState(false);
-  const isDraggingRef = useRef(false);
 
   const goTo = useCallback((i: number, dir: number = 0) => {
     const len = slides.length;
@@ -53,29 +48,6 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
     return () => window.removeEventListener("keydown", onKey);
   }, [next, prev]);
 
-  const handleDragStart = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    if (Math.abs(info.offset.x) > CLICK_DRAG_THRESHOLD) {
-      isDraggingRef.current = true;
-    }
-  };
-
-  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const distance = info.offset.x;
-    const velocity = info.velocity.x;
-
-    if (distance < -SWIPE_THRESHOLD || velocity < -VELOCITY_THRESHOLD) {
-      next();
-    } else if (distance > SWIPE_THRESHOLD || velocity > VELOCITY_THRESHOLD) {
-      prev();
-    }
-    setTimeout(() => { isDraggingRef.current = false; }, 50);
-  };
-
-  const handleClick = () => {
-    if (isDraggingRef.current) return;
-    next();
-  };
-
   const current = slides[index];
 
   const variants = {
@@ -97,18 +69,13 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
     >
-      {/* Container fixo — não se move ao arrastar */}
       <div className="absolute inset-0 rounded-[1.75rem] sm:rounded-[2rem] overflow-hidden shadow-[var(--shadow-soft)] bg-[var(--bg-alt)]">
-        {/* Camada de drag — só a imagem se move */}
-        <motion.div
-          className="absolute inset-0 cursor-grab active:cursor-grabbing touch-pan-y"
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.18}
-          dragMomentum={false}
-          onDragStart={handleDragStart}
-          onDragEnd={handleDragEnd}
-          onClick={handleClick}
+        {/* Camada de clique — imagem clicável avança */}
+        <button
+          type="button"
+          onClick={next}
+          aria-label="Próxima imagem"
+          className="absolute inset-0 cursor-pointer block"
         >
           <AnimatePresence mode="wait" initial={false} custom={direction}>
             <motion.div
@@ -136,9 +103,9 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[var(--brand-ink)]/55 via-[var(--brand-ink)]/15 to-transparent" />
             </motion.div>
           </AnimatePresence>
-        </motion.div>
+        </button>
 
-        {/* Caption — fixo, fora do drag */}
+        {/* Caption — fixo, fora do click target */}
         {current.caption && (
           <div className="absolute left-5 right-5 bottom-14 sm:bottom-16 text-[var(--brand-bone)] pointer-events-none z-20">
             <AnimatePresence mode="wait">
@@ -160,15 +127,7 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
           </div>
         )}
 
-        {/* Hint visual no hover */}
-        <div className="absolute top-5 right-5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--brand-bone)]/85 backdrop-blur-sm text-[var(--brand-walnut)] text-[10px] uppercase tracking-[0.18em] font-semibold shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-            <path d="M8 7l-4 5 4 5M16 7l4 5-4 5" />
-          </svg>
-          Arraste
-        </div>
-
-        {/* Indicadores em barras — fixos */}
+        {/* Indicadores em barras — clicáveis */}
         <div className="absolute left-5 right-5 bottom-5 flex items-center gap-2 z-20">
           {slides.map((_, i) => (
             <button
@@ -177,7 +136,7 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
               onClick={(e) => { e.stopPropagation(); goTo(i, i > index ? 1 : -1); }}
               aria-label={`Ir para imagem ${i + 1}`}
               aria-current={i === index}
-              className="group/dot relative h-1 flex-1 cursor-pointer overflow-hidden rounded-full bg-[var(--brand-bone)]/30 transition-colors hover:bg-[var(--brand-bone)]/55"
+              className="relative h-1 flex-1 cursor-pointer overflow-hidden rounded-full bg-[var(--brand-bone)]/30 transition-colors hover:bg-[var(--brand-bone)]/55"
             >
               <motion.span
                 className="absolute inset-y-0 left-0 bg-[var(--brand-bone)]"
@@ -188,14 +147,6 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
             </button>
           ))}
         </div>
-      </div>
-
-      {/* Contador — fora do container, posição flutuante */}
-      <div className="absolute -bottom-4 right-4 sm:-bottom-5 sm:right-6 hidden sm:block rounded-full bg-[var(--bg)] border border-[var(--border-strong)] shadow-[var(--shadow-card)] px-4 py-2 z-30">
-        <p className="font-serif text-sm text-[var(--fg)] leading-none">
-          <span className="text-[var(--accent)] font-semibold">{String(index + 1).padStart(2, "0")}</span>
-          <span className="text-[var(--fg-mute)]"> / {String(slides.length).padStart(2, "0")}</span>
-        </p>
       </div>
     </div>
   );
