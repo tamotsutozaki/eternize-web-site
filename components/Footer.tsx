@@ -110,7 +110,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 sm:mt-14 pt-6 sm:pt-8 border-t border-[var(--brand-bone)]/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-[var(--brand-cream)]/60">
+        <div className="mt-12 sm:mt-14 pt-6 sm:pt-8 border-t border-[var(--brand-bone)]/10 flex flex-col-reverse sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-[var(--brand-cream)]/60">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
             <span>© {year} Eternize · Todos os direitos reservados</span>
             <span className="hidden sm:inline text-[var(--brand-cream)]/30">·</span>
