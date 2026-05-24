@@ -7,87 +7,87 @@ import { whatsappLink } from "@/lib/config";
 export const metadata: Metadata = {
   title: "Perguntas frequentes",
   description:
-    "Tudo o que você precisa saber sobre os retratos de pet da Eternize: produto, pedido, pagamento, entrega e garantia.",
+    "Esclarecimentos sobre produto, processo, pagamento, entrega e garantia das peças produzidas pela Eternize.",
 };
 
 const FAQS: FaqCategoria[] = [
   {
-    titulo: "Sobre o produto",
+    titulo: "Produto e materiais",
     items: [
       {
-        q: "Que tipo de madeira é usada?",
-        a: "Fatias de madeira pinus (bolacha de tronco) selecionadas, tratadas e lixadas à mão. Cada peça tem uma textura única — nó, veio, formato — porque é madeira de verdade, não MDF.",
+        q: "Qual madeira é utilizada como suporte?",
+        a: "Fatias naturais de pinus, selecionadas individualmente, lixadas e tratadas antes da pintura. Cada peça apresenta textura, nós e veios únicos — característica intencional do suporte, não um defeito.",
       },
       {
-        q: "Quanto tempo a peça dura?",
-        a: "Com cuidado básico (longe de umidade direta e luz solar intensa), dura por décadas. O verniz protege a tinta e a madeira contra desgaste do tempo.",
+        q: "Qual a durabilidade esperada da obra?",
+        a: "Com conservação adequada — ambiente interno, distante de fontes de umidade direta e luz solar incidente — a peça mantém integridade por décadas. O acabamento envernizado oferece proteção contra desgaste físico-químico do tempo.",
       },
       {
-        q: "Posso pendurar em ambiente externo?",
-        a: "Não recomendamos. A peça é feita pra ambiente interno. Sol direto e chuva afetam tinta e madeira ao longo do tempo.",
+        q: "A peça pode ser exposta em ambiente externo?",
+        a: "Não recomendado. O conjunto madeira + tinta acrílica + verniz é dimensionado para ambientes internos. Exposição direta a sol, chuva ou variações bruscas de umidade compromete a integridade da obra.",
       },
       {
-        q: "O verniz protege contra o quê?",
-        a: "Contra umidade leve, poeira, oleosidade do toque e amarelamento. É o que garante que a peça envelheça bonito.",
+        q: "Qual a função do verniz aplicado?",
+        a: "Proteção contra umidade leve, deposição de poeira, oleosidade do toque manual e amarelamento por oxidação. É um verniz de base aquosa, atóxico após cura completa, sem alteração cromática da pintura.",
       },
     ],
   },
   {
-    titulo: "Sobre o pedido",
+    titulo: "Encomenda e produção",
     items: [
       {
-        q: "Como faço pra pedir?",
-        a: "Manda mensagem no WhatsApp com a foto do seu pet. Eu respondo com sugestões de tamanho, fundo e detalhes. Confirmou? PIX e a pintura começa.",
+        q: "Como iniciar uma encomenda?",
+        a: "Envio inicial da fotografia do pet pelo WhatsApp. Após análise da imagem, retorno orçamento detalhado em até 24 horas úteis, com sugestões de dimensão, composição e prazo. Confirmação via PIX dá início à produção.",
       },
       {
-        q: "Quanto tempo leva?",
-        a: "De 7 a 15 dias úteis após confirmação do pagamento. Em períodos de alta demanda (Natal, Dia das Mães), o prazo pode ser maior — sempre confirmamos antes.",
+        q: "Qual o prazo de execução?",
+        a: "Sete a quinze dias úteis a partir da confirmação do pagamento. Em períodos de alta demanda (Natal, Dia das Mães, Dia dos Pais), o prazo pode ser estendido — sempre comunicado previamente.",
       },
       {
-        q: "Posso colocar mais de um pet na mesma peça?",
-        a: "Sim, nos tamanhos 18cm (R$ 80 por pet adicional) e 25cm (R$ 100 por pet adicional). No 14cm não dá — o espaço não comporta dois pets bem retratados.",
+        q: "É possível retratar mais de um pet na mesma peça?",
+        a: "Sim, nos formatos 18 cm (acréscimo de R$ 80 por pet adicional) e 25 cm (acréscimo de R$ 100 por pet adicional). O formato 14 cm é dedicado a um único animal, em função da área útil de composição.",
       },
       {
-        q: "Posso escolher o fundo?",
-        a: "Pode. Madeira natural é o padrão e fica lindo. Mas você pode pedir cor sólida (qualquer uma) — sem custo extra. Elementos como flores, folhas, estrelas e acessórios no pet (lenço, gravata, óculos, coroa) também são gratuitos.",
+        q: "É possível escolher o fundo da peça?",
+        a: "Sim. Madeira natural é o tratamento padrão. Cores sólidas e composições com elementos decorativos (flora, estrelas, motivos pessoais) e acessórios no pet (lenço, gravata, óculos, coroa) estão inclusos no valor base, sem custo adicional.",
       },
       {
-        q: "Que tipo de foto preciso mandar?",
-        a: "Quanto melhor a foto, melhor o retrato. Luz natural (de dia, perto de janela), pet em foco, no nível do olhar dele. Pode ser corpo inteiro ou close. Fundo bagunçado não importa — recompomos na pintura.",
+        q: "Que tipo de fotografia obtém melhor resultado?",
+        a: "Imagem em luz natural (próximo a janelas, durante o dia), com o pet em foco e na altura do olhar. Resolução acima de 2.000 pixels é ideal. O fundo da foto não influencia o resultado — a composição é recriada integralmente na pintura.",
       },
     ],
   },
   {
-    titulo: "Pagamento e entrega",
+    titulo: "Pagamento e logística",
     items: [
       {
-        q: "Como pago?",
-        a: "PIX é o preferido (5% de desconto à vista). Também aceitamos cartão de crédito em até 3x sem juros (a definir taxas).",
+        q: "Quais formas de pagamento são aceitas?",
+        a: "PIX (5% de desconto à vista) e cartão de crédito em até 3x sem juros. Pagamento na contratação dá início à produção.",
       },
       {
-        q: "Tem desconto?",
-        a: "Sim — 5% no PIX à vista. E descontos progressivos pra quem encomenda mais de uma peça (ex: presente pra família inteira).",
+        q: "Há desconto para múltiplas peças?",
+        a: "Sim. Encomendas com duas ou mais peças no mesmo pedido recebem desconto progressivo, calculado caso a caso.",
       },
       {
-        q: "Onde vocês entregam?",
-        a: "A entrega presencial gratuita é feita apenas em Indaiatuba/SP e Salto/SP. Para qualquer outra cidade, o pedido é enviado pelos Correios ou transportadora, e o frete fica por conta do cliente.",
+        q: "Para quais localidades vocês entregam?",
+        a: "Entrega presencial sem custo em Indaiatuba/SP e Salto/SP. Demais localidades: envio via Correios ou transportadora, com frete por conta do cliente.",
       },
       {
-        q: "Quanto custa o frete?",
-        a: "Para cidades fora de Indaiatuba e Salto, o frete é calculado pelo CEP no momento da encomenda — você recebe o valor antes de fechar o pedido. Embalagem reforçada já vai incluída sem custo extra.",
+        q: "Como é calculado o frete?",
+        a: "Para localidades fora da área de entrega presencial, o frete é calculado pelo CEP no momento do orçamento. Embalagem reforçada — espuma protetora e papelão duplo — já está inclusa, sem custo adicional.",
       },
     ],
   },
   {
-    titulo: "Garantia",
+    titulo: "Garantia e ajustes",
     items: [
       {
-        q: "E se eu não gostar?",
-        a: "Antes de envernizar, a gente manda foto da peça quase pronta. Se algum ajuste for necessário, fazemos sem custo. Quando você recebe, é porque já aprovou.",
+        q: "E se o resultado não corresponder à expectativa?",
+        a: "Antes do envernizamento final, envio fotografias em alta resolução para aprovação. Ajustes pontuais — tom de fundo, posicionamento de elementos, refinamento de traço — são incorporados sem custo. A finalização só ocorre após aprovação explícita.",
       },
       {
-        q: "Posso pedir alterações depois de pronto?",
-        a: "Pequenos ajustes pontuais a gente discute caso a caso. Pra mudanças grandes (cor de fundo, troca de pet), seria uma nova peça.",
+        q: "É possível solicitar alterações após a entrega?",
+        a: "Ajustes menores são avaliados individualmente. Alterações estruturais (mudança de fundo, troca de pet retratado) configuram nova encomenda, com novo orçamento.",
       },
     ],
   },
@@ -100,7 +100,7 @@ export default function FAQPage() {
         <SectionTitle
           eyebrow="FAQ"
           title="perguntas frequentes"
-          subtitle="As dúvidas que mais aparecem na nossa caixa de entrada. Se a sua não está aqui, fala com a gente no WhatsApp."
+          subtitle="Esclarecimentos sobre produto, processo, logística e garantia. Para dúvidas específicas não cobertas aqui, atendimento direto via WhatsApp."
         />
 
         <div className="mt-12 sm:mt-16 max-w-3xl">
@@ -111,18 +111,18 @@ export default function FAQPage() {
       <section className="bg-[var(--bg-alt)] border-t border-[var(--border)]">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-10 py-16 sm:py-20 text-center reveal">
           <h2 className="font-script text-4xl sm:text-5xl">
-            ainda tem dúvida?
+            Dúvida não respondida?
           </h2>
           <p className="mt-4 text-[var(--fg-soft)]">
-            Me chama direto no WhatsApp.
+            Envio direto para o WhatsApp do estúdio.
           </p>
           <a
             href={whatsappLink("Olá! Tenho uma dúvida sobre os retratos.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-solid mt-7 sm:mt-8 text-sm"
+            className="btn-solid mt-7 sm:mt-8"
           >
-            Tirar dúvida no WhatsApp
+            Falar com a artista
           </a>
         </div>
       </section>

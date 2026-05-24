@@ -10,65 +10,70 @@ export type Peca = {
   multiplosPets?: number;
 };
 
-// MOCK — placedog usado como placeholder. Substituir por fotos reais
-// das peças entregues.
+// MOCK — substituir por imagens reais das peças entregues.
 export const PORTFOLIO: Peca[] = [
   {
     id: "mel",
     nomePet: "Mel",
     ano: 2026,
     tamanho: "25cm",
-    imagens: ["https://placedog.net/640/640?id=1"], // MOCK
+    imagens: ["https://placedog.net/640/640?id=1"],
     descricao:
-      "Retrato em destaque na sala. Fundo madeira natural, lacinho azul.",
+      "Composição sobre fundo de madeira natural, com acessório em laço azul-petróleo. Detalhamento de textura do pelo em camadas sucessivas.",
   },
   {
     id: "thor",
     nomePet: "Thor",
     ano: 2026,
     tamanho: "18cm",
-    imagens: ["https://placedog.net/640/640?id=2"], // MOCK
-    descricao: "Fundo creme com gravata borboleta. Presente do Dia dos Pais.",
+    imagens: ["https://placedog.net/640/640?id=2"],
+    descricao:
+      "Retrato com fundo creme sólido e gravata borboleta. Encomenda comemorativa para o Dia dos Pais.",
   },
   {
     id: "luna",
     nomePet: "Luna",
     ano: 2026,
     tamanho: "14cm",
-    imagens: ["https://placedog.net/640/640?id=3"], // MOCK
-    descricao: "Versão mesa, com flores miúdas em volta.",
+    imagens: ["https://placedog.net/640/640?id=3"],
+    descricao:
+      "Formato compacto para mesa, com composição floral discreta ao redor. Fundo em madeira natural.",
   },
   {
     id: "bento",
     nomePet: "Bento",
     ano: 2026,
     tamanho: "25cm",
-    imagens: ["https://placedog.net/640/640?id=4"], // MOCK
-    descricao: "Olhar atento. Fundo verde-musgo profundo.",
+    imagens: ["https://placedog.net/640/640?id=4"],
+    descricao:
+      "Retrato em primeiro plano sobre fundo verde-musgo profundo. Ênfase no contato visual do animal.",
   },
   {
     id: "nina",
     nomePet: "Nina",
     ano: 2026,
     tamanho: "18cm",
-    imagens: ["https://placedog.net/640/640?id=5"], // MOCK
-    descricao: "Lacinho rosa, fundo madeira natural com estrelas pequenas.",
+    imagens: ["https://placedog.net/640/640?id=5"],
+    descricao:
+      "Composição com laço rosa e elementos estrelados sobre madeira natural. Encomenda comemorativa.",
   },
   {
     id: "pipoca",
     nomePet: "Pipoca",
     ano: 2026,
     tamanho: "14cm",
-    imagens: ["https://placedog.net/640/640?id=6"], // MOCK
-    descricao: "Mini retrato pra prateleira do escritório.",
+    imagens: ["https://placedog.net/640/640?id=6"],
+    descricao:
+      "Formato reduzido, indicado para prateleira ou superfície de trabalho. Composição minimalista.",
   },
   {
     id: "bob-maya",
     nomePet: "Bob & Maya",
     ano: 2026,
     tamanho: "25cm",
-    imagens: ["https://placedog.net/640/640?id=7"], // MOCK
-    descricao: "Os dois irmãos juntos. Fundo terracota.",
+    imagens: ["https://placedog.net/640/640?id=7"],
+    descricao:
+      "Dupla composição sobre fundo terracota. Encomenda dedicada a dois animais da mesma família.",
     multiplosPets: 2,
   },
   {
@@ -76,24 +81,27 @@ export const PORTFOLIO: Peca[] = [
     nomePet: "Cacau",
     ano: 2026,
     tamanho: "18cm",
-    imagens: ["https://placedog.net/640/640?id=8"], // MOCK
-    descricao: "Peça memorial. Fundo bege com coração discreto.",
+    imagens: ["https://placedog.net/640/640?id=8"],
+    descricao:
+      "Peça memorial. Fundo bege com elemento simbólico discreto incorporado à composição.",
   },
   {
     id: "amora",
     nomePet: "Amora",
     ano: 2026,
     tamanho: "18cm",
-    imagens: ["https://placedog.net/640/640?id=9"], // MOCK
-    descricao: "Coroa dourada e fundo creme, presente de aniversário.",
+    imagens: ["https://placedog.net/640/640?id=9"],
+    descricao:
+      "Composição com coroa em folha de ouro e fundo creme. Encomenda comemorativa de aniversário.",
   },
   {
     id: "biscoito",
     nomePet: "Biscoito",
     ano: 2026,
     tamanho: "14cm",
-    imagens: ["https://placedog.net/640/640?id=10"], // MOCK
-    descricao: "Versão prateleira, fundo madeira sem detalhes extras.",
+    imagens: ["https://placedog.net/640/640?id=10"],
+    descricao:
+      "Formato compacto sobre madeira natural, sem elementos decorativos adicionais. Foco na expressão.",
   },
 ];
 
@@ -101,66 +109,73 @@ export const TAMANHOS: { tamanho: Tamanho; preco: number; descricao: string; det
   {
     tamanho: "14cm",
     preco: 110,
-    descricao: "Mesa, prateleira, presente compacto",
-    detalhes: ["1 pet por peça", "Acabamento envernizado", "Cordão de algodão"],
+    descricao: "Formato compacto",
+    detalhes: [
+      "Um animal por peça",
+      "Acabamento envernizado",
+      "Cordão de algodão incluso",
+      "Indicado para mesa ou prateleira",
+    ],
   },
   {
     tamanho: "18cm",
     preco: 140,
-    descricao: "Parede, presente clássico",
+    descricao: "Formato intermediário",
     detalhes: [
-      "1 pet ou +1 (R$ 80 por pet extra)",
+      "Até dois animais (acréscimo de R$ 80 por animal extra)",
       "Acabamento envernizado",
-      "Acessórios e fundo personalizáveis",
+      "Acessórios e fundo personalizados inclusos",
+      "Indicado para parede",
     ],
   },
   {
     tamanho: "25cm",
     preco: 190,
-    descricao: "Destaque na sala, peça principal",
+    descricao: "Formato destaque",
     detalhes: [
-      "1 pet ou +1 (R$ 100 por pet extra)",
+      "Até três animais (acréscimo de R$ 100 por animal extra)",
       "Acabamento envernizado premium",
-      "Fundo + acessórios + elementos decorativos",
+      "Composição complexa: fundo, acessórios e elementos decorativos",
+      "Peça principal de ambiente",
     ],
   },
 ];
 
-// MOCK — depoimentos placeholder, trocar por reais.
+// MOCK — depoimentos placeholder, substituir por reais com autorização dos clientes.
 export const DEPOIMENTOS = [
   {
     nome: "Mariana Souza",
     pet: "Mel",
     cidade: "Indaiatuba/SP",
     texto:
-      "A semelhança é assustadora. Minha mãe chorou quando abriu o pacote. Cada detalhe parece ter sido olhado com carinho.",
+      "O nível de fidelidade da peça surpreendeu toda a família. A Isabella conduziu o briefing com cuidado raro — cada detalhe foi discutido antes da execução. Recomendo sem reservas.",
   },
   {
     nome: "Rafael Lima",
     pet: "Thor",
     cidade: "Salto/SP",
     texto:
-      "Pedi pra presentear minha esposa e foi o melhor presente que já dei. Atendimento super atencioso, mostrou cada etapa.",
+      "Encomendei como presente de aniversário. O acompanhamento durante a produção, com fotos das etapas intermediárias, fez diferença. Resultado final superou a expectativa.",
   },
   {
     nome: "Camila Ribeiro",
     pet: "Luna",
     cidade: "Itu/SP",
     texto:
-      "A Luna me deixou ano passado. Ter um retrato dela na sala fez muita diferença pra família. Ficou exatamente como ela era.",
+      "Peça memorial executada com sensibilidade. A Isabella entendeu o peso emocional da encomenda e conduziu o processo com respeito. Hoje a obra é um marco na sala de casa.",
   },
   {
     nome: "Felipe Andrade",
     pet: "Bento",
     cidade: "Campinas/SP",
     texto:
-      "A peça chegou super bem embalada e o trabalho é de outro nível. Já encomendei mais duas pra dar de Natal.",
+      "A embalagem chegou íntegra mesmo após longo trajeto pelos Correios. Trabalho de altíssimo padrão. Já encomendei outras duas peças para presente.",
   },
   {
     nome: "Larissa Almeida",
     pet: "Bob & Maya",
     cidade: "Indaiatuba/SP",
     texto:
-      "Os dois juntos numa peça só ficou lindo. Cada um com sua personalidade — atendimento entende mesmo de bicho.",
+      "Composição com dois animais resolvida com elegância. Cada pet ficou identificável em sua expressão particular — algo difícil em retratos múltiplos.",
   },
 ];

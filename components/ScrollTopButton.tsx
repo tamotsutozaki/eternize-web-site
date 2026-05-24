@@ -30,7 +30,7 @@ export default function ScrollTopButton() {
           transition={{ duration: 0.25, ease: "easeOut" }}
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.94 }}
-          className="fixed bottom-24 right-6 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--fg)] border border-[var(--border-strong)] shadow-[0_4px_12px_-4px_rgba(61,40,23,0.25)] hover:bg-[var(--bg-alt)] transition-colors"
+          className="fixed bottom-24 right-6 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--fg)] border border-[var(--border-strong)] shadow-[0_4px_12px_-4px_rgba(61,40,23,0.25)] hover:bg-[var(--brand-walnut)] hover:text-[var(--brand-bone)] hover:border-[var(--brand-walnut)] transition-colors"
         >
           <svg
             viewBox="0 0 24 24"

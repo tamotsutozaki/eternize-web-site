@@ -25,7 +25,7 @@ export default function PieceLightbox({
     };
   }, [onClose]);
 
-  const message = `Olá! Vi o retrato do ${peca.nomePet} no site e quero encomendar um parecido (tamanho ${peca.tamanho}).`;
+  const message = `Olá! Vi a peça "${peca.nomePet}" (${peca.tamanho}) no portfólio e gostaria de solicitar orçamento para uma composição similar.`;
 
   return (
     <motion.div
@@ -51,7 +51,7 @@ export default function PieceLightbox({
           onClick={onClose}
           aria-label="Fechar"
           whileTap={{ scale: 0.92 }}
-          className="cursor-pointer absolute top-3 right-3 md:top-4 md:right-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--fg)] border border-[var(--border-strong)] shadow-[var(--shadow-card)] hover:bg-[var(--bg-deep)] hover:text-[var(--bg-deep-text)] hover:border-[var(--bg-deep)] transition-colors duration-200"
+          className="cursor-pointer absolute top-3 right-3 md:top-4 md:right-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--fg)] border border-[var(--border-strong)] shadow-[var(--shadow-card)] hover:bg-[var(--brand-walnut)] hover:text-[var(--brand-bone)] hover:border-[var(--brand-walnut)] transition-colors duration-200"
         >
           <svg
             width="18"
@@ -70,7 +70,7 @@ export default function PieceLightbox({
         <div className="relative aspect-square md:aspect-auto md:min-h-[480px] bg-[var(--bg-alt)]">
           <Image
             src={peca.imagens[0]}
-            alt={`Retrato de ${peca.nomePet}`}
+            alt={`Retrato — ${peca.nomePet}`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
@@ -78,8 +78,8 @@ export default function PieceLightbox({
         </div>
 
         <div className="p-6 sm:p-8 md:p-10 flex flex-col">
-          <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
-            {peca.tamanho}
+          <span className="text-[11px] uppercase tracking-[0.28em] text-[var(--accent)] font-medium">
+            Ficha técnica · {peca.tamanho}
             {peca.ano ? ` · ${peca.ano}` : ""}
           </span>
           <h3 className="font-script text-4xl sm:text-5xl md:text-6xl mt-2 leading-none">
@@ -92,15 +92,16 @@ export default function PieceLightbox({
           )}
           {peca.multiplosPets && peca.multiplosPets > 1 && (
             <p className="mt-4 text-sm text-[var(--fg-mute)]">
-              Peça com {peca.multiplosPets} pets na mesma bolacha.
+              Composição múltipla — {peca.multiplosPets} animais sobre o mesmo suporte.
             </p>
           )}
 
-          <ul className="mt-6 space-y-2 text-sm text-[var(--fg-mute)]">
-            <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Madeira pinus natural</li>
-            <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Tinta acrílica · acabamento envernizado</li>
-            <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Cordão de algodão pronto pra pendurar</li>
-          </ul>
+          <dl className="mt-6 space-y-2.5 text-sm text-[var(--fg-mute)]">
+            <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Suporte: pinus natural lixado e tratado</div>
+            <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Pintura: tinta acrílica artística</div>
+            <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Acabamento: verniz protetor de base aquosa</div>
+            <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Fixação: cordão de algodão natural</div>
+          </dl>
 
           <div className="mt-auto pt-8">
             <motion.a
@@ -108,9 +109,9 @@ export default function PieceLightbox({
               target="_blank"
               rel="noopener noreferrer"
               whileTap={{ scale: 0.97 }}
-              className="btn-solid w-full justify-center text-sm"
+              className="btn-solid w-full"
             >
-              Quero um parecido
+              Solicitar peça similar
             </motion.a>
           </div>
         </div>

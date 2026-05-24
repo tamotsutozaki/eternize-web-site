@@ -9,11 +9,11 @@ import { whatsappLink } from "@/lib/config";
 import { PORTFOLIO, DEPOIMENTOS } from "@/lib/portfolio";
 
 const PASSOS = [
-  { n: "01", titulo: "Você manda a foto", desc: "Pelo WhatsApp, simples assim." },
-  { n: "02", titulo: "Conversamos os detalhes", desc: "Tamanho, fundo, acessórios, mais de um pet." },
-  { n: "03", titulo: "Eu pinto à mão", desc: "Cada peça leva 7 a 15 dias." },
-  { n: "04", titulo: "Você aprova", desc: "Foto da peça antes da finalização." },
-  { n: "05", titulo: "Recebe em casa", desc: "Embalagem caprichada, prontinha pra pendurar." },
+  { n: "01", titulo: "Envio da referência", desc: "Você envia uma fotografia do pet pelo WhatsApp." },
+  { n: "02", titulo: "Briefing e orçamento", desc: "Definimos dimensão, fundo, acessórios e prazo." },
+  { n: "03", titulo: "Execução da pintura", desc: "Sete a quinze dias úteis, em estúdio próprio." },
+  { n: "04", titulo: "Aprovação prévia", desc: "Você revisa a peça antes do acabamento final." },
+  { n: "05", titulo: "Entrega", desc: "Embalagem reforçada e pronta para fixação na parede." },
 ];
 
 export default function HomePage() {
@@ -23,12 +23,12 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Como funciona — resumo */}
+      {/* Processo — resumo */}
       <Section variant="cream" id="como-funciona">
         <SectionTitle
-          eyebrow="Em 5 passos"
-          title={<>do clique até<br/>a parede da sua sala</>}
-          subtitle="Sem cadastro, sem carrinho. Toda venda acontece numa conversa direta — do jeito que sempre foi feito quando se pinta à mão."
+          eyebrow="Processo"
+          title={<>do envio da foto<br/>à entrega da peça</>}
+          subtitle="Atendimento conversacional via WhatsApp. Sem carrinho, sem cadastro — cada pedido recebe acompanhamento individual do briefing à entrega."
         />
 
         <ol className="reveal mt-12 md:mt-16 grid gap-8 sm:gap-10 md:gap-6 sm:grid-cols-2 md:grid-cols-5">
@@ -38,7 +38,7 @@ export default function HomePage() {
                 {p.n}
               </span>
               <span className="mt-3 h-px w-10 bg-[var(--border-strong)]" />
-              <h3 className="mt-4 text-base font-medium text-[var(--fg)]">
+              <h3 className="mt-4 text-[15px] font-semibold text-[var(--fg)] tracking-tight">
                 {p.titulo}
               </h3>
               <p className="mt-2 text-sm text-[var(--fg-soft)] leading-relaxed">
@@ -49,11 +49,8 @@ export default function HomePage() {
         </ol>
 
         <div className="reveal mt-10 sm:mt-12">
-          <Link
-            href="/como-funciona"
-            className="prose-link inline-flex items-center gap-2 text-sm tracking-wide text-[var(--fg)]"
-          >
-            Ver passo a passo completo
+          <Link href="/como-funciona" className="link-arrow">
+            Ver processo completo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -66,13 +63,10 @@ export default function HomePage() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <SectionTitle
             eyebrow="Portfólio"
-            title={<>peças que já<br/>foram pra casa</>}
-            subtitle="Cada retrato carrega o olhar de quem entende de bicho — e a história de uma família."
+            title={<>peças entregues<br/>a famílias reais</>}
+            subtitle="Seleção de retratos finalizados nos últimos meses. O portfólio completo reúne trabalhos nas três dimensões disponíveis."
           />
-          <Link
-            href="/portfolio"
-            className="reveal hidden md:inline-flex prose-link items-center gap-2 text-sm tracking-wide text-[var(--fg)]"
-          >
+          <Link href="/portfolio" className="reveal hidden md:inline-flex link-arrow">
             Ver portfólio completo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
@@ -83,46 +77,46 @@ export default function HomePage() {
         <FeaturedGrid items={destaque} />
 
         <div className="reveal mt-10 md:hidden">
-          <Link
-            href="/portfolio"
-            className="prose-link inline-flex items-center gap-2 text-sm tracking-wide text-[var(--fg)]"
-          >
-            Ver portfólio completo →
+          <Link href="/portfolio" className="link-arrow">
+            Ver portfólio completo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+              <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </Link>
         </div>
       </Section>
 
-      {/* Detalhes da obra — proposta de valor */}
+      {/* Materiais e técnica */}
       <Section variant="cream">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           <div className="reveal lg:col-span-5">
-            <span className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">
-              O que torna única
+            <span className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] font-medium">
+              Materiais e técnica
             </span>
             <h2 className="font-script text-5xl md:text-6xl mt-4 leading-[1.05]">
-              cada peça é<br/>
-              uma só
+              especificações<br/>
+              da peça
             </h2>
             <p className="mt-5 sm:mt-6 text-[var(--fg-soft)] leading-relaxed max-w-md">
-              Da seleção da bolacha de pinus ao último gesto de verniz —
-              tudo é feito à mão, em estúdio próprio. Nada terceirizado,
-              nada produzido em série.
+              Trabalho integralmente artesanal, executado em estúdio próprio.
+              Sem terceirização, sem reprodução em série. Toda peça é única
+              e numerada.
             </p>
           </div>
 
           <div className="reveal lg:col-span-7 grid sm:grid-cols-2 gap-4 sm:gap-6">
             {[
-              { titulo: "Madeira natural", desc: "Fatias selecionadas de pinus, lixadas e tratadas. Cada nó e veio é único." },
-              { titulo: "Tinta acrílica premium", desc: "Cores estáveis, vivas e que mantêm a fidelidade por décadas." },
-              { titulo: "Verniz protetor", desc: "Acabamento que protege contra umidade leve, poeira e o tempo." },
-              { titulo: "Cordão de algodão", desc: "Pronta pra pendurar. Embalagem reforçada incluída sem custo extra." },
+              { titulo: "Suporte", desc: "Fatia de pinus natural, selecionada manualmente, lixada e tratada para receber a pintura." },
+              { titulo: "Pintura", desc: "Tinta acrílica artística profissional, aplicada em camadas, com fidelidade cromática ao referencial." },
+              { titulo: "Acabamento", desc: "Verniz protetor de base aquosa, anti-amarelamento, proteção contra umidade leve." },
+              { titulo: "Fixação", desc: "Cordão de algodão natural incluído, pronto para instalação sem necessidade de suporte adicional." },
             ].map((item) => (
               <div
                 key={item.titulo}
                 className="lift-card rounded-2xl border border-[var(--border-strong)] bg-[var(--bg)] p-5 sm:p-6"
               >
-                <p className="font-medium text-[var(--fg)]">{item.titulo}</p>
-                <p className="mt-2 text-sm text-[var(--fg-soft)] leading-relaxed">{item.desc}</p>
+                <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--accent)] font-medium">{item.titulo}</p>
+                <p className="mt-3 text-sm text-[var(--fg-soft)] leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -133,9 +127,9 @@ export default function HomePage() {
       <Section variant="bone" id="tamanhos">
         <SectionTitle
           align="center"
-          eyebrow="Tamanhos"
-          title="escolha o seu"
-          subtitle="Três tamanhos, mesmo cuidado. PIX à vista tem 5% de desconto."
+          eyebrow="Dimensões e investimento"
+          title="três formatos disponíveis"
+          subtitle="Valores referência. Acessórios, fundo personalizado e elementos decorativos estão inclusos. Pagamento via PIX (5% de desconto à vista) ou cartão em até 3x."
         />
 
         <PricingTabs />
@@ -144,33 +138,31 @@ export default function HomePage() {
       {/* Sobre Isabella preview */}
       <Section variant="cream">
         <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
-          <div className="reveal lg:col-span-5 relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg-alt)] shadow-[var(--shadow-soft)] zoom-on-hover">
+          <div className="reveal lg:col-span-5 relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg-alt)] shadow-[var(--shadow-soft)] zoom-on-hover max-w-md w-full mx-auto lg:max-w-none">
             <Image
-              // MOCK — trocar pela foto real da Isabella pintando
+              // MOCK — substituir por fotografia da artista em estúdio
               src="https://randomuser.me/api/portraits/women/44.jpg"
-              alt="Isabella, médica veterinária e artista por trás da Eternize"
+              alt="Isabella, médica veterinária e artista responsável pela Eternize"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"
             />
           </div>
           <div className="reveal lg:col-span-7">
-            <span className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">
+            <span className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] font-medium">
               Sobre a artista
             </span>
             <h2 className="font-script text-5xl md:text-6xl lg:text-7xl mt-4 leading-[1.05]">
-              oi, eu sou a<br/>Isabella
+              Isabella Ferreira
             </h2>
-            <p className="mt-5 sm:mt-6 text-lg md:text-xl text-[var(--fg-soft)] leading-relaxed max-w-xl font-script italic">
-              {/* MOCK — substituir pelo texto real da Isabella */}
-              &ldquo;Sou veterinária há 5 anos e desenho pets desde criança.
-              Cada peça que faço carrega esse olhar — técnico e afetivo.&rdquo;
+            <p className="mt-5 sm:mt-6 text-base sm:text-lg text-[var(--fg-soft)] leading-relaxed max-w-xl">
+              Médica veterinária com formação complementar em ilustração
+              naturalista. Funda a Eternize a partir da intersecção entre
+              o conhecimento clínico de anatomia animal e a prática artística
+              iniciada na infância.
             </p>
-            <Link
-              href="/sobre"
-              className="prose-link mt-8 sm:mt-10 inline-flex items-center gap-2 text-sm tracking-wide text-[var(--fg)]"
-            >
-              Conheça minha história
+            <Link href="/sobre" className="link-arrow mt-8 sm:mt-10">
+              Conhecer trajetória completa
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                 <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -182,8 +174,9 @@ export default function HomePage() {
       {/* Depoimentos */}
       <Section variant="bone">
         <SectionTitle
-          eyebrow="Quem já levou pra casa"
-          title="depoimentos"
+          eyebrow="Depoimentos"
+          title="o que dizem"
+          subtitle="Retornos de clientes que receberam suas peças nos últimos meses."
         />
         <div className="reveal mt-12 sm:mt-14 grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {DEPOIMENTOS.slice(0, 3).map((d) => (
@@ -215,23 +208,26 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* CTA final escuro */}
+      {/* CTA final */}
       <section className="bg-[var(--brand-walnut)] text-[var(--brand-bone)]">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 md:px-10 py-20 sm:py-24 md:py-32 text-center reveal">
-          <h2 className="font-script text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-[var(--brand-bone)]">
-            pronto pra eternizar<br/>seu pet?
+          <span className="inline-block text-xs uppercase tracking-[0.3em] text-[var(--brand-caramel)] font-medium">
+            Solicite sua peça
+          </span>
+          <h2 className="mt-5 font-script text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-[var(--brand-bone)]">
+            Um retrato para<br/>permanecer.
           </h2>
           <p className="mt-5 sm:mt-6 text-[var(--brand-cream)]/80 max-w-xl mx-auto leading-relaxed">
-            Manda a foto pelo zap. A gente conversa, decide os detalhes, e
-            em 7-15 dias seu retrato está pronto.
+            Envie a fotografia do seu pet pelo WhatsApp. O briefing é
+            conduzido por mim, com retorno em até 24h.
           </p>
           <a
-            href={whatsappLink("Olá! Quero encomendar o retrato do meu pet 🐾")}
+            href={whatsappLink("Olá! Gostaria de solicitar um orçamento para um retrato.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-solid btn-light mt-8 sm:mt-10 text-sm sm:text-base"
+            className="btn-solid btn-light mt-8 sm:mt-10"
           >
-            Falar no WhatsApp
+            Iniciar conversa no WhatsApp
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

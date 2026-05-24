@@ -144,12 +144,12 @@ export default function Header() {
 
           <div className="flex items-center gap-2">
             <a
-              href={whatsappLink("Olá! Quero encomendar um retrato 🐾")}
+              href={whatsappLink("Olá! Gostaria de solicitar um orçamento.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex btn-solid text-[13px] py-2.5 px-5"
+              className="hidden md:inline-flex btn-solid text-[12.5px] py-2.5 px-5 tracking-[0.08em]"
             >
-              Encomendar
+              Solicitar orçamento
             </a>
             {/* Spacer mobile pra balancear o hamburger esquerdo */}
             <span className="md:hidden h-11 w-11" aria-hidden />
@@ -259,12 +259,12 @@ export default function Header() {
                     className="mt-auto px-5 pb-6 pt-4 shrink-0"
                   >
                     <a
-                      href={whatsappLink("Olá! Quero encomendar um retrato 🐾")}
+                      href={whatsappLink("Olá! Gostaria de solicitar um orçamento.")}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-solid w-full justify-center text-sm"
+                      className="btn-solid w-full"
                     >
-                      Encomendar no WhatsApp
+                      Solicitar orçamento
                     </a>
                   </motion.div>
                 </div>

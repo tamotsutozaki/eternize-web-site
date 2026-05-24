@@ -6,7 +6,7 @@ import { SITE_CONFIG, whatsappLink } from "@/lib/config";
 export const metadata: Metadata = {
   title: "Contato",
   description:
-    "Fale comigo pelo WhatsApp, Instagram ou e-mail. Atendimento direto, sem intermediário.",
+    "Canais de atendimento do estúdio Eternize: WhatsApp, Instagram e e-mail. Atendimento direto, sem intermediários.",
 };
 
 export default function ContatoPage() {
@@ -15,8 +15,8 @@ export default function ContatoPage() {
       <Section variant="bone">
         <SectionTitle
           eyebrow="Contato"
-          title={<>vamos<br/>conversar</>}
-          subtitle="Eu mesma atendo cada mensagem. Escolha o canal mais confortável pra você."
+          title={<>canais de<br/>atendimento</>}
+          subtitle="Todo atendimento é conduzido diretamente pela artista. Selecione o canal de sua preferência."
         />
 
         <div className="mt-12 sm:mt-16 grid gap-5 sm:gap-6 md:gap-8 md:grid-cols-3">
@@ -25,7 +25,7 @@ export default function ContatoPage() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="reveal lift-card md:col-span-3 lg:col-span-1 lg:row-span-2 group flex flex-col rounded-2xl bg-[var(--bg-deep)] text-[var(--bg-deep-text)] p-7 sm:p-8 md:p-10 overflow-hidden"
+            className="reveal lift-card md:col-span-3 lg:col-span-1 lg:row-span-2 group flex flex-col rounded-2xl bg-[var(--brand-walnut)] text-[var(--brand-bone)] p-7 sm:p-8 md:p-10 overflow-hidden hover:bg-[var(--brand-ink)] transition-colors"
           >
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--brand-caramel)] text-[var(--brand-bone)]">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden>
@@ -35,13 +35,13 @@ export default function ContatoPage() {
             <h3 className="mt-6 sm:mt-8 font-script text-4xl sm:text-5xl leading-none">
               WhatsApp
             </h3>
-            <p className="mt-3 text-[var(--brand-cream)]/80">
-              Falo com você por aqui. Manda foto, tira dúvida, encomenda
-              — tudo num lugar só.
+            <p className="mt-3 text-[var(--brand-cream)]/80 leading-relaxed">
+              Canal principal de atendimento. Envio de referências, briefing,
+              orçamento e acompanhamento de produção em um único fluxo.
             </p>
-            <span className="mt-auto pt-8 sm:pt-10 inline-flex items-center gap-2 text-sm tracking-wide text-[var(--brand-bone)] underline-offset-8 group-hover:underline decoration-[var(--brand-caramel)]">
-              Abrir WhatsApp
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+            <span className="mt-auto pt-8 sm:pt-10 inline-flex items-center gap-2 text-sm tracking-[0.04em] text-[var(--brand-bone)]">
+              Abrir conversa
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden className="transition-transform group-hover:translate-x-1">
                 <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
@@ -52,9 +52,9 @@ export default function ContatoPage() {
             href={SITE_CONFIG.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="reveal lift-card group flex flex-col rounded-2xl border border-[var(--border-strong)] bg-[var(--bg-alt)] p-7 sm:p-8 hover:bg-[var(--bg)] transition-colors"
+            className="reveal lift-card group flex flex-col rounded-2xl border border-[var(--border-strong)] bg-[var(--bg-alt)] p-7 sm:p-8 hover:bg-[var(--bg)] hover:border-[var(--accent)] transition-colors"
           >
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--accent)] border border-[var(--border-strong)]">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--accent)] border border-[var(--border-strong)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-[var(--brand-bone)] group-hover:border-[var(--accent)]">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <rect x="3" y="3" width="18" height="18" rx="5" />
                 <circle cx="12" cy="12" r="4" />
@@ -64,9 +64,9 @@ export default function ContatoPage() {
             <h3 className="mt-5 sm:mt-6 font-script text-3xl text-[var(--fg)] leading-none">
               Instagram
             </h3>
-            <p className="mt-3 text-[var(--fg-soft)]">
-              Veja peças novas em primeira mão, bastidores da pintura e
-              dicas pra escolher fotos do seu pet.
+            <p className="mt-3 text-[var(--fg-soft)] leading-relaxed">
+              Bastidores do estúdio, peças recentes e dicas de captação
+              fotográfica para boas referências.
             </p>
             <span className="mt-5 sm:mt-6 inline-flex items-center gap-2 text-sm tracking-wide text-[var(--accent)]">
               @{SITE_CONFIG.instagramHandle}
@@ -76,9 +76,9 @@ export default function ContatoPage() {
           {/* E-mail */}
           <a
             href={`mailto:${SITE_CONFIG.email}`}
-            className="reveal lift-card group flex flex-col rounded-2xl border border-[var(--border-strong)] bg-[var(--bg-alt)] p-7 sm:p-8 hover:bg-[var(--bg)] transition-colors"
+            className="reveal lift-card group flex flex-col rounded-2xl border border-[var(--border-strong)] bg-[var(--bg-alt)] p-7 sm:p-8 hover:bg-[var(--bg)] hover:border-[var(--accent)] transition-colors"
           >
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--accent)] border border-[var(--border-strong)]">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--accent)] border border-[var(--border-strong)] transition-colors group-hover:bg-[var(--accent)] group-hover:text-[var(--brand-bone)] group-hover:border-[var(--accent)]">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <path d="M3 7l9 6 9-6" />
@@ -87,9 +87,9 @@ export default function ContatoPage() {
             <h3 className="mt-5 sm:mt-6 font-script text-3xl text-[var(--fg)] leading-none">
               E-mail
             </h3>
-            <p className="mt-3 text-[var(--fg-soft)]">
-              Pra parcerias, atacado, presskit ou qualquer coisa que peça
-              algo mais formal.
+            <p className="mt-3 text-[var(--fg-soft)] leading-relaxed">
+              Contato formal: parcerias, imprensa, assessoria, encomendas
+              corporativas e atendimento B2B.
             </p>
             <span className="mt-5 sm:mt-6 inline-flex items-center gap-2 text-sm tracking-wide text-[var(--accent)] break-all">
               {SITE_CONFIG.email}
@@ -97,11 +97,11 @@ export default function ContatoPage() {
           </a>
         </div>
 
-        <div className="reveal mt-12 sm:mt-16 text-sm text-[var(--fg-mute)]">
+        <div className="reveal mt-12 sm:mt-16 text-sm text-[var(--fg-mute)] max-w-2xl">
           <p>
-            <strong className="text-[var(--fg-soft)]">Atendimento:</strong>{" "}
-            seg-sex das 9h às 19h. Aos sábados respondo quando dá. Domingo
-            é dia de descanso (e de pet também).
+            <strong className="text-[var(--fg-soft)]">Horário de atendimento:</strong>{" "}
+            segunda a sexta, das 9h às 19h. Aos sábados, retornos pontuais conforme
+            disponibilidade. Domingos e feriados, sem atendimento.
           </p>
         </div>
       </Section>

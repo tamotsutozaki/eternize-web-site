@@ -4,9 +4,9 @@ import Section from "@/components/Section";
 import { whatsappLink } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Sobre",
+  title: "Sobre a artista",
   description:
-    "Sou Isabella — médica veterinária e artista por trás de cada peça da Eternize.",
+    "Isabella Ferreira — médica veterinária e artista responsável pela Eternize. Trajetória, formação e processo de trabalho.",
 };
 
 export default function SobrePage() {
@@ -17,22 +17,23 @@ export default function SobrePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 pt-12 sm:pt-16 md:pt-24 pb-10 sm:pb-12">
           <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-end">
             <div className="lg:col-span-7 reveal">
-              <span className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">
+              <span className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] font-medium">
                 Sobre a artista
               </span>
               <h1 className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-4 leading-[1] text-[var(--fg)]">
-                oi, eu sou a<br/>Isabella
+                Isabella Ferreira
               </h1>
               <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-[var(--fg-soft)] max-w-xl leading-relaxed">
-                Médica veterinária, artista e a pessoa por trás de cada
-                pincelada da Eternize.
+                Médica veterinária, ilustradora e fundadora da Eternize.
+                Cada peça do estúdio é executada integralmente por mim,
+                do briefing inicial à entrega.
               </p>
             </div>
             <div className="lg:col-span-5 reveal relative aspect-[4/5] rounded-2xl overflow-hidden shadow-[var(--shadow-soft)] bg-[var(--bg-alt)] zoom-on-hover max-w-md w-full mx-auto lg:max-w-none">
-              {/* MOCK — trocar por foto real da Isabella */}
+              {/* MOCK */}
               <Image
                 src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="Isabella"
+                alt="Isabella Ferreira"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -43,48 +44,48 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Texto pessoal — 1ª pessoa */}
+      {/* Texto pessoal */}
       <Section variant="bone">
         <div className="grid lg:grid-cols-12 gap-10 sm:gap-12">
           <div className="lg:col-span-8 lg:col-start-2 space-y-10 sm:space-y-12">
             <div className="reveal">
-              <h2 className="text-xs uppercase tracking-[0.28em] text-[var(--accent)] mb-3 sm:mb-4">
-                Veterinária há 5 anos
+              <h2 className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] mb-3 sm:mb-4 font-medium">
+                Formação e prática clínica
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-[var(--fg-soft)] leading-relaxed">
-                {/* MOCK — substituir pelo [TEXTO_ISABELLA] real */}
-                Quando me formei em medicina veterinária, eu não imaginava
-                que ia acabar pintando os meus próprios pacientes. Mas o
-                olhar que a clínica me ensinou — anatomia, expressão,
-                comportamento — é o mesmo que uso hoje pra te entregar um
-                retrato em que você reconhece o seu pet de primeira.
+                {/* MOCK */}
+                Graduada em Medicina Veterinária pela Unesp em 2020, atuei
+                por cinco anos em clínica de pequenos animais. A rotina
+                hospitalar moldou meu olhar para anatomia, expressão e
+                comportamento — competências que hoje sustentam a fidelidade
+                de cada retrato.
               </p>
             </div>
 
             <div className="reveal">
-              <h2 className="text-xs uppercase tracking-[0.28em] text-[var(--accent)] mb-3 sm:mb-4">
-                Pintar pets desde criança
+              <h2 className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] mb-3 sm:mb-4 font-medium">
+                Da ilustração à madeira
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-[var(--fg-soft)] leading-relaxed">
                 {/* MOCK */}
-                Eu desenho desde sempre. Cachorro, gato, coelho — qualquer
-                bicho que aparecesse na minha frente virava traço no caderno.
-                Quando descobri a madeira como suporte, foi como achar o
-                lugar onde tudo se encaixava: a vet, a artista, a memória.
+                Desenho desde a infância. A transição para a pintura sobre
+                madeira aconteceu em 2024, durante uma especialização em
+                ilustração naturalista. O suporte natural — com suas
+                texturas, nós e veios — passou a integrar a composição
+                como parte ativa da obra.
               </p>
             </div>
 
             <div className="reveal">
-              <h2 className="text-xs uppercase tracking-[0.28em] text-[var(--accent)] mb-3 sm:mb-4">
-                Por que cada peça importa
+              <h2 className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] mb-3 sm:mb-4 font-medium">
+                Filosofia de trabalho
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-[var(--fg-soft)] leading-relaxed">
                 {/* MOCK */}
-                Pinto tudo à mão, do esboço ao verniz. Não terceirizo nada
-                e atendo cada pessoa pessoalmente — desde a primeira foto
-                que você me manda até a hora em que a peça chega na sua
-                casa. Pra mim, retratar um pet é fixar uma história, e isso
-                merece todo o cuidado.
+                Cada peça nasce de uma conversa direta. Não trabalho com
+                terceirização, não opero em escala industrial. Atendo um
+                número limitado de encomendas por mês para garantir o
+                tempo de execução que cada retrato exige.
               </p>
             </div>
           </div>
@@ -95,11 +96,11 @@ export default function SobrePage() {
       <Section variant="cream">
         <blockquote className="reveal max-w-4xl mx-auto text-center">
           <p className="font-script italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--fg)] leading-[1.1]">
-            &ldquo;Cada pet tem uma história — meu trabalho é transformar
-            essa história em algo que dure.&rdquo;
+            &ldquo;Retratar um pet é registrar a história de uma família.
+            Esse compromisso define o ritmo do estúdio.&rdquo;
           </p>
-          <footer className="mt-6 sm:mt-8 text-sm uppercase tracking-[0.28em] text-[var(--accent)]">
-            Isabella
+          <footer className="mt-6 sm:mt-8 text-sm uppercase tracking-[0.3em] text-[var(--accent)] font-medium">
+            Isabella Ferreira
           </footer>
         </blockquote>
       </Section>
@@ -108,19 +109,19 @@ export default function SobrePage() {
       <section className="bg-[var(--brand-walnut)] text-[var(--brand-bone)]">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-10 py-16 sm:py-20 md:py-24 text-center reveal">
           <h2 className="font-script text-4xl sm:text-5xl">
-            quer um retrato seu?
+            Vamos conversar?
           </h2>
           <p className="mt-4 text-[var(--brand-cream)]/80 max-w-xl mx-auto">
-            Me manda uma foto do seu pet no WhatsApp. A gente conversa,
-            decide os detalhes, e em 7-15 dias seu retrato está pronto.
+            O atendimento é feito diretamente comigo, via WhatsApp.
+            Resposta em até 24 horas em dias úteis.
           </p>
           <a
-            href={whatsappLink("Olá Isabella! Vim pelo Sobre do site e quero encomendar 🐾")}
+            href={whatsappLink("Olá, Isabella! Vim pela página Sobre e gostaria de conversar sobre um retrato.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-solid btn-light mt-7 sm:mt-8 text-sm"
+            className="btn-solid btn-light mt-7 sm:mt-8"
           >
-            Falar comigo
+            Falar com Isabella
           </a>
         </div>
       </section>

@@ -5,47 +5,47 @@ import SectionTitle from "@/components/SectionTitle";
 import { whatsappLink } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Como funciona",
+  title: "Processo",
   description:
-    "Do clique até a peça pendurada na parede. O passo a passo da Eternize, em 5 etapas simples.",
+    "Do envio da fotografia à entrega da peça finalizada. Etapas detalhadas do processo de encomenda na Eternize.",
 };
 
 const PASSOS = [
   {
     n: "01",
-    titulo: "Você manda a foto",
+    titulo: "Envio da fotografia",
     descricao:
-      "Pelo WhatsApp. Quanto melhor a foto, melhor o retrato — luz natural, pet em foco, no nível do olhar dele. Pode ser de corpo inteiro ou close. Não se preocupe com fundo bagunçado: a gente recompõe na pintura.",
-    cta: "Mandar foto agora",
-    ctaMessage: "Olá! Quero mandar a foto do meu pet pra começar 🐾",
+      "O atendimento começa com o envio de uma fotografia do pet pelo WhatsApp. Recomenda-se imagem em luz natural, com o animal em foco e na altura do olhar. Resoluções acima de 2.000 pixels facilitam a captação de detalhes do pelo e da expressão. Fundo da foto não influencia — a composição é recriada na pintura.",
+    cta: "Iniciar atendimento",
+    ctaMessage: "Olá! Gostaria de iniciar o atendimento para uma encomenda.",
     imagem: "https://placedog.net/700/900?id=20",
   },
   {
     n: "02",
-    titulo: "Conversamos os detalhes",
+    titulo: "Briefing e orçamento",
     descricao:
-      "Tamanho da peça (14, 18 ou 25 cm), fundo (madeira natural ou cor sólida à sua escolha), acessórios opcionais no pet (lenço, gravata, terno, óculos, coroa) e elementos decorativos (flores, folhas, estrelas). Mais de um pet? Em 18 e 25 cm dá pra fazer.",
+      "Definimos juntos as características da peça: dimensão (14, 18 ou 25 cm), tratamento do fundo (madeira natural ou cor sólida), acessórios opcionais para o pet (lenço, gravata, óculos, coroa) e elementos decorativos (flora, estrelas, motivos pessoais). Encomendas com múltiplos pets são possíveis nos formatos 18 e 25 cm.",
     imagem: "https://placedog.net/700/900?id=21",
   },
   {
     n: "03",
-    titulo: "Eu pinto à mão",
+    titulo: "Execução da pintura",
     descricao:
-      "A pintura é feita sobre uma fatia de madeira pinus (bolacha de tronco), com tinta acrílica e acabamento envernizado. Cada peça leva entre 7 e 15 dias úteis após confirmação do PIX — esse é o tempo da arte.",
+      "Após confirmação do pagamento, a peça entra na fila de produção. O prazo padrão é de sete a quinze dias úteis, executado em estúdio próprio. A pintura é feita em tinta acrílica artística profissional, aplicada em camadas sobre a fatia de pinus previamente preparada.",
     imagem: "https://placedog.net/700/900?id=22",
   },
   {
     n: "04",
-    titulo: "Você aprova antes da finalização",
+    titulo: "Aprovação prévia",
     descricao:
-      "Antes de envernizar e finalizar, a gente manda foto da peça quase pronta. Se tiver algum ajuste — cor de fundo, posição do acessório — é o momento. Sem custo extra.",
+      "Antes do envernizamento final, envio fotografias da peça em alta resolução para sua avaliação. Ajustes pontuais — tom de fundo, posicionamento de acessório, refinamento de traço — são incorporados nesta etapa, sem custo adicional. O acabamento só é aplicado após sua aprovação.",
     imagem: "https://placedog.net/700/900?id=23",
   },
   {
     n: "05",
-    titulo: "Você recebe em casa",
+    titulo: "Embalagem e envio",
     descricao:
-      "Entrega presencial gratuita apenas em Indaiatuba e Salto. Para as demais cidades, fazemos o envio pelos Correios ou transportadora — o frete é calculado pelo CEP e fica por conta do cliente. A peça já chega com cordão de algodão pronto pra pendurar.",
+      "Entrega presencial sem custo em Indaiatuba e Salto. Para demais localidades, despacho via Correios ou transportadora, com frete calculado pelo CEP. A peça é embalada em camadas protetoras de espuma e papelão duplo, acompanhada do cordão de algodão natural pronto para fixação.",
     imagem: "https://placedog.net/700/900?id=24",
   },
 ];
@@ -55,9 +55,9 @@ export default function ComoFuncionaPage() {
     <>
       <Section variant="bone">
         <SectionTitle
-          eyebrow="Como funciona"
-          title={<>do clique<br/>até a parede</>}
-          subtitle="Sem cadastro, sem carrinho, sem complicação. Toda venda acontece numa conversa direta no WhatsApp — pra que cada peça saia com o cuidado que ela pede."
+          eyebrow="Processo"
+          title={<>do envio da foto<br/>à entrega da peça</>}
+          subtitle="Cinco etapas conduzidas individualmente pela artista. Atendimento conversacional, sem intermediários, com acompanhamento da concepção à finalização."
         />
       </Section>
 
@@ -78,7 +78,7 @@ export default function ComoFuncionaPage() {
                   <span className="font-script text-7xl sm:text-8xl lg:text-9xl text-[var(--accent)] leading-none">
                     {p.n}
                   </span>
-                  <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-[var(--fg)] tracking-tight leading-tight">
+                  <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[var(--fg)] tracking-tight leading-tight">
                     {p.titulo}
                   </h2>
                   <p className="mt-5 sm:mt-6 text-base sm:text-lg text-[var(--fg-soft)] leading-relaxed max-w-xl">
@@ -89,7 +89,7 @@ export default function ComoFuncionaPage() {
                       href={whatsappLink(p.ctaMessage)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-solid mt-7 sm:mt-8 text-sm"
+                      className="btn-solid mt-7 sm:mt-8"
                     >
                       {p.cta}
                     </a>
@@ -113,19 +113,23 @@ export default function ComoFuncionaPage() {
 
       <section className="bg-[var(--brand-walnut)] text-[var(--brand-bone)]">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-10 py-20 sm:py-24 md:py-28 text-center reveal">
-          <h2 className="font-script text-4xl sm:text-5xl md:text-6xl leading-tight">
-            tudo pronto<br/>pra começar?
+          <span className="inline-block text-xs uppercase tracking-[0.3em] text-[var(--brand-caramel)] font-medium">
+            Próximo passo
+          </span>
+          <h2 className="mt-5 font-script text-4xl sm:text-5xl md:text-6xl leading-tight">
+            Pronto para começar?
           </h2>
           <p className="mt-5 sm:mt-6 text-[var(--brand-cream)]/80 max-w-xl mx-auto">
-            Manda a foto do seu pet pelo WhatsApp. A gente cuida do resto.
+            Envie a fotografia do pet pelo WhatsApp. Retorno o orçamento
+            em até 24 horas úteis.
           </p>
           <a
-            href={whatsappLink("Olá! Quero começar — vou mandar a foto do meu pet 🐾")}
+            href={whatsappLink("Olá! Gostaria de iniciar uma encomenda.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-solid btn-light mt-8 sm:mt-10 text-sm"
+            className="btn-solid btn-light mt-8 sm:mt-10"
           >
-            Mandar foto agora
+            Enviar fotografia
           </a>
         </div>
       </section>
