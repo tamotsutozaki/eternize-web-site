@@ -39,15 +39,15 @@ function Item({ item }: { item: FaqItem }) {
           {item.q}
         </span>
         <motion.span
-          animate={{ rotate: open ? 45 : 0 }}
+          animate={{ rotate: open ? 180 : 0 }}
           transition={{ type: "spring", stiffness: 380, damping: 26 }}
           className={`mt-0.5 sm:mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[var(--border-strong)] ${
             open ? "bg-[var(--accent)] text-[var(--brand-bone)] border-[var(--accent)]" : ""
           } transition-colors`}
           aria-hidden
         >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <path d="M12 5v14M5 12h14" />
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M6 9l6 6 6-6" />
           </svg>
         </motion.span>
       </motion.button>
