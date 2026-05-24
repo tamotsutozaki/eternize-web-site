@@ -195,117 +195,121 @@ body {
   border-color: var(--border-strong);
 }
 
-/* Link com seta — usado em CTAs secundárias */
-.link-arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--fg);
-  font-size: 0.875rem;
-  letter-spacing: 0.04em;
-  padding-bottom: 3px;
-  background-image: linear-gradient(var(--accent), var(--accent));
-  background-repeat: no-repeat;
-  background-size: 0% 1.5px;
-  background-position: 0 100%;
-  transition:
-    background-size 0.35s var(--ease-out-quint),
-    color 0.25s ease;
-}
-.link-arrow:hover {
-  color: var(--accent);
-  background-size: 100% 1.5px;
-}
-.link-arrow svg {
-  transition: transform 0.3s var(--ease-spring);
-}
-.link-arrow:hover svg {
-  transform: translateX(4px);
+@layer components {
+  /* Link com seta — CTA secundário */
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--fg);
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    padding-bottom: 3px;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-repeat: no-repeat;
+    background-size: 0% 1.5px;
+    background-position: 0 100%;
+    transition:
+      background-size 0.35s var(--ease-out-quint),
+      color 0.25s ease;
+  }
+  .link-arrow:hover {
+    color: var(--accent);
+    background-size: 100% 1.5px;
+  }
+  .link-arrow svg {
+    transition: transform 0.3s var(--ease-spring);
+  }
+  .link-arrow:hover svg {
+    transform: translateX(4px);
+  }
+
+  /* Stat com hover sutil */
+  .stat-cell {
+    transition: transform 0.3s var(--ease-spring), color 0.3s ease;
+  }
+  .stat-cell:hover .stat-num { color: var(--accent); }
+
+  /* Botão sólido */
+  .btn-solid {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.95rem 1.85rem;
+    background: var(--brand-walnut);
+    color: var(--brand-bone);
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    border-radius: 999px;
+    border: 1px solid var(--brand-walnut);
+    box-shadow: 0 4px 14px -4px rgba(61, 40, 23, 0.28);
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.25s var(--ease-spring),
+      box-shadow 0.3s ease;
+  }
+  .btn-solid:hover {
+    background: var(--brand-caramel);
+    border-color: var(--brand-caramel);
+    color: var(--brand-bone);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -10px rgba(184, 137, 94, 0.45);
+  }
+  .btn-solid:active {
+    transform: translateY(0);
+    transition-duration: 0.1s;
+  }
+
+  /* Variante clara — fundos escuros */
+  .btn-light {
+    background: var(--brand-bone);
+    color: var(--brand-walnut);
+    border-color: var(--brand-bone);
+    box-shadow: 0 4px 14px -4px rgba(0, 0, 0, 0.3);
+  }
+  .btn-light:hover {
+    background: var(--brand-caramel);
+    border-color: var(--brand-caramel);
+    color: var(--brand-bone);
+    box-shadow: 0 12px 28px -10px rgba(184, 137, 94, 0.55);
+  }
 }
 
-/* Stat com hover sutil */
-.stat-cell {
-  transition: transform 0.3s var(--ease-spring), color 0.3s ease;
-}
-.stat-cell:hover .stat-num { color: var(--accent); }
-
-/* Botão sólido — fundo escuro sempre presente, hover muda pra caramelo */
-.btn-solid {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  padding: 0.95rem 1.85rem;
-  background: var(--brand-walnut);
-  color: var(--brand-bone);
-  font-weight: 500;
-  font-size: 0.875rem;
-  letter-spacing: 0.04em;
-  border-radius: 999px;
-  border: 1px solid var(--brand-walnut);
-  box-shadow: 0 4px 14px -4px rgba(61, 40, 23, 0.28);
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.25s var(--ease-spring),
-    box-shadow 0.3s ease;
-}
-.btn-solid:hover {
-  background: var(--brand-caramel);
-  border-color: var(--brand-caramel);
-  color: var(--brand-bone);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px -10px rgba(184, 137, 94, 0.45);
-}
-.btn-solid:active {
-  transform: translateY(0);
-  transition-duration: 0.1s;
-}
-
-/* Variante clara — usada em fundos escuros (CTA final, footer) */
-.btn-light {
-  background: var(--brand-bone);
-  color: var(--brand-walnut);
-  border-color: var(--brand-bone);
-  box-shadow: 0 4px 14px -4px rgba(0, 0, 0, 0.3);
-}
-.btn-light:hover {
-  background: var(--brand-caramel);
-  border-color: var(--brand-caramel);
-  color: var(--brand-bone);
-  box-shadow: 0 12px 28px -10px rgba(184, 137, 94, 0.55);
-}
-
-/* Botão ghost — borda visível, fundo sutil, hover preenche */
-.btn-ghost {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  padding: 0.9rem 1.6rem;
-  background: transparent;
-  color: var(--fg);
-  font-weight: 500;
-  font-size: 0.875rem;
-  letter-spacing: 0.04em;
-  border-radius: 999px;
-  border: 1px solid var(--border-strong);
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.25s var(--ease-spring),
-    box-shadow 0.3s ease;
-}
-.btn-ghost:hover {
-  background: var(--brand-walnut);
-  border-color: var(--brand-walnut);
-  color: var(--brand-bone);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px -10px rgba(61, 40, 23, 0.35);
+@layer components {
+  /* Botão ghost — borda visível, hover preenche em walnut */
+  .btn-ghost {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.9rem 1.6rem;
+    background: transparent;
+    color: var(--fg);
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    border-radius: 999px;
+    border: 1px solid var(--border-strong);
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.25s var(--ease-spring),
+      box-shadow 0.3s ease;
+  }
+  .btn-ghost:hover {
+    background: var(--brand-walnut);
+    border-color: var(--brand-walnut);
+    color: var(--brand-bone);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -10px rgba(61, 40, 23, 0.35);
+  }
 }
 
 /* Imagens dentro de cards/photos — leve zoom on hover */
