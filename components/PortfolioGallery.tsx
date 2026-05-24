@@ -41,10 +41,10 @@ export default function PortfolioGallery({
               type="button"
               onClick={() => setFiltro(f)}
               whileTap={{ scale: 0.95 }}
-              className={`relative rounded-full px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm tracking-wide transition-colors border cursor-pointer ${
+              className={`relative rounded-full px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm tracking-[0.08em] font-medium transition-all duration-300 border cursor-pointer ${
                 active
                   ? "text-[var(--bg-deep-text)] border-[var(--bg-deep)]"
-                  : "bg-transparent text-[var(--fg-soft)] border-[var(--border-strong)] hover:text-[var(--fg)] hover:border-[var(--fg-mute)]"
+                  : "bg-[var(--bg)] text-[var(--fg-soft)] border-[var(--border-strong)] hover:bg-[var(--brand-walnut)] hover:text-[var(--brand-bone)] hover:border-[var(--brand-walnut)] hover:-translate-y-0.5"
               }`}
             >
               {active && (
@@ -86,7 +86,7 @@ export default function PortfolioGallery({
               </span>
             </div>
             <div className="p-4 sm:p-5 flex items-center justify-between gap-2">
-              <p className="font-script text-xl sm:text-2xl text-[var(--fg)] leading-none truncate transition-colors group-hover:text-[var(--accent)]">
+              <p className="font-serif text-xl sm:text-2xl text-[var(--fg)] leading-none truncate transition-colors group-hover:text-[var(--accent)]">
                 {peca.nomePet}
               </p>
               <span className="text-[10px] sm:text-xs uppercase tracking-[0.18em] text-[var(--accent)] shrink-0">

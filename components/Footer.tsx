@@ -114,7 +114,7 @@ export default function Footer() {
 
         <div className="mt-12 sm:mt-14 pt-6 sm:pt-8 border-t border-[var(--brand-bone)]/10 flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--brand-cream)]/60">
           <span>© {year} Eternize · Todos os direitos reservados</span>
-          <span className="font-script text-base text-[var(--brand-caramel)]">
+          <span className="font-serif text-base text-[var(--brand-caramel)]">
             Memórias que ficam
           </span>
         </div>

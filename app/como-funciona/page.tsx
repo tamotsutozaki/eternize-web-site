@@ -75,7 +75,7 @@ export default function ComoFuncionaPage() {
                 }`}
               >
                 <div className="reveal lg:col-span-6">
-                  <span className="font-script text-7xl sm:text-8xl lg:text-9xl text-[var(--accent)] leading-none">
+                  <span className="font-serif text-7xl sm:text-8xl lg:text-9xl text-[var(--accent)] leading-none">
                     {p.n}
                   </span>
                   <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[var(--fg)] tracking-tight leading-tight">
@@ -116,7 +116,7 @@ export default function ComoFuncionaPage() {
           <span className="inline-block text-xs uppercase tracking-[0.3em] text-[var(--brand-caramel)] font-medium">
             Próximo passo
           </span>
-          <h2 className="mt-5 font-script text-4xl sm:text-5xl md:text-6xl leading-tight">
+          <h2 className="mt-5 font-serif text-4xl sm:text-5xl md:text-6xl leading-tight">
             Pronto para começar?
           </h2>
           <p className="mt-5 sm:mt-6 text-[var(--brand-cream)]/80 max-w-xl mx-auto">

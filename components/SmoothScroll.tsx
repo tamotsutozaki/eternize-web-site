@@ -1,14 +1,33 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
+
+type LenisInstance = {
+  raf: (time: number) => void;
+  scrollTo: (target: number | HTMLElement, options?: { offset?: number; immediate?: boolean; duration?: number }) => void;
+  destroy: () => void;
+};
+
+declare global {
+  interface Window {
+    __lenis?: LenisInstance;
+  }
+}
 
 export default function SmoothScroll() {
+  const pathname = usePathname();
+  const initializedRef = useRef(false);
+
+  // Init Lenis (uma vez)
   useEffect(() => {
+    if (initializedRef.current) return;
     if (typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    let lenis: import("lenis").default | undefined;
+    let lenis: LenisInstance | undefined;
     let rafId = 0;
     let cancelled = false;
+    initializedRef.current = true;
 
     (async () => {
       const { default: Lenis } = await import("lenis");
@@ -20,7 +39,7 @@ export default function SmoothScroll() {
         smoothWheel: true,
         wheelMultiplier: 0.9,
         touchMultiplier: 1.6,
-      });
+      }) as unknown as LenisInstance;
 
       const raf = (time: number) => {
         lenis?.raf(time);
@@ -40,16 +59,28 @@ export default function SmoothScroll() {
       };
       document.addEventListener("click", onAnchorClick);
 
-      (window as unknown as { __lenis?: typeof lenis }).__lenis = lenis;
+      window.__lenis = lenis;
     })();
 
     return () => {
       cancelled = true;
       if (rafId) cancelAnimationFrame(rafId);
-      lenis?.destroy();
-      (window as unknown as { __lenis?: unknown }).__lenis = undefined;
+      window.__lenis?.destroy();
+      window.__lenis = undefined;
+      initializedRef.current = false;
     };
   }, []);
+
+  // Reset scroll quando muda de rota
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const lenis = window.__lenis;
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }, [pathname]);
 
   return null;
 }

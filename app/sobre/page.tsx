@@ -20,7 +20,7 @@ export default function SobrePage() {
               <span className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] font-medium">
                 Sobre a artista
               </span>
-              <h1 className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-4 leading-[1] text-[var(--fg)]">
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-4 leading-[1.02] text-[var(--fg)] tracking-tight">
                 Isabella Ferreira
               </h1>
               <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-[var(--fg-soft)] max-w-xl leading-relaxed">
@@ -95,7 +95,7 @@ export default function SobrePage() {
       {/* Pull quote */}
       <Section variant="cream">
         <blockquote className="reveal max-w-4xl mx-auto text-center">
-          <p className="font-script italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--fg)] leading-[1.1]">
+          <p className="font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] text-[var(--fg)] leading-[1.2]">
             &ldquo;Retratar um pet é registrar a história de uma família.
             Esse compromisso define o ritmo do estúdio.&rdquo;
           </p>
@@ -108,7 +108,7 @@ export default function SobrePage() {
       {/* CTA */}
       <section className="bg-[var(--brand-walnut)] text-[var(--brand-bone)]">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-10 py-16 sm:py-20 md:py-24 text-center reveal">
-          <h2 className="font-script text-4xl sm:text-5xl">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl tracking-tight">
             Vamos conversar?
           </h2>
           <p className="mt-4 text-[var(--brand-cream)]/80 max-w-xl mx-auto">

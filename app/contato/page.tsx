@@ -32,7 +32,7 @@ export default function ContatoPage() {
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.768.967-.941 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487 2.981 1.288 2.981.86 3.518.806.537-.054 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
               </svg>
             </span>
-            <h3 className="mt-6 sm:mt-8 font-script text-4xl sm:text-5xl leading-none">
+            <h3 className="mt-6 sm:mt-8 font-serif text-4xl sm:text-5xl leading-none">
               WhatsApp
             </h3>
             <p className="mt-3 text-[var(--brand-cream)]/80 leading-relaxed">
@@ -61,7 +61,7 @@ export default function ContatoPage() {
                 <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
               </svg>
             </span>
-            <h3 className="mt-5 sm:mt-6 font-script text-3xl text-[var(--fg)] leading-none">
+            <h3 className="mt-5 sm:mt-6 font-serif text-3xl text-[var(--fg)] leading-none">
               Instagram
             </h3>
             <p className="mt-3 text-[var(--fg-soft)] leading-relaxed">
@@ -84,7 +84,7 @@ export default function ContatoPage() {
                 <path d="M3 7l9 6 9-6" />
               </svg>
             </span>
-            <h3 className="mt-5 sm:mt-6 font-script text-3xl text-[var(--fg)] leading-none">
+            <h3 className="mt-5 sm:mt-6 font-serif text-3xl text-[var(--fg)] leading-none">
               E-mail
             </h3>
             <p className="mt-3 text-[var(--fg-soft)] leading-relaxed">

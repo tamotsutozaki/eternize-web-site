@@ -110,7 +110,7 @@ export default function FAQPage() {
 
       <section className="bg-[var(--bg-alt)] border-t border-[var(--border)]">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-10 py-16 sm:py-20 text-center reveal">
-          <h2 className="font-script text-4xl sm:text-5xl">
+          <h2 className="font-serif text-4xl sm:text-5xl">
             Dúvida não respondida?
           </h2>
           <p className="mt-4 text-[var(--fg-soft)]">

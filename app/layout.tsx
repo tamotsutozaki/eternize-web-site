@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Caveat, Dancing_Script } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -15,17 +15,11 @@ const inter = Inter({
   display: "swap",
 });
 
-const caveat = Caveat({
-  variable: "--font-caveat",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["500", "600"],
-  display: "swap",
-});
-
-const dancing = Dancing_Script({
-  variable: "--font-dancing-script",
-  subsets: ["latin"],
-  weight: ["700"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -80,7 +74,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${caveat.variable} ${dancing.variable} antialiased`}
+      className={`${inter.variable} ${fraunces.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--fg)]">
         <SmoothScroll />

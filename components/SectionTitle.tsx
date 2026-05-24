@@ -19,11 +19,11 @@ export default function SectionTitle({
   return (
     <div className={`reveal max-w-3xl ${alignCls} ${className}`}>
       {eyebrow && (
-        <span className="inline-block text-[11px] sm:text-xs uppercase tracking-[0.28em] text-[var(--accent)] mb-3 sm:mb-4">
+        <span className="inline-block text-[11px] sm:text-xs uppercase tracking-[0.32em] text-[var(--accent)] mb-4 sm:mb-5 font-semibold">
           {eyebrow}
         </span>
       )}
-      <h2 className="font-script text-[2.5rem] leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl text-[var(--fg)]">
+      <h2 className="font-serif text-[2.25rem] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-[var(--fg)] tracking-tight">
         {title}
       </h2>
       {subtitle && (

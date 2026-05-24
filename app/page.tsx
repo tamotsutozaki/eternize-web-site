@@ -34,7 +34,7 @@ export default function HomePage() {
         <ol className="reveal mt-12 md:mt-16 grid gap-8 sm:gap-10 md:gap-6 sm:grid-cols-2 md:grid-cols-5">
           {PASSOS.map((p) => (
             <li key={p.n} className="flex flex-col">
-              <span className="font-script text-5xl md:text-6xl text-[var(--accent)] leading-none">
+              <span className="font-serif text-5xl md:text-6xl text-[var(--accent)] leading-none">
                 {p.n}
               </span>
               <span className="mt-3 h-px w-10 bg-[var(--border-strong)]" />
@@ -93,9 +93,8 @@ export default function HomePage() {
             <span className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] font-medium">
               Materiais e técnica
             </span>
-            <h2 className="font-script text-5xl md:text-6xl mt-4 leading-[1.05]">
-              especificações<br/>
-              da peça
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl mt-4 leading-[1.05] tracking-tight">
+              Especificações da peça
             </h2>
             <p className="mt-5 sm:mt-6 text-[var(--fg-soft)] leading-relaxed max-w-md">
               Trabalho integralmente artesanal, executado em estúdio próprio.
@@ -152,7 +151,7 @@ export default function HomePage() {
             <span className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] font-medium">
               Sobre a artista
             </span>
-            <h2 className="font-script text-5xl md:text-6xl lg:text-7xl mt-4 leading-[1.05]">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl mt-4 leading-[1.02] tracking-tight">
               Isabella Ferreira
             </h2>
             <p className="mt-5 sm:mt-6 text-base sm:text-lg text-[var(--fg-soft)] leading-relaxed max-w-xl">
@@ -214,8 +213,8 @@ export default function HomePage() {
           <span className="inline-block text-xs uppercase tracking-[0.3em] text-[var(--brand-caramel)] font-medium">
             Solicite sua peça
           </span>
-          <h2 className="mt-5 font-script text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-[var(--brand-bone)]">
-            Um retrato para<br/>permanecer.
+          <h2 className="mt-5 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-[var(--brand-bone)] tracking-tight">
+            Um retrato para permanecer.
           </h2>
           <p className="mt-5 sm:mt-6 text-[var(--brand-cream)]/80 max-w-xl mx-auto leading-relaxed">
             Envie a fotografia do seu pet pelo WhatsApp. O briefing é

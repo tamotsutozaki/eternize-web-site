@@ -82,7 +82,7 @@ export default function PieceLightbox({
             Ficha técnica · {peca.tamanho}
             {peca.ano ? ` · ${peca.ano}` : ""}
           </span>
-          <h3 className="font-script text-4xl sm:text-5xl md:text-6xl mt-2 leading-none">
+          <h3 className="font-serif text-4xl sm:text-5xl md:text-6xl mt-2 leading-none">
             {peca.nomePet}
           </h3>
           {peca.descricao && (

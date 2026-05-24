@@ -32,7 +32,7 @@ export default function PriceCard({
         </span>
       )}
 
-      <div className="font-script text-4xl sm:text-5xl md:text-6xl text-[var(--fg)] leading-none">
+      <div className="font-serif text-4xl sm:text-5xl md:text-6xl text-[var(--fg)] leading-none">
         {tamanho}
       </div>
       <p className="mt-2 text-sm text-[var(--fg-mute)]">{descricao}</p>

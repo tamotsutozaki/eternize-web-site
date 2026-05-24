@@ -26,7 +26,7 @@ export default function PortfolioPage() {
 
       <section className="bg-[var(--bg-alt)] border-t border-[var(--border)]">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-10 py-16 sm:py-20 md:py-24 text-center reveal">
-          <h2 className="font-script text-4xl sm:text-5xl leading-tight">
+          <h2 className="font-serif text-4xl sm:text-5xl leading-tight">
             Encomende a sua
           </h2>
           <p className="mt-4 text-[var(--fg-soft)] max-w-xl mx-auto">

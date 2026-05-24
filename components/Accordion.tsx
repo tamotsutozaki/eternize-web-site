@@ -10,7 +10,7 @@ export default function FAQAccordion({ categorias }: { categorias: FaqCategoria[
     <div className="space-y-12 sm:space-y-16">
       {categorias.map((cat) => (
         <div key={cat.titulo} className="reveal">
-          <h3 className="font-script text-3xl md:text-4xl mb-5 sm:mb-6 text-[var(--accent)]">
+          <h3 className="font-serif text-3xl md:text-4xl mb-5 sm:mb-6 text-[var(--accent)]">
             {cat.titulo}
           </h3>
           <div className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
