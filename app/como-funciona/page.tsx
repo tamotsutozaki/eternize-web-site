@@ -75,13 +75,13 @@ export default function ComoFuncionaPage() {
                 }`}
               >
                 <div className="reveal lg:col-span-6">
-                  <span className="font-serif text-7xl sm:text-8xl lg:text-9xl text-[var(--accent)] leading-none">
+                  <span className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-[var(--accent)] leading-none">
                     {p.n}
                   </span>
-                  <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[var(--fg)] tracking-tight leading-tight">
+                  <h2 className="mt-3 sm:mt-4 text-xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[var(--fg)] tracking-tight leading-tight">
                     {p.titulo}
                   </h2>
-                  <p className="mt-5 sm:mt-6 text-base sm:text-lg text-[var(--fg-soft)] leading-relaxed max-w-xl">
+                  <p className="mt-4 sm:mt-6 text-[15px] sm:text-lg text-[var(--fg-soft)] leading-relaxed max-w-xl">
                     {p.descricao}
                   </p>
                   {p.cta && (
@@ -89,7 +89,7 @@ export default function ComoFuncionaPage() {
                       href={whatsappLink(p.ctaMessage)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-solid mt-7 sm:mt-8"
+                      className="btn-solid mt-6 sm:mt-8 w-full sm:w-auto"
                     >
                       {p.cta}
                     </a>
@@ -127,7 +127,7 @@ export default function ComoFuncionaPage() {
             href={whatsappLink("Olá! Gostaria de iniciar uma encomenda.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-solid btn-light mt-8 sm:mt-10"
+            className="btn-solid btn-light mt-8 sm:mt-10 w-full sm:w-auto"
           >
             Enviar fotografia
           </a>

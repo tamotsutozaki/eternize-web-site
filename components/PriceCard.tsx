@@ -20,7 +20,7 @@ export default function PriceCard({
   const message = `Olá! Gostaria de solicitar orçamento para um retrato de ${tamanho} (valor base R$ ${preco}).`;
   return (
     <div
-      className={`lift-card relative flex flex-col rounded-2xl border p-7 sm:p-8 md:p-10 ${
+      className={`lift-card relative flex flex-col rounded-2xl border p-6 sm:p-8 md:p-10 ${
         destaque
           ? "border-[var(--accent)] bg-[var(--bg)] shadow-[var(--shadow-soft)]"
           : "border-[var(--border-strong)] bg-[var(--bg-alt)]"
@@ -64,7 +64,7 @@ export default function PriceCard({
         target="_blank"
         rel="noopener noreferrer"
         whileTap={{ scale: 0.97 }}
-        className="btn-solid mt-7 sm:mt-8"
+        className="btn-solid mt-7 sm:mt-8 w-full"
       >
         Solicitar {tamanho}
       </motion.a>

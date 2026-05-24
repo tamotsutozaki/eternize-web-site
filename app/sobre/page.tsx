@@ -119,7 +119,7 @@ export default function SobrePage() {
             href={whatsappLink("Olá, Isabella! Vim pela página Sobre e gostaria de conversar sobre um retrato.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-solid btn-light mt-7 sm:mt-8"
+            className="btn-solid btn-light mt-7 sm:mt-8 w-full sm:w-auto"
           >
             Falar com Isabella
           </a>

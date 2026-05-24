@@ -37,10 +37,10 @@ export default function Footer() {
         <div className="grid gap-10 sm:gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Link href="/" aria-label="Eternize — início" className="inline-flex flex-col group">
-              <span className="font-serif italic text-5xl sm:text-6xl leading-none text-[var(--brand-bone)] tracking-tight transition-colors group-hover:text-[var(--brand-caramel)]">
+              <span className="font-serif italic text-4xl sm:text-5xl md:text-6xl leading-none text-[var(--brand-bone)] tracking-tight transition-colors group-hover:text-[var(--brand-caramel)]">
                 Eternize
               </span>
-              <span className="mt-2 text-[11px] uppercase tracking-[0.32em] text-[var(--brand-caramel)] font-semibold">
+              <span className="mt-2 text-[10px] sm:text-[11px] uppercase tracking-[0.24em] sm:tracking-[0.32em] text-[var(--brand-caramel)] font-semibold">
                 Eternizando emoções com arte
               </span>
             </Link>

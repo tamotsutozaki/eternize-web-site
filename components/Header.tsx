@@ -67,7 +67,7 @@ export default function Header() {
             : "bg-[var(--bg)]"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 md:px-10 py-3 md:py-4">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 md:px-10 py-3 md:py-4">
           <motion.button
             type="button"
             onClick={() => setOpen((v) => !v)}

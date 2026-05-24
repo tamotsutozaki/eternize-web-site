@@ -120,7 +120,7 @@ export default function FAQPage() {
             href={whatsappLink("Olá! Tenho uma dúvida sobre os retratos.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-solid mt-7 sm:mt-8"
+            className="btn-solid mt-7 sm:mt-8 w-full sm:w-auto"
           >
             Falar com a artista
           </a>

@@ -64,7 +64,7 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
 
   return (
     <div
-      className="relative aspect-[4/5] w-full max-w-md mx-auto lg:max-w-none select-none group"
+      className="relative aspect-[3/4] sm:aspect-[4/5] w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none select-none group"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
@@ -107,7 +107,7 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
 
         {/* Caption — fixo, fora do click target */}
         {current.caption && (
-          <div className="absolute left-5 right-5 bottom-14 sm:bottom-16 text-[var(--brand-bone)] pointer-events-none z-20">
+          <div className="absolute left-4 right-4 sm:left-5 sm:right-5 bottom-12 sm:bottom-16 text-[var(--brand-bone)] pointer-events-none z-20">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`caption-${index}`}
@@ -119,7 +119,7 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
                 <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-[var(--brand-caramel)] font-semibold">
                   {current.meta}
                 </p>
-                <p className="mt-1.5 font-serif text-xl sm:text-2xl leading-tight">
+                <p className="mt-1.5 font-serif text-lg sm:text-2xl leading-tight">
                   {current.caption}
                 </p>
               </motion.div>
@@ -128,7 +128,7 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
         )}
 
         {/* Indicadores em barras — clicáveis */}
-        <div className="absolute left-5 right-5 bottom-5 flex items-center gap-2 z-20">
+        <div className="absolute left-4 right-4 sm:left-5 sm:right-5 bottom-4 sm:bottom-5 flex items-center gap-1.5 sm:gap-2 z-20">
           {slides.map((_, i) => (
             <button
               key={i}

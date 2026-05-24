@@ -37,7 +37,7 @@ export default function PortfolioPage() {
             href={whatsappLink("Olá! Vi o portfólio e gostaria de solicitar um orçamento.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-solid mt-7 sm:mt-8"
+            className="btn-solid mt-7 sm:mt-8 w-full sm:w-auto"
           >
             Solicitar orçamento
           </a>

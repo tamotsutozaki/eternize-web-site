@@ -224,7 +224,7 @@ export default function HomePage() {
             href={whatsappLink("Olá! Gostaria de solicitar um orçamento para um retrato.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-solid btn-light mt-8 sm:mt-10"
+            className="btn-solid btn-light mt-8 sm:mt-10 w-full sm:w-auto"
           >
             Iniciar conversa no WhatsApp
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
