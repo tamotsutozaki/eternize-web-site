@@ -78,8 +78,7 @@ site/
 │   ├── faq/page.tsx
 │   └── contato/page.tsx
 ├── components/
-│   ├── BrandLogo.tsx          # PNG responsiva, troca por tema
-│   ├── EternizeLogo.tsx       # variante SVG inline (currentColor)
+│   ├── BrandLogo.tsx          # logo PNG responsiva
 │   ├── Header.tsx             # nav desktop + drawer mobile animado
 │   ├── Footer.tsx
 │   ├── Hero.tsx

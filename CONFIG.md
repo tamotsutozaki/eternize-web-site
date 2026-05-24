@@ -84,9 +84,8 @@ Sugerido: usar `next/script` no `app/layout.tsx` com `strategy="afterInteractive
 
 Em `/public/brand/`:
 
-- `eternize-logo.png` — logo principal (silhueta + script Eternize). Usada no Header, Footer e OG.
+- `eternize-logo.png` — logo oficial (silhueta + script Eternize). Usada no Header, Footer e OG.
 - `logo.svg`, `wordmark.svg`, `logo-mark.svg` — versões SVG monocromáticas alternativas (usam `currentColor`).
-- `eternize-cafe.png`, `eternize-cappuccino.png` — versões antigas (deprecated).
 
 > O componente `<BrandLogo />` carrega `/brand/eternize-logo.png`. Para trocar a logo, basta substituir esse arquivo mantendo o mesmo nome.
 
