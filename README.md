@@ -22,18 +22,19 @@ A Eternize é uma marca real de retratos personalizados: o cliente envia uma fot
 
 Este repositório é o **site institucional**: vitrine, portfólio e ponte para o atendimento direto. O objetivo de UX é simples — apresentar a marca com calor humano, mostrar o trabalho com cuidado editorial e empurrar o usuário pra uma conversa qualificada no WhatsApp.
 
-> Construído com Next.js 16 (App Router + Turbopack), TypeScript, Tailwind v4 e Framer Motion. 100% estático, mobile-first, com tema claro/escuro respeitando a paleta da marca.
+> Construído com Next.js 16 (App Router + Turbopack), TypeScript, Tailwind v4, Framer Motion e Lenis (smooth scroll). 100% estático, mobile-first, tema claro único respeitando a paleta da marca.
 
 ---
 
 ## Decisões de design
 
 - **Vitrine, não e-commerce.** Sem carrinho, sem login, sem pagamento integrado. Cada CTA leva pra uma conversa pré-preenchida no WhatsApp. Reduz fricção e mantém o atendimento humano.
-- **Sistema de design próprio.** Sem bibliotecas como shadcn, MUI ou Chakra — todos os componentes são feitos do zero pra preservar a identidade artesanal. Tokens semânticos (`--bg`, `--fg`, `--accent`) trocam automaticamente entre os temas.
-- **Tema claro e escuro com a mesma paleta.** O escuro não é preto puro — usa `--brand-ink` (#2A1E14, marrom muito profundo). Mantém o calor da marca.
+- **Sistema de design próprio.** Sem bibliotecas como shadcn, MUI ou Chakra — todos os componentes são feitos do zero pra preservar a identidade artesanal. Tokens semânticos (`--bg`, `--fg`, `--accent`) regem todo o sistema visual.
+- **Tema claro único.** Paleta calma com `--brand-bone` (#FAF7F2) e `--brand-walnut` (#3D2817). Foco em destacar as obras, não competir com elas.
+- **Smooth scroll com Lenis.** Rolagem suave em desktop e mobile, com respeito a `prefers-reduced-motion`.
 - **Tipografia híbrida.** Dancing Script no logo, Caveat em headlines/citações emocionais, Inter no corpo. Self-hosted via `next/font` pra zero requests externos.
 - **Performance e SEO.** Build 100% estático (9 rotas pré-renderizadas), `next/image` em tudo, Open Graph configurado, Lighthouse alvo 90+ em todas as métricas.
-- **Animações com propósito.** Framer Motion em microinterações (drawer mobile com stagger, lightbox com spring, cards com tap feedback) — reforçam a sensação de produto cuidado, sem custar performance.
+- **Animações com propósito.** Framer Motion em microinterações (drawer mobile com stagger, lightbox com spring, cards com tap feedback, lift on hover) — reforçam a sensação de produto cuidado, sem custar performance.
 - **Acessibilidade.** Tap targets ≥ 44px no mobile, `aria-label` em ícones, modal com `role="dialog"`/`aria-modal`, fecha no Esc, body-scroll-lock, suporte a `prefers-reduced-motion`.
 
 ---
@@ -55,8 +56,8 @@ Este repositório é o **site institucional**: vitrine, portfólio e ponte para 
 
 - **Framework**: Next.js 16 (App Router, Turbopack)
 - **Linguagem**: TypeScript estrito
-- **Estilo**: Tailwind CSS v4 com `@theme` API e `@custom-variant` para tema escuro via atributo
-- **Animações**: Framer Motion 12
+- **Estilo**: Tailwind CSS v4 com `@theme` API
+- **Animações**: Framer Motion 12 + Lenis (smooth scroll)
 - **Fontes**: Inter, Caveat, Dancing Script (auto-hospedadas via `next/font/google`)
 - **Imagens**: `next/image` com lazy loading + remote patterns
 - **Hospedagem**: Vercel (plano gratuito)
@@ -87,7 +88,7 @@ site/
 │   ├── PortfolioGallery.tsx, FeaturedGrid.tsx
 │   ├── PieceLightbox.tsx      # modal de detalhe da peça
 │   ├── Accordion.tsx          # FAQ
-│   ├── ThemeProvider.tsx, ThemeToggle.tsx
+│   ├── SmoothScroll.tsx       # Lenis init (client-side)
 │   ├── ScrollReveal.tsx       # IntersectionObserver utility
 │   ├── ScrollTopButton.tsx
 │   └── WhatsAppButton.tsx     # CTA flutuante fixo
@@ -122,27 +123,22 @@ npm run lint    # ESLint + regras Next 16
 
 ---
 
-## Tema claro e escuro
+## Tema único (claro)
 
-Detecta `prefers-color-scheme` do sistema, salva preferência em `localStorage` e tem toggle no header (desktop) e no drawer (mobile). Anti-flash via script inline no `<head>` evita FOUC.
-
-Implementação em `app/globals.css` usando Tailwind v4:
+Paleta bone/walnut/cream/caramel definida em `app/globals.css` via tokens semânticos. Sem dark mode — site editorial focado em destacar as obras.
 
 ```css
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
-
 :root {
   --bg: var(--brand-bone);
   --fg: var(--brand-walnut);
-  /* ... */
-}
-
-[data-theme="dark"] {
-  --bg: var(--brand-ink);
-  --fg: var(--brand-bone);
+  --accent: var(--brand-caramel);
   /* ... */
 }
 ```
+
+## Smooth scroll
+
+Implementado com [Lenis](https://github.com/darkroomengineering/lenis) em `components/SmoothScroll.tsx`. Inicializado client-side, com easing customizado e fallback automático para `prefers-reduced-motion`.
 
 ---
 

@@ -33,18 +33,20 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 bg-[var(--brand-ink)] text-[var(--brand-bone)]">
-      <div className="mx-auto max-w-7xl px-5 md:px-10 py-16 md:py-20">
-        <div className="grid gap-12 md:grid-cols-12">
+    <footer className="mt-16 sm:mt-24 bg-[var(--brand-ink)] text-[var(--brand-bone)]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 py-14 sm:py-16 md:py-20">
+        <div className="grid gap-10 sm:gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
-            <Image
-              src="/brand/eternize-cappuccino.png"
-              alt="Eternize"
-              width={1080}
-              height={1080}
-              className="h-auto w-[220px]"
-            />
-            <p className="mt-6 text-[var(--brand-cream)]/80 max-w-sm leading-relaxed">
+            <div className="bg-[var(--brand-bone)] inline-flex p-3 rounded-xl">
+              <Image
+                src="/brand/eternize-logo.png"
+                alt="Eternize"
+                width={1080}
+                height={1080}
+                className="h-auto w-[140px] sm:w-[160px] object-contain"
+              />
+            </div>
+            <p className="mt-5 sm:mt-6 text-[var(--brand-cream)]/80 max-w-sm leading-relaxed text-sm sm:text-base">
               Retratos de pets pintados à mão sobre madeira natural. Feitos
               com olhar técnico e afetivo por uma veterinária.
             </p>
@@ -55,11 +57,11 @@ export default function Footer() {
               Navegação
             </h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/portfolio" className="hover:text-[var(--brand-caramel)]">Portfólio</Link></li>
-              <li><Link href="/como-funciona" className="hover:text-[var(--brand-caramel)]">Como funciona</Link></li>
-              <li><Link href="/sobre" className="hover:text-[var(--brand-caramel)]">Sobre</Link></li>
-              <li><Link href="/faq" className="hover:text-[var(--brand-caramel)]">FAQ</Link></li>
-              <li><Link href="/contato" className="hover:text-[var(--brand-caramel)]">Contato</Link></li>
+              <li><Link href="/portfolio" className="hover:text-[var(--brand-caramel)] transition-colors">Portfólio</Link></li>
+              <li><Link href="/como-funciona" className="hover:text-[var(--brand-caramel)] transition-colors">Como funciona</Link></li>
+              <li><Link href="/sobre" className="hover:text-[var(--brand-caramel)] transition-colors">Sobre</Link></li>
+              <li><Link href="/faq" className="hover:text-[var(--brand-caramel)] transition-colors">FAQ</Link></li>
+              <li><Link href="/contato" className="hover:text-[var(--brand-caramel)] transition-colors">Contato</Link></li>
             </ul>
           </div>
 
@@ -97,9 +99,9 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="inline-flex items-center gap-3 hover:text-[var(--brand-caramel)] transition-colors"
+                  className="inline-flex items-center gap-3 hover:text-[var(--brand-caramel)] transition-colors break-all"
                 >
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--brand-bone)]/8 text-[var(--brand-caramel)] border border-[var(--brand-bone)]/15">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--brand-bone)]/8 text-[var(--brand-caramel)] border border-[var(--brand-bone)]/15 shrink-0">
                     <IconMail />
                   </span>
                   {SITE_CONFIG.email}
@@ -109,8 +111,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-[var(--brand-bone)]/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-[var(--brand-cream)]/60">
-          <span>© {year} Eternize</span>
+        <div className="mt-12 sm:mt-14 pt-6 sm:pt-8 border-t border-[var(--brand-bone)]/10 flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--brand-cream)]/60">
+          <span>© {year} Eternize · Todos os direitos reservados</span>
           <span className="font-script text-base text-[var(--brand-caramel)]">
             Memórias que ficam
           </span>

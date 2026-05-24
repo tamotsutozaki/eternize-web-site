@@ -8,7 +8,7 @@ export default function PricingTabs() {
   const [active, setActive] = useState<Tamanho>("18cm");
 
   return (
-    <div className="reveal mt-12">
+    <div className="reveal mt-10 sm:mt-12">
       {/* Desktop — grid de 3 cards lado a lado */}
       <div className="hidden md:grid gap-6 md:grid-cols-3">
         {TAMANHOS.map((t) => (

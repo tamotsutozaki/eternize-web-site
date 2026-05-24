@@ -6,8 +6,6 @@ type Props = {
   className?: string;
 };
 
-const RATIO = 1;
-
 export default function BrandLogo({
   width = 140,
   priority,
@@ -16,24 +14,16 @@ export default function BrandLogo({
   return (
     <span
       className={`relative inline-block ${className}`}
-      style={{ width, maxWidth: "100%", aspectRatio: `${RATIO}` }}
+      style={{ width, maxWidth: "100%", aspectRatio: "1" }}
       aria-label="Eternize"
     >
       <Image
-        src="/brand/eternize-cafe.png"
-        alt=""
+        src="/brand/eternize-logo.png"
+        alt="Eternize"
         fill
         priority={priority}
         sizes={`${width}px`}
-        className="object-contain block dark:hidden"
-      />
-      <Image
-        src="/brand/eternize-cappuccino.png"
-        alt=""
-        fill
-        priority={priority}
-        sizes={`${width}px`}
-        className="object-contain hidden dark:block"
+        className="object-contain"
       />
     </span>
   );

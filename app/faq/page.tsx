@@ -103,14 +103,14 @@ export default function FAQPage() {
           subtitle="As dúvidas que mais aparecem na nossa caixa de entrada. Se a sua não está aqui, fala com a gente no WhatsApp."
         />
 
-        <div className="mt-16 max-w-3xl">
+        <div className="mt-12 sm:mt-16 max-w-3xl">
           <FAQAccordion categorias={FAQS} />
         </div>
       </Section>
 
       <section className="bg-[var(--bg-alt)] border-t border-[var(--border)]">
-        <div className="mx-auto max-w-3xl px-5 md:px-10 py-20 text-center reveal">
-          <h2 className="font-script text-4xl md:text-5xl">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-10 py-16 sm:py-20 text-center reveal">
+          <h2 className="font-script text-4xl sm:text-5xl">
             ainda tem dúvida?
           </h2>
           <p className="mt-4 text-[var(--fg-soft)]">
@@ -120,7 +120,7 @@ export default function FAQPage() {
             href={whatsappLink("Olá! Tenho uma dúvida sobre os retratos.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex rounded-full bg-[var(--bg-deep)] text-[var(--bg-deep-text)] px-7 py-3.5 text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
+            className="btn-solid mt-7 sm:mt-8 text-sm"
           >
             Tirar dúvida no WhatsApp
           </a>

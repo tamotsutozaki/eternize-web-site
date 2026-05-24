@@ -82,13 +82,13 @@ Sugerido: usar `next/script` no `app/layout.tsx` com `strategy="afterInteractive
 
 ## 6. Logos disponíveis
 
-Já estão em `/public/brand/`:
+Em `/public/brand/`:
 
-- `logo.svg`, `wordmark.svg`, `logo-mark.svg` — versões SVG monocromáticas (tema-aware via `currentColor`).
-- `eternize-cafe.png` — versão com silhuetas marrom + caramelo (recomendada para tema claro).
-- `eternize-cappuccino.png` — versão com silhuetas creme + caramelo (recomendada para tema escuro).
+- `eternize-logo.png` — logo principal (silhueta + script Eternize). Usada no Header, Footer e OG.
+- `logo.svg`, `wordmark.svg`, `logo-mark.svg` — versões SVG monocromáticas alternativas (usam `currentColor`).
+- `eternize-cafe.png`, `eternize-cappuccino.png` — versões antigas (deprecated).
 
-> O componente `<EternizeLogo />` (em `components/EternizeLogo.tsx`) usa SVG inline e herda a cor do CSS `currentColor` — funciona automaticamente nos dois temas. As PNGs são para casos onde se queira a versão com as silhuetas dog+cat (ex: imagens OG, WhatsApp avatar).
+> O componente `<BrandLogo />` carrega `/brand/eternize-logo.png`. Para trocar a logo, basta substituir esse arquivo mantendo o mesmo nome.
 
 ---
 

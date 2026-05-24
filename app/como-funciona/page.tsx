@@ -18,7 +18,6 @@ const PASSOS = [
       "Pelo WhatsApp. Quanto melhor a foto, melhor o retrato — luz natural, pet em foco, no nível do olhar dele. Pode ser de corpo inteiro ou close. Não se preocupe com fundo bagunçado: a gente recompõe na pintura.",
     cta: "Mandar foto agora",
     ctaMessage: "Olá! Quero mandar a foto do meu pet pra começar 🐾",
-    // MOCK — placeholder visual
     imagem: "https://placedog.net/700/900?id=20",
   },
   {
@@ -69,20 +68,20 @@ export default function ComoFuncionaPage() {
           variant === "bone" ? "bg-[var(--bg)]" : "bg-[var(--bg-alt)]";
         return (
           <section key={p.n} className={`${bgClass} border-t border-[var(--border)]`}>
-            <div className="mx-auto max-w-7xl px-5 md:px-10 py-20 md:py-28">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 py-16 sm:py-20 md:py-28">
               <div
-                className={`grid lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
+                className={`grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center ${
                   isEven ? "" : "lg:[&>*:first-child]:order-2"
                 }`}
               >
                 <div className="reveal lg:col-span-6">
-                  <span className="font-script text-7xl md:text-8xl lg:text-9xl text-[var(--accent)] leading-none">
+                  <span className="font-script text-7xl sm:text-8xl lg:text-9xl text-[var(--accent)] leading-none">
                     {p.n}
                   </span>
-                  <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-medium text-[var(--fg)] tracking-tight leading-tight">
+                  <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-[var(--fg)] tracking-tight leading-tight">
                     {p.titulo}
                   </h2>
-                  <p className="mt-6 text-base md:text-lg text-[var(--fg-soft)] leading-relaxed max-w-xl">
+                  <p className="mt-5 sm:mt-6 text-base sm:text-lg text-[var(--fg-soft)] leading-relaxed max-w-xl">
                     {p.descricao}
                   </p>
                   {p.cta && (
@@ -90,14 +89,14 @@ export default function ComoFuncionaPage() {
                       href={whatsappLink(p.ctaMessage)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--bg-deep)] text-[var(--bg-deep-text)] px-6 py-3 text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
+                      className="btn-solid mt-7 sm:mt-8 text-sm"
                     >
                       {p.cta}
                     </a>
                   )}
                 </div>
-                <div className="reveal lg:col-span-6 relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg)] shadow-[var(--shadow-soft)]">
-                  {/* MOCK — trocar por foto real do passo */}
+                <div className="reveal lg:col-span-6 relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg)] shadow-[var(--shadow-soft)] zoom-on-hover max-w-md w-full mx-auto lg:max-w-none">
+                  {/* MOCK */}
                   <Image
                     src={p.imagem}
                     alt={p.titulo}
@@ -113,18 +112,18 @@ export default function ComoFuncionaPage() {
       })}
 
       <section className="bg-[var(--brand-walnut)] text-[var(--brand-bone)]">
-        <div className="mx-auto max-w-3xl px-5 md:px-10 py-24 md:py-28 text-center reveal">
-          <h2 className="font-script text-5xl md:text-6xl leading-tight">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-10 py-20 sm:py-24 md:py-28 text-center reveal">
+          <h2 className="font-script text-4xl sm:text-5xl md:text-6xl leading-tight">
             tudo pronto<br/>pra começar?
           </h2>
-          <p className="mt-6 text-[var(--brand-cream)]/80 max-w-xl mx-auto">
+          <p className="mt-5 sm:mt-6 text-[var(--brand-cream)]/80 max-w-xl mx-auto">
             Manda a foto do seu pet pelo WhatsApp. A gente cuida do resto.
           </p>
           <a
             href={whatsappLink("Olá! Quero começar — vou mandar a foto do meu pet 🐾")}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--brand-bone)] text-[var(--brand-walnut)] px-7 py-3.5 text-sm font-medium tracking-wide hover:bg-[var(--brand-caramel)] hover:text-[var(--brand-bone)] transition-colors"
+            className="btn-solid btn-light mt-8 sm:mt-10 text-sm"
           >
             Mandar foto agora
           </a>

@@ -26,8 +26,8 @@ export default function Section({
     <section id={id} className={`${bg} ${className}`}>
       <div
         className={`${
-          full ? "" : "mx-auto max-w-7xl px-5 md:px-10"
-        } py-20 md:py-28`}
+          full ? "" : "mx-auto max-w-7xl px-4 sm:px-6 md:px-10"
+        } py-16 sm:py-20 md:py-28`}
       >
         {children}
       </div>

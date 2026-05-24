@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Caveat, Dancing_Script } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollTopButton from "@/components/ScrollTopButton";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import SmoothScroll from "@/components/SmoothScroll";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import "./globals.css";
 
@@ -53,17 +53,25 @@ export const metadata: Metadata = {
     siteName: "Eternize",
     locale: "pt_BR",
     type: "website",
-    images: ["/brand/eternize-cafe.png"],
+    images: ["/brand/eternize-logo.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Eternize — Memórias que ficam",
     description: "Retratos de pets pintados à mão sobre madeira natural.",
-    images: ["/brand/eternize-cafe.png"],
+    images: ["/brand/eternize-logo.png"],
   },
   icons: {
     icon: "/brand/logo-mark.svg",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#FAF7F2",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -72,26 +80,16 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      suppressHydrationWarning
       className={`${inter.variable} ${caveat.variable} ${dancing.variable} antialiased`}
     >
-      <head>
-        {/* Evita flash antes do React hidratar */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('eternize-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();`,
-          }}
-        />
-      </head>
       <body className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--fg)]">
-        <ThemeProvider>
-          <ScrollReveal />
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <ScrollTopButton />
-          <WhatsAppButton />
-        </ThemeProvider>
+        <SmoothScroll />
+        <ScrollReveal />
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <ScrollTopButton />
+        <WhatsAppButton />
       </body>
     </html>
   );

@@ -36,7 +36,7 @@ export default function PieceLightbox({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.22, ease: "easeOut" }}
-      className="fixed inset-0 z-[80] bg-[var(--brand-ink)]/85 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
+      className="fixed inset-0 z-[80] bg-[var(--brand-ink)]/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 md:p-10 overflow-y-auto"
     >
       <motion.div
         onClick={(e) => e.stopPropagation()}
@@ -44,7 +44,7 @@ export default function PieceLightbox({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.96, y: 8 }}
         transition={{ type: "spring", stiffness: 320, damping: 28, mass: 0.7 }}
-        className="relative w-full max-w-4xl bg-[var(--bg)] rounded-2xl overflow-hidden shadow-2xl grid md:grid-cols-2"
+        className="relative w-full max-w-4xl bg-[var(--bg)] rounded-2xl overflow-hidden shadow-2xl grid md:grid-cols-2 my-auto"
       >
         <motion.button
           type="button"
@@ -77,16 +77,16 @@ export default function PieceLightbox({
           />
         </div>
 
-        <div className="p-8 md:p-10 flex flex-col">
+        <div className="p-6 sm:p-8 md:p-10 flex flex-col">
           <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
             {peca.tamanho}
             {peca.ano ? ` · ${peca.ano}` : ""}
           </span>
-          <h3 className="font-script text-5xl md:text-6xl mt-2 leading-none">
+          <h3 className="font-script text-4xl sm:text-5xl md:text-6xl mt-2 leading-none">
             {peca.nomePet}
           </h3>
           {peca.descricao && (
-            <p className="mt-6 text-[var(--fg-soft)] leading-relaxed">
+            <p className="mt-5 sm:mt-6 text-[var(--fg-soft)] leading-relaxed">
               {peca.descricao}
             </p>
           )}
@@ -95,15 +95,22 @@ export default function PieceLightbox({
               Peça com {peca.multiplosPets} pets na mesma bolacha.
             </p>
           )}
+
+          <ul className="mt-6 space-y-2 text-sm text-[var(--fg-mute)]">
+            <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Madeira pinus natural</li>
+            <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Tinta acrílica · acabamento envernizado</li>
+            <li className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Cordão de algodão pronto pra pendurar</li>
+          </ul>
+
           <div className="mt-auto pt-8">
             <motion.a
               href={whatsappLink(message)}
               target="_blank"
               rel="noopener noreferrer"
               whileTap={{ scale: 0.97 }}
-              className="flex w-full items-center justify-center rounded-full bg-[var(--bg-deep)] text-[var(--bg-deep-text)] px-5 py-3 text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
+              className="btn-solid w-full justify-center text-sm"
             >
-              Quero um igual
+              Quero um parecido
             </motion.a>
           </div>
         </div>

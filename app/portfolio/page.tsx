@@ -19,14 +19,14 @@ export default function PortfolioPage() {
           title={<>cada peça,<br/>uma família</>}
           subtitle="Filtre por tamanho ou veja todas. Clique em qualquer retrato pra ver detalhes e encomendar um parecido."
         />
-        <div className="mt-14">
+        <div className="mt-12 sm:mt-14">
           <PortfolioGallery />
         </div>
       </Section>
 
       <section className="bg-[var(--bg-alt)] border-t border-[var(--border)]">
-        <div className="mx-auto max-w-3xl px-5 md:px-10 py-20 md:py-24 text-center reveal">
-          <h2 className="font-script text-4xl md:text-5xl leading-tight">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-10 py-16 sm:py-20 md:py-24 text-center reveal">
+          <h2 className="font-script text-4xl sm:text-5xl leading-tight">
             quero o meu também
           </h2>
           <p className="mt-4 text-[var(--fg-soft)] max-w-xl mx-auto">
@@ -37,7 +37,7 @@ export default function PortfolioPage() {
             href={whatsappLink("Olá! Vi o portfólio e quero encomendar um retrato 🐾")}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--bg-deep)] text-[var(--bg-deep-text)] px-7 py-3.5 text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
+            className="btn-solid mt-7 sm:mt-8 text-sm"
           >
             Encomendar agora
           </a>

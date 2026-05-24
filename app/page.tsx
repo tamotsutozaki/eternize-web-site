@@ -31,7 +31,7 @@ export default function HomePage() {
           subtitle="Sem cadastro, sem carrinho. Toda venda acontece numa conversa direta — do jeito que sempre foi feito quando se pinta à mão."
         />
 
-        <ol className="reveal mt-16 grid gap-8 md:gap-6 md:grid-cols-5">
+        <ol className="reveal mt-12 md:mt-16 grid gap-8 sm:gap-10 md:gap-6 sm:grid-cols-2 md:grid-cols-5">
           {PASSOS.map((p) => (
             <li key={p.n} className="flex flex-col">
               <span className="font-script text-5xl md:text-6xl text-[var(--accent)] leading-none">
@@ -48,10 +48,10 @@ export default function HomePage() {
           ))}
         </ol>
 
-        <div className="reveal mt-12">
+        <div className="reveal mt-10 sm:mt-12">
           <Link
             href="/como-funciona"
-            className="inline-flex items-center gap-2 text-sm tracking-wide text-[var(--fg)] underline-offset-8 hover:underline decoration-[var(--accent)]"
+            className="prose-link inline-flex items-center gap-2 text-sm tracking-wide text-[var(--fg)]"
           >
             Ver passo a passo completo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
@@ -71,7 +71,7 @@ export default function HomePage() {
           />
           <Link
             href="/portfolio"
-            className="reveal hidden md:inline-flex items-center gap-2 text-sm tracking-wide text-[var(--fg)] underline-offset-8 hover:underline decoration-[var(--accent)]"
+            className="reveal hidden md:inline-flex prose-link items-center gap-2 text-sm tracking-wide text-[var(--fg)]"
           >
             Ver portfólio completo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
@@ -85,15 +85,52 @@ export default function HomePage() {
         <div className="reveal mt-10 md:hidden">
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 text-sm tracking-wide text-[var(--fg)] underline-offset-8 hover:underline decoration-[var(--accent)]"
+            className="prose-link inline-flex items-center gap-2 text-sm tracking-wide text-[var(--fg)]"
           >
             Ver portfólio completo →
           </Link>
         </div>
       </Section>
 
+      {/* Detalhes da obra — proposta de valor */}
+      <Section variant="cream">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div className="reveal lg:col-span-5">
+            <span className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">
+              O que torna única
+            </span>
+            <h2 className="font-script text-5xl md:text-6xl mt-4 leading-[1.05]">
+              cada peça é<br/>
+              uma só
+            </h2>
+            <p className="mt-5 sm:mt-6 text-[var(--fg-soft)] leading-relaxed max-w-md">
+              Da seleção da bolacha de pinus ao último gesto de verniz —
+              tudo é feito à mão, em estúdio próprio. Nada terceirizado,
+              nada produzido em série.
+            </p>
+          </div>
+
+          <div className="reveal lg:col-span-7 grid sm:grid-cols-2 gap-4 sm:gap-6">
+            {[
+              { titulo: "Madeira natural", desc: "Fatias selecionadas de pinus, lixadas e tratadas. Cada nó e veio é único." },
+              { titulo: "Tinta acrílica premium", desc: "Cores estáveis, vivas e que mantêm a fidelidade por décadas." },
+              { titulo: "Verniz protetor", desc: "Acabamento que protege contra umidade leve, poeira e o tempo." },
+              { titulo: "Cordão de algodão", desc: "Pronta pra pendurar. Embalagem reforçada incluída sem custo extra." },
+            ].map((item) => (
+              <div
+                key={item.titulo}
+                className="lift-card rounded-2xl border border-[var(--border-strong)] bg-[var(--bg)] p-5 sm:p-6"
+              >
+                <p className="font-medium text-[var(--fg)]">{item.titulo}</p>
+                <p className="mt-2 text-sm text-[var(--fg-soft)] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* Tamanhos e preços */}
-      <Section variant="cream" id="tamanhos">
+      <Section variant="bone" id="tamanhos">
         <SectionTitle
           align="center"
           eyebrow="Tamanhos"
@@ -105,9 +142,9 @@ export default function HomePage() {
       </Section>
 
       {/* Sobre Isabella preview */}
-      <Section variant="bone">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <div className="reveal lg:col-span-5 relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg-alt)] shadow-[var(--shadow-soft)]">
+      <Section variant="cream">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
+          <div className="reveal lg:col-span-5 relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg-alt)] shadow-[var(--shadow-soft)] zoom-on-hover">
             <Image
               // MOCK — trocar pela foto real da Isabella pintando
               src="https://randomuser.me/api/portraits/women/44.jpg"
@@ -118,20 +155,20 @@ export default function HomePage() {
             />
           </div>
           <div className="reveal lg:col-span-7">
-            <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
+            <span className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">
               Sobre a artista
             </span>
             <h2 className="font-script text-5xl md:text-6xl lg:text-7xl mt-4 leading-[1.05]">
               oi, eu sou a<br/>Isabella
             </h2>
-            <p className="mt-6 text-lg md:text-xl text-[var(--fg-soft)] leading-relaxed max-w-xl font-script italic">
+            <p className="mt-5 sm:mt-6 text-lg md:text-xl text-[var(--fg-soft)] leading-relaxed max-w-xl font-script italic">
               {/* MOCK — substituir pelo texto real da Isabella */}
               &ldquo;Sou veterinária há 5 anos e desenho pets desde criança.
               Cada peça que faço carrega esse olhar — técnico e afetivo.&rdquo;
             </p>
             <Link
               href="/sobre"
-              className="mt-10 inline-flex items-center gap-2 text-sm tracking-wide text-[var(--fg)] underline-offset-8 hover:underline decoration-[var(--accent)]"
+              className="prose-link mt-8 sm:mt-10 inline-flex items-center gap-2 text-sm tracking-wide text-[var(--fg)]"
             >
               Conheça minha história
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
@@ -143,16 +180,16 @@ export default function HomePage() {
       </Section>
 
       {/* Depoimentos */}
-      <Section variant="cream">
+      <Section variant="bone">
         <SectionTitle
           eyebrow="Quem já levou pra casa"
           title="depoimentos"
         />
-        <div className="reveal mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal mt-12 sm:mt-14 grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {DEPOIMENTOS.slice(0, 3).map((d) => (
             <figure
               key={d.nome}
-              className="flex flex-col rounded-2xl border border-[var(--border-strong)] bg-[var(--bg)] p-7 md:p-8"
+              className="lift-card flex flex-col rounded-2xl border border-[var(--border-strong)] bg-[var(--bg-alt)] p-6 sm:p-7 md:p-8"
             >
               <svg
                 width="22"
@@ -167,7 +204,7 @@ export default function HomePage() {
               <blockquote className="mt-4 text-[var(--fg-soft)] leading-relaxed">
                 {d.texto}
               </blockquote>
-              <figcaption className="mt-6 pt-6 border-t border-[var(--border)] text-sm">
+              <figcaption className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-[var(--border)] text-sm">
                 <p className="font-medium text-[var(--fg)]">{d.nome}</p>
                 <p className="text-[var(--fg-mute)] mt-0.5">
                   {d.pet} · {d.cidade}
@@ -180,11 +217,11 @@ export default function HomePage() {
 
       {/* CTA final escuro */}
       <section className="bg-[var(--brand-walnut)] text-[var(--brand-bone)]">
-        <div className="mx-auto max-w-4xl px-5 md:px-10 py-24 md:py-32 text-center reveal">
-          <h2 className="font-script text-5xl md:text-7xl leading-[1.05] text-[var(--brand-bone)]">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 md:px-10 py-20 sm:py-24 md:py-32 text-center reveal">
+          <h2 className="font-script text-5xl sm:text-6xl md:text-7xl leading-[1.05] text-[var(--brand-bone)]">
             pronto pra eternizar<br/>seu pet?
           </h2>
-          <p className="mt-6 text-[var(--brand-cream)]/80 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 sm:mt-6 text-[var(--brand-cream)]/80 max-w-xl mx-auto leading-relaxed">
             Manda a foto pelo zap. A gente conversa, decide os detalhes, e
             em 7-15 dias seu retrato está pronto.
           </p>
@@ -192,7 +229,7 @@ export default function HomePage() {
             href={whatsappLink("Olá! Quero encomendar o retrato do meu pet 🐾")}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--brand-bone)] text-[var(--brand-walnut)] px-8 py-4 text-base font-medium tracking-wide hover:bg-[var(--brand-caramel)] hover:text-[var(--brand-bone)] transition-colors"
+            className="btn-solid btn-light mt-8 sm:mt-10 text-sm sm:text-base"
           >
             Falar no WhatsApp
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
