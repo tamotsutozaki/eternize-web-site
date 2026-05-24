@@ -4,7 +4,7 @@
 
 **Site institucional + vitrine de portfólio para uma marca artesanal de retratos de pets pintados à mão sobre madeira natural.**
 
-*Memórias que ficam.*
+*Eternizando emoções com arte.*
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-000?style=flat&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org)

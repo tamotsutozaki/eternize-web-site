@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { SITE_CONFIG, whatsappLink } from "@/lib/config";
 
 function IconWA({ size = 18 }: { size?: number }) {
@@ -37,16 +36,15 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 py-14 sm:py-16 md:py-20">
         <div className="grid gap-10 sm:gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="bg-[var(--brand-bone)] inline-flex p-3 rounded-xl">
-              <Image
-                src="/brand/eternize-logo.png"
-                alt="Eternize"
-                width={1080}
-                height={1080}
-                className="h-auto w-[140px] sm:w-[160px] object-contain"
-              />
-            </div>
-            <p className="mt-5 sm:mt-6 text-[var(--brand-cream)]/80 max-w-sm leading-relaxed text-sm sm:text-base">
+            <Link href="/" aria-label="Eternize — início" className="inline-flex flex-col group">
+              <span className="font-serif italic text-5xl sm:text-6xl leading-none text-[var(--brand-bone)] tracking-tight transition-colors group-hover:text-[var(--brand-caramel)]">
+                Eternize
+              </span>
+              <span className="mt-2 text-[11px] uppercase tracking-[0.32em] text-[var(--brand-caramel)] font-semibold">
+                Eternizando emoções com arte
+              </span>
+            </Link>
+            <p className="mt-6 sm:mt-7 text-[var(--brand-cream)]/80 max-w-sm leading-relaxed text-sm sm:text-base">
               Estúdio especializado em retratos de pet sobre madeira natural.
               Produção integralmente artesanal, conduzida pela artista
               Isabella Ferreira em Indaiatuba/SP.
@@ -114,8 +112,8 @@ export default function Footer() {
 
         <div className="mt-12 sm:mt-14 pt-6 sm:pt-8 border-t border-[var(--brand-bone)]/10 flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--brand-cream)]/60">
           <span>© {year} Eternize · Todos os direitos reservados</span>
-          <span className="font-serif text-base text-[var(--brand-caramel)]">
-            Memórias que ficam
+          <span className="font-serif italic text-base text-[var(--brand-caramel)]">
+            Eternizando emoções com arte
           </span>
         </div>
       </div>

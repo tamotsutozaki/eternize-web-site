@@ -26,7 +26,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL("https://eternize.art"),
   title: {
-    default: "Eternize — Memórias que ficam",
+    default: "Eternize — Eternizando emoções com arte",
     template: "%s · Eternize",
   },
   description:
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "arte personalizada",
   ],
   openGraph: {
-    title: "Eternize — Memórias que ficam",
+    title: "Eternize — Eternizando emoções com arte",
     description:
       "Retratos de pets pintados à mão sobre madeira natural.",
     url: "https://eternize.art",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eternize — Memórias que ficam",
+    title: "Eternize — Eternizando emoções com arte",
     description: "Retratos de pets pintados à mão sobre madeira natural.",
     images: ["/brand/eternize-logo.png"],
   },
