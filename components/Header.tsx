@@ -7,8 +7,9 @@ import BrandLogo from "./BrandLogo";
 import { whatsappLink } from "@/lib/config";
 
 const NAV = [
+  { href: "/", label: "Início" },
   { href: "/portfolio", label: "Portfólio" },
-  { href: "/como-funciona", label: "Como Funciona" },
+  { href: "/como-funciona", label: "Processo" },
   { href: "/sobre", label: "Sobre" },
   { href: "/faq", label: "FAQ" },
   { href: "/contato", label: "Contato" },
