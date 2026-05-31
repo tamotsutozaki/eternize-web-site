@@ -3,31 +3,30 @@ import { motion } from "framer-motion";
 import { whatsappLink } from "@/lib/config";
 import HeroSlider, { Slide } from "./HeroSlider";
 
-// MOCK — substituir por fotografias reais de peças finalizadas
 const HERO_SLIDES: Slide[] = [
   {
-    src: "https://placedog.net/800/1000?id=11",
-    alt: "Retrato de pet pintado à mão sobre madeira natural",
-    meta: "Coleção 2026",
-    caption: "Mel — 25 cm · madeira natural",
+    src: "/images/portfolio/aurora-full.jpg",
+    alt: "Retrato memorial da Aurora pintado à mão sobre madeira pinus",
+    meta: "Peça memorial",
+    caption: "Aurora — 25 cm · auréola",
   },
   {
-    src: "https://placedog.net/800/1000?id=14",
-    alt: "Composição com gravata borboleta sobre fundo creme",
-    meta: "Encomenda Dia dos Pais",
-    caption: "Thor — 18 cm · fundo creme",
-  },
-  {
-    src: "https://placedog.net/800/1000?id=17",
-    alt: "Retrato com elementos florais sobre madeira",
+    src: "/images/portfolio/shory-full.jpg",
+    alt: "Retrato do Shory com motivo floral sobre madeira pinus",
     meta: "Composição decorativa",
-    caption: "Nina — 18 cm · motivo floral",
+    caption: "Shory — 18 cm · motivo floral",
   },
   {
-    src: "https://placedog.net/800/1000?id=23",
-    alt: "Dupla composição sobre fundo terracota",
+    src: "/images/portfolio/odin-full.jpg",
+    alt: "Retrato do Odin sobre fundo verde",
+    meta: "Coleção 2026",
+    caption: "Odin — 14 cm · fundo verde",
+  },
+  {
+    src: "/images/portfolio/magoo-tunico-full.jpg",
+    alt: "Dupla composição do Tunico e Magoo sobre fundo rosa",
     meta: "Composição múltipla",
-    caption: "Bob & Maya — 25 cm",
+    caption: "Tunico e Magoo — 18 cm",
   },
 ];
 
@@ -70,7 +69,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="mt-10 sm:mt-14 grid grid-cols-3 max-w-md gap-3 sm:gap-6 border-t border-[var(--border)] pt-6 sm:pt-8">
+          <div className="mt-10 sm:mt-14 grid grid-cols-2 gap-x-8 gap-y-6 sm:flex sm:flex-wrap sm:gap-x-10 max-w-md sm:max-w-none border-t border-[var(--border)] pt-6 sm:pt-8">
             <div className="stat-cell">
               <p className="stat-num font-serif text-2xl sm:text-4xl text-[var(--fg)] leading-none transition-colors">7–15</p>
               <p className="mt-1.5 sm:mt-2 text-[9px] sm:text-[11px] tracking-[0.14em] sm:tracking-[0.18em] text-[var(--fg-mute)] uppercase">Dias úteis</p>
@@ -82,6 +81,10 @@ export default function Hero() {
             <div className="stat-cell">
               <p className="stat-num font-serif text-2xl sm:text-4xl text-[var(--fg)] leading-none transition-colors">100%</p>
               <p className="mt-1.5 sm:mt-2 text-[9px] sm:text-[11px] tracking-[0.14em] sm:tracking-[0.18em] text-[var(--fg-mute)] uppercase">Sob encomenda</p>
+            </div>
+            <div className="stat-cell">
+              <p className="stat-num font-serif text-2xl sm:text-4xl text-[var(--fg)] leading-none transition-colors">1–5</p>
+              <p className="mt-1.5 sm:mt-2 text-[9px] sm:text-[11px] tracking-[0.14em] sm:tracking-[0.18em] text-[var(--fg-mute)] uppercase">Pets por bolacha</p>
             </div>
           </div>
         </div>

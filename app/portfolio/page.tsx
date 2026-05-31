@@ -17,7 +17,7 @@ export default function PortfolioPage() {
         <SectionTitle
           eyebrow="Portfólio"
           title={<>retratos entregues</>}
-          subtitle="Seleção curatorial de peças finalizadas. Use o filtro para visualizar por dimensão. Clique em qualquer obra para acessar a ficha técnica."
+          subtitle="Seleção de peças finalizadas. Use o filtro para visualizar por dimensão. Clique em qualquer obra para acessar a ficha técnica."
         />
         <div className="mt-12 sm:mt-14">
           <PortfolioGallery />

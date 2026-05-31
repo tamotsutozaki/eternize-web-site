@@ -45,9 +45,9 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-6 sm:mt-7 text-[var(--brand-cream)]/80 max-w-sm leading-relaxed text-sm sm:text-base">
-              Estúdio especializado em retratos de pet sobre madeira natural.
-              Produção integralmente artesanal, conduzida pela artista
-              Isabella Ferreira em Indaiatuba/SP.
+              Estúdio especializado em retratos de pet sobre madeira pinus
+              natural. Produção integralmente artesanal, conduzida pela artista
+              Isabella Rossi em Indaiatuba/SP.
             </p>
           </div>
 

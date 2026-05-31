@@ -98,8 +98,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-5 sm:mt-6 text-[var(--fg-soft)] leading-relaxed max-w-md">
               Trabalho integralmente artesanal, executado em estúdio próprio.
-              Sem terceirização, sem reprodução em série. Toda peça é única
-              e numerada.
+              Sem terceirização, sem reprodução em série. Toda peça eternizada é única.
             </p>
           </div>
 
@@ -108,7 +107,7 @@ export default function HomePage() {
               { titulo: "Suporte", desc: "Fatia de pinus natural, selecionada manualmente, lixada e tratada para receber a pintura." },
               { titulo: "Pintura", desc: "Tinta acrílica artística profissional, aplicada em camadas, com fidelidade cromática ao referencial." },
               { titulo: "Acabamento", desc: "Verniz protetor de base aquosa, anti-amarelamento, proteção contra umidade leve." },
-              { titulo: "Fixação", desc: "Cordão de algodão natural incluído, pronto para instalação sem necessidade de suporte adicional." },
+              { titulo: "Fixação", desc: "Cordão de algodão natural incluso, pronto para pendurar; suporte não visível opcional para exibição em pé sobre mesa ou prateleira." },
             ].map((item) => (
               <div
                 key={item.titulo}
@@ -128,10 +127,79 @@ export default function HomePage() {
           align="center"
           eyebrow="Dimensões e investimento"
           title="três formatos disponíveis"
-          subtitle="Valores referência. Acessórios, fundo personalizado e elementos decorativos estão inclusos. Pagamento via PIX (5% de desconto à vista) ou cartão em até 3x."
+          subtitle="Acessórios, fundo personalizado e elementos decorativos estão inclusos."
         />
 
         <PricingTabs />
+
+        {/* Formas de pagamento */}
+        <div className="reveal mt-16 sm:mt-20">
+          <span className="block text-center text-[10px] sm:text-xs uppercase tracking-[0.24em] sm:tracking-[0.32em] text-[var(--accent)] font-semibold mb-8 sm:mb-10">
+            Formas de pagamento
+          </span>
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
+            {[
+              {
+                icone: (
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+                    <circle cx="12" cy="12" r="9" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none" />
+                    <path d="M12 3v18" strokeLinecap="round" />
+                  </svg>
+                ),
+                titulo: "PIX 50% + 50%",
+                desc: "50% para iniciar a peça + 50% na entrega",
+              },
+              {
+                icone: (
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+                    <path d="M12 3l1.6 4.9a3 3 0 0 0 1.9 1.9L21 11.4l-4.5 1.6a3 3 0 0 0-1.9 1.9L12 19.8l-1.6-4.9a3 3 0 0 0-1.9-1.9L4 11.4l4.5-1.6a3 3 0 0 0 1.9-1.9L12 3z" strokeLinejoin="round" />
+                    <path d="M19 4.5v3M20.5 6h-3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                ),
+                titulo: "PIX à vista",
+                sub: "5% de desconto",
+                desc: "Pagamento integral antecipado",
+                destaque: true,
+              },
+              {
+                icone: (
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+                    <rect x="2.5" y="5.5" width="19" height="13" rx="2.5" strokeLinejoin="round" />
+                    <path d="M2.5 9.5h19" strokeLinecap="round" />
+                    <path d="M6 14.5h4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                ),
+                titulo: "Cartão em até 12x",
+                desc: "Juros das parcelas por conta do cliente",
+              },
+            ].map((item) => (
+              <div
+                key={item.titulo}
+                className={`lift-card flex flex-col rounded-2xl p-6 sm:p-7 text-center ${
+                  item.destaque
+                    ? "border-2 border-[var(--accent)] bg-[var(--bg-alt)] shadow-[var(--shadow-soft)]"
+                    : "border border-[var(--border-strong)] bg-[var(--bg)]"
+                }`}
+              >
+                <span className="flex justify-center text-[var(--accent)]" aria-hidden>
+                  {item.icone}
+                </span>
+                <h3 className="mt-4 font-serif text-xl sm:text-2xl text-[var(--fg)] tracking-tight leading-tight">
+                  {item.titulo}
+                </h3>
+                {item.sub && (
+                  <p className="mt-1.5 text-[11px] uppercase tracking-[0.18em] text-[var(--accent)] font-semibold">
+                    {item.sub}
+                  </p>
+                )}
+                <p className="mt-3 text-sm text-[var(--fg-soft)] leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </Section>
 
       {/* Sobre Isabella preview */}
@@ -139,9 +207,8 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
           <div className="reveal lg:col-span-5 relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg-alt)] shadow-[var(--shadow-soft)] zoom-on-hover max-w-md w-full mx-auto lg:max-w-none">
             <Image
-              // MOCK — substituir por fotografia da artista em estúdio
-              src="https://randomuser.me/api/portraits/women/44.jpg"
-              alt="Isabella, médica veterinária e artista responsável pela Eternize"
+              src="/images/isabella-shory.jpg"
+              alt="Isabella Rossi, fundadora da Eternize, segurando um retrato de pet pintado à mão"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"
@@ -152,13 +219,12 @@ export default function HomePage() {
               Sobre a artista
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl mt-4 leading-[1.02] tracking-tight">
-              Isabella Ferreira
+              Isabella Rossi
             </h2>
             <p className="mt-5 sm:mt-6 text-base sm:text-lg text-[var(--fg-soft)] leading-relaxed max-w-xl">
-              Médica veterinária com formação complementar em ilustração
-              naturalista. Funda a Eternize a partir da intersecção entre
-              o conhecimento clínico de anatomia animal e a prática artística
-              iniciada na infância.
+              Olá, sou a Isabella! Fundei a Eternize para transformar o amor
+              entre tutores e pets em arte. Cada peça é pintada à mão, com tinta
+              acrílica sobre madeira pinus, e carrega uma história única — e sua.
             </p>
             <Link href="/sobre" className="link-arrow mt-8 sm:mt-10">
               Conhecer trajetória completa
@@ -193,10 +259,10 @@ export default function HomePage() {
               >
                 <path d="M9 7H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2v2a4 4 0 0 1-4 4v2c4 0 7-3 7-7V7zm12 0h-4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2v2a4 4 0 0 1-4 4v2c4 0 7-3 7-7V7z" />
               </svg>
-              <blockquote className="mt-4 text-[var(--fg-soft)] leading-relaxed">
+              <blockquote className="mt-4 mb-5 sm:mb-6 text-[var(--fg-soft)] leading-relaxed">
                 {d.texto}
               </blockquote>
-              <figcaption className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-[var(--border)] text-sm">
+              <figcaption className="mt-auto pt-5 sm:pt-6 border-t border-[var(--border)] text-sm">
                 <p className="font-medium text-[var(--fg)]">{d.nome}</p>
                 <p className="text-[var(--fg-mute)] mt-0.5">
                   {d.pet} · {d.cidade}

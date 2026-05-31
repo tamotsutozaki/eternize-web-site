@@ -47,7 +47,7 @@ export default function PriceCard({
       </div>
 
       {detalhes && detalhes.length > 0 && (
-        <ul className="mt-5 sm:mt-6 space-y-2.5 text-sm text-[var(--fg-soft)]">
+        <ul className="mt-5 sm:mt-6 mb-7 sm:mb-8 space-y-2.5 text-sm text-[var(--fg-soft)]">
           {detalhes.map((d) => (
             <li key={d} className="flex items-start gap-2.5">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="mt-0.5 text-[var(--accent)] shrink-0" aria-hidden>
@@ -64,7 +64,7 @@ export default function PriceCard({
         target="_blank"
         rel="noopener noreferrer"
         whileTap={{ scale: 0.97 }}
-        className="btn-solid mt-7 sm:mt-8 w-full"
+        className="btn-solid mt-auto w-full"
       >
         Solicitar {tamanho}
       </motion.a>

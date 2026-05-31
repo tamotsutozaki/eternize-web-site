@@ -15,7 +15,7 @@ type Props = {
   autoplayMs?: number;
 };
 
-export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
+export default function HeroSlider({ slides, autoplayMs = 3500 }: Props) {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -53,12 +53,12 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
   const variants = {
     enter: (dir: number) => ({
       opacity: 0,
-      x: dir > 0 ? 80 : dir < 0 ? -80 : 0,
+      x: dir > 0 ? 40 : dir < 0 ? -40 : 0,
     }),
     center: { opacity: 1, x: 0 },
     exit: (dir: number) => ({
       opacity: 0,
-      x: dir > 0 ? -80 : dir < 0 ? 80 : 0,
+      x: dir > 0 ? -40 : dir < 0 ? 40 : 0,
     }),
   };
 
@@ -77,7 +77,7 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
           aria-label="Próxima imagem"
           className="absolute inset-0 cursor-pointer block"
         >
-          <AnimatePresence mode="wait" initial={false} custom={direction}>
+          <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={index}
               custom={direction}
@@ -86,8 +86,8 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
               animate="center"
               exit="exit"
               transition={{
-                opacity: { duration: 0.4 },
-                x: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                opacity: { duration: 0.22, ease: "easeOut" },
+                x: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
               }}
               className="absolute inset-0 pointer-events-none"
             >
@@ -116,10 +116,10 @@ export default function HeroSlider({ slides, autoplayMs = 6000 }: Props) {
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               >
-                <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-[var(--brand-caramel)] font-semibold">
+                <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-[var(--brand-bone)] font-semibold [text-shadow:0_1px_4px_rgba(0,0,0,0.55)]">
                   {current.meta}
                 </p>
-                <p className="mt-1.5 font-serif text-lg sm:text-2xl leading-tight">
+                <p className="mt-1.5 font-serif text-lg sm:text-2xl leading-tight [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]">
                   {current.caption}
                 </p>
               </motion.div>

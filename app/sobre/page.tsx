@@ -21,19 +21,18 @@ export default function SobrePage() {
                 Sobre a artista
               </span>
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-4 leading-[1.02] text-[var(--fg)] tracking-tight">
-                Isabella Ferreira
+                Isabella Rossi
               </h1>
               <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-[var(--fg-soft)] max-w-xl leading-relaxed">
-                Médica veterinária, ilustradora e fundadora da Eternize.
-                Cada peça do estúdio é executada integralmente por mim,
-                do briefing inicial à entrega.
+                Ilustradora e fundadora da Eternize. Cada peça do estúdio é
+                executada integralmente por mim, do briefing inicial à entrega.
               </p>
             </div>
             <div className="lg:col-span-5 reveal relative aspect-[4/5] rounded-2xl overflow-hidden shadow-[var(--shadow-soft)] bg-[var(--bg-alt)] zoom-on-hover max-w-md w-full mx-auto lg:max-w-none">
               {/* MOCK */}
               <Image
-                src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="Isabella Ferreira"
+                src="/images/isabella-aurora.jpg"
+                alt="Isabella Rossi"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -50,15 +49,14 @@ export default function SobrePage() {
           <div className="lg:col-span-8 lg:col-start-2 space-y-10 sm:space-y-12">
             <div className="reveal">
               <h2 className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] mb-3 sm:mb-4 font-medium">
-                Formação e prática clínica
+                A paixão por animais
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-[var(--fg-soft)] leading-relaxed">
                 {/* MOCK */}
-                Graduada em Medicina Veterinária pela Unesp em 2020, atuei
-                por cinco anos em clínica de pequenos animais. A rotina
-                hospitalar moldou meu olhar para anatomia, expressão e
-                comportamento — competências que hoje sustentam a fidelidade
-                de cada retrato.
+                Desde a infância cresci rodeada por animais — cães, gatos,
+                ovelhas e pássaros. Foi com eles que aprendi o que é o amor
+                incondicional, o mais sincero que existe. Esse vínculo é o que
+                procuro traduzir em cada retrato.
               </p>
             </div>
 
@@ -68,11 +66,11 @@ export default function SobrePage() {
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-[var(--fg-soft)] leading-relaxed">
                 {/* MOCK */}
-                Desenho desde a infância. A transição para a pintura sobre
-                madeira aconteceu em 2024, durante uma especialização em
-                ilustração naturalista. O suporte natural — com suas
-                texturas, nós e veios — passou a integrar a composição
-                como parte ativa da obra.
+                Desenho desde a infância e, em especial, os animais. Em 2026
+                retomei a pintura e, ao descobrir a arte sobre madeira pinus,
+                não tive dúvidas de que me apaixonaria por esse universo —
+                com suas texturas, nós e veios, o suporte natural passou a
+                integrar a composição como parte ativa da obra.
               </p>
             </div>
 
@@ -100,7 +98,7 @@ export default function SobrePage() {
             Esse compromisso define o ritmo do estúdio.&rdquo;
           </p>
           <footer className="mt-6 sm:mt-8 text-sm uppercase tracking-[0.3em] text-[var(--accent)] font-medium">
-            Isabella Ferreira
+            Isabella Rossi
           </footer>
         </blockquote>
       </Section>

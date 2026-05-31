@@ -24,7 +24,7 @@ const PASSOS = [
     n: "02",
     titulo: "Briefing e orçamento",
     descricao:
-      "Definimos juntos as características da peça: dimensão (14, 18 ou 25 cm), tratamento do fundo (madeira natural ou cor sólida), acessórios opcionais para o pet (lenço, gravata, óculos, coroa) e elementos decorativos (flora, estrelas, motivos pessoais). Encomendas com múltiplos pets são possíveis nos formatos 18 e 25 cm.",
+      "Definimos juntos a dimensão (14, 18 ou 25 cm), o fundo, os acessórios e os elementos decorativos — incluindo auréolas, em homenagem a pets que já partiram. Você escolhe ainda entre pendurar a peça pelo cordão incluso ou exibi-la em pé com o suporte não visível. Múltiplos pets nos formatos 18 e 25 cm.",
     imagem: "https://placedog.net/700/900?id=21",
   },
   {
@@ -45,7 +45,7 @@ const PASSOS = [
     n: "05",
     titulo: "Embalagem e envio",
     descricao:
-      "Entrega presencial sem custo em Indaiatuba e Salto. Para demais localidades, despacho via Correios ou transportadora, com frete calculado pelo CEP. A peça é embalada em camadas protetoras de espuma e papelão duplo, acompanhada do cordão de algodão natural pronto para fixação.",
+      "Entrega presencial sem custo em Indaiatuba e Salto. Para demais localidades, despacho via Correios ou transportadora, com frete calculado pelo CEP. A peça é embalada com cuidado minucioso, para que sua experiência seja a melhor possível.",
     imagem: "https://placedog.net/700/900?id=24",
   },
 ];

@@ -36,7 +36,7 @@ export default function FeaturedGrid({ items }: { items: Peca[] }) {
               </span>
             </div>
             <div className="p-3 sm:p-4 flex items-center justify-between gap-2">
-              <span className="font-serif text-lg sm:text-xl text-[var(--fg)] leading-none truncate transition-colors group-hover:text-[var(--accent)]">
+              <span className="font-serif text-lg sm:text-xl text-[var(--fg)] leading-tight truncate transition-colors group-hover:text-[var(--accent)]">
                 {peca.nomePet}
               </span>
               <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--accent)] shrink-0">

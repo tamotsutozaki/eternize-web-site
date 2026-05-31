@@ -14,94 +14,40 @@ export type Peca = {
 export const PORTFOLIO: Peca[] = [
   {
     id: "mel",
-    nomePet: "Mel",
+    nomePet: "Aurora",
     ano: 2026,
     tamanho: "25cm",
-    imagens: ["https://placedog.net/640/640?id=1"],
+    imagens: ["/images/portfolio/aurora-full.jpg"],
     descricao:
       "Composição sobre fundo de madeira natural, com acessório em laço azul-petróleo. Detalhamento de textura do pelo em camadas sucessivas.",
   },
   {
     id: "thor",
-    nomePet: "Thor",
+    nomePet: "Shory",
     ano: 2026,
     tamanho: "18cm",
-    imagens: ["https://placedog.net/640/640?id=2"],
+    imagens: ["/images/portfolio/shory-full.jpg"],
     descricao:
       "Retrato com fundo creme sólido e gravata borboleta. Encomenda comemorativa para o Dia dos Pais.",
   },
   {
     id: "luna",
-    nomePet: "Luna",
+    nomePet: "Odin",
     ano: 2026,
     tamanho: "14cm",
-    imagens: ["https://placedog.net/640/640?id=3"],
+    imagens: ["/images/portfolio/odin-full.jpg"],
     descricao:
       "Formato compacto para mesa, com composição floral discreta ao redor. Fundo em madeira natural.",
   },
   {
     id: "bento",
-    nomePet: "Bento",
+    nomePet: "Tunico e Magoo",
     ano: 2026,
-    tamanho: "25cm",
-    imagens: ["https://placedog.net/640/640?id=4"],
+    tamanho: "18cm",
+    imagens: ["/images/portfolio/magoo-tunico-full.jpg"],
     descricao:
       "Retrato em primeiro plano sobre fundo verde-musgo profundo. Ênfase no contato visual do animal.",
-  },
-  {
-    id: "nina",
-    nomePet: "Nina",
-    ano: 2026,
-    tamanho: "18cm",
-    imagens: ["https://placedog.net/640/640?id=5"],
-    descricao:
-      "Composição com laço rosa e elementos estrelados sobre madeira natural. Encomenda comemorativa.",
-  },
-  {
-    id: "pipoca",
-    nomePet: "Pipoca",
-    ano: 2026,
-    tamanho: "14cm",
-    imagens: ["https://placedog.net/640/640?id=6"],
-    descricao:
-      "Formato reduzido, indicado para prateleira ou superfície de trabalho. Composição minimalista.",
-  },
-  {
-    id: "bob-maya",
-    nomePet: "Bob & Maya",
-    ano: 2026,
-    tamanho: "25cm",
-    imagens: ["https://placedog.net/640/640?id=7"],
-    descricao:
-      "Dupla composição sobre fundo terracota. Encomenda dedicada a dois animais da mesma família.",
     multiplosPets: 2,
-  },
-  {
-    id: "cacau",
-    nomePet: "Cacau",
-    ano: 2026,
-    tamanho: "18cm",
-    imagens: ["https://placedog.net/640/640?id=8"],
-    descricao:
-      "Peça memorial. Fundo bege com elemento simbólico discreto incorporado à composição.",
-  },
-  {
-    id: "amora",
-    nomePet: "Amora",
-    ano: 2026,
-    tamanho: "18cm",
-    imagens: ["https://placedog.net/640/640?id=9"],
-    descricao:
-      "Composição com coroa em folha de ouro e fundo creme. Encomenda comemorativa de aniversário.",
-  },
-  {
-    id: "biscoito",
-    nomePet: "Biscoito",
-    ano: 2026,
-    tamanho: "14cm",
-    imagens: ["https://placedog.net/640/640?id=10"],
-    descricao:
-      "Formato compacto sobre madeira natural, sem elementos decorativos adicionais. Foco na expressão.",
   },
 ];
 
@@ -113,7 +59,8 @@ export const TAMANHOS: { tamanho: Tamanho; preco: number; descricao: string; det
     detalhes: [
       "Um animal por peça",
       "Acabamento envernizado",
-      "Cordão de algodão incluso",
+      "Acessórios e fundo personalizados inclusos",
+      "Cordão de algodão ou suporte não visível",
       "Indicado para mesa ou prateleira",
     ],
   },
@@ -122,10 +69,12 @@ export const TAMANHOS: { tamanho: Tamanho; preco: number; descricao: string; det
     preco: 140,
     descricao: "Formato intermediário",
     detalhes: [
-      "Até dois animais (acréscimo de R$ 80 por animal extra)",
+      "Até três animais (acréscimo de R$ 80 por animal extra)",
       "Acabamento envernizado",
       "Acessórios e fundo personalizados inclusos",
-      "Indicado para parede",
+      "Inclusão de elementos decorativos",
+      "Cordão de algodão ou suporte não visível",
+      "Indicado para parede ou mesa/prateleira",
     ],
   },
   {
@@ -133,9 +82,11 @@ export const TAMANHOS: { tamanho: Tamanho; preco: number; descricao: string; det
     preco: 190,
     descricao: "Formato destaque",
     detalhes: [
-      "Até três animais (acréscimo de R$ 100 por animal extra)",
-      "Acabamento envernizado premium",
-      "Composição complexa: fundo, acessórios e elementos decorativos",
+      "Até cinco animais (acréscimo de R$ 100 por animal extra)",
+      "Acabamento envernizado",
+      "Acessórios e fundo personalizados inclusos",
+      "Inclusão de elementos decorativos",
+      "Cordão de algodão",
       "Peça principal de ambiente",
     ],
   },
@@ -144,25 +95,25 @@ export const TAMANHOS: { tamanho: Tamanho; preco: number; descricao: string; det
 // MOCK — depoimentos placeholder, substituir por reais com autorização dos clientes.
 export const DEPOIMENTOS = [
   {
-    nome: "Mariana Souza",
-    pet: "Mel",
-    cidade: "Indaiatuba/SP",
+    nome: "Ana Maísa",
+    pet: "Aurora",
+    cidade: "Cerquilho/SP",
     texto:
-      "O nível de fidelidade da peça surpreendeu toda a família. A Isabella conduziu o briefing com cuidado raro — cada detalhe foi discutido antes da execução. Recomendo sem reservas.",
+      "Nossa Aurora partiu recentemente, e quando encontramos a Isa tivemos certeza que poderíamos confiar para eternizar nosso grande amor. Recomendo de olhos fechados.",
   },
   {
     nome: "Rafael Lima",
-    pet: "Thor",
+    pet: "Luna",
     cidade: "Salto/SP",
     texto:
-      "Encomendei como presente de aniversário. O acompanhamento durante a produção, com fotos das etapas intermediárias, fez diferença. Resultado final superou a expectativa.",
+      "Encomendei como presente de aniversário para minha esposa, e ela ficou totalmente emocionada com a riqueza de detalhes e com o carinho para pintar nossa Luna. Resultado final superou completamente a expectativa, recomendo!",
   },
   {
-    nome: "Camila Ribeiro",
-    pet: "Luna",
-    cidade: "Itu/SP",
+    nome: "Gabriela Pozebom",
+    pet: "Tunico e Magoo",
+    cidade: "Indaiatuba/SP",
     texto:
-      "Peça memorial executada com sensibilidade. A Isabella entendeu o peso emocional da encomenda e conduziu o processo com respeito. Hoje a obra é um marco na sala de casa.",
+      "Quanta delicadeza! A Isa conseguiu conduzir a pintura dos nossos animais da maneira mais linda possível, não tem quem venha em casa e não elogie! A melhor decoração de todas!",
   },
   {
     nome: "Felipe Andrade",

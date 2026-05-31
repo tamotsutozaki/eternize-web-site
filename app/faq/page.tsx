@@ -49,7 +49,7 @@ const FAQS: FaqCategoria[] = [
       },
       {
         q: "É possível escolher o fundo da peça?",
-        a: "Sim. Madeira natural é o tratamento padrão. Cores sólidas e composições com elementos decorativos (flora, estrelas, motivos pessoais) e acessórios no pet (lenço, gravata, óculos, coroa) estão inclusos no valor base, sem custo adicional.",
+        a: "Sim. Madeira natural é o tratamento padrão. Cores sólidas e composições com elementos decorativos (flores, estrelas, auréola em caso de pets que já partiram) e acessórios no pet (lenço, gravata, óculos, coroa) estão inclusos no valor base, sem custo adicional.",
       },
       {
         q: "Que tipo de fotografia obtém melhor resultado?",
@@ -62,7 +62,7 @@ const FAQS: FaqCategoria[] = [
     items: [
       {
         q: "Quais formas de pagamento são aceitas?",
-        a: "PIX (5% de desconto à vista) e cartão de crédito em até 3x sem juros. Pagamento na contratação dá início à produção.",
+        a: "PIX em 2x (50% para iniciar a peça + 50% na entrega), PIX à vista com 5% de desconto, ou cartão de crédito em até 12x com juros das parcelas por conta do cliente.",
       },
       {
         q: "Há desconto para múltiplas peças?",
@@ -74,7 +74,7 @@ const FAQS: FaqCategoria[] = [
       },
       {
         q: "Como é calculado o frete?",
-        a: "Para localidades fora da área de entrega presencial, o frete é calculado pelo CEP no momento do orçamento. Embalagem reforçada — espuma protetora e papelão duplo — já está inclusa, sem custo adicional.",
+        a: "Para localidades fora da área de entrega presencial, o frete é calculado pelo CEP no momento do orçamento. Embalagem reforçada já está inclusa, sem custo adicional.",
       },
     ],
   },
