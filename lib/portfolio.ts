@@ -19,7 +19,7 @@ export const PORTFOLIO: Peca[] = [
     tamanho: "25cm",
     imagens: ["/images/portfolio/aurora-full.jpg"],
     descricao:
-      "Composição sobre fundo de madeira natural, com acessório em laço azul-petróleo. Detalhamento de textura do pelo em camadas sucessivas.",
+      "Composição sobre fundo de madeira natural, com círculo em verde esmeralda, margaridas e ramos de folhas. A auréola, incorporada a pedido da tutora, dá significado à composição final — em homenagem à pet, que já havia partido.",
   },
   {
     id: "thor",
@@ -28,7 +28,7 @@ export const PORTFOLIO: Peca[] = [
     tamanho: "18cm",
     imagens: ["/images/portfolio/shory-full.jpg"],
     descricao:
-      "Retrato com fundo creme sólido e gravata borboleta. Encomenda comemorativa para o Dia dos Pais.",
+      "Retrato com fundo completamente natural, composição realizada por pequenas flores coloridas. Encomenda comemorativa para o Dia dos Namorados.",
   },
   {
     id: "luna",
@@ -37,7 +37,7 @@ export const PORTFOLIO: Peca[] = [
     tamanho: "14cm",
     imagens: ["/images/portfolio/odin-full.jpg"],
     descricao:
-      "Formato compacto para mesa, com composição floral discreta ao redor. Fundo em madeira natural.",
+      "Formato compacto para mesa, com composição minimalista de círculo verde escuro.",
   },
   {
     id: "bento",
@@ -46,7 +46,7 @@ export const PORTFOLIO: Peca[] = [
     tamanho: "18cm",
     imagens: ["/images/portfolio/magoo-tunico-full.jpg"],
     descricao:
-      "Retrato em primeiro plano sobre fundo verde-musgo profundo. Ênfase no contato visual do animal.",
+      "Retrato duplo com composição em círculo lilás e acessórios em ambos os pets, trazendo um toque de diversão ao resultado final.",
     multiplosPets: 2,
   },
 ];
@@ -60,7 +60,7 @@ export const TAMANHOS: { tamanho: Tamanho; preco: number; descricao: string; det
       "Um animal por peça",
       "Acabamento envernizado",
       "Acessórios e fundo personalizados inclusos",
-      "Cordão de algodão ou suporte não visível",
+      "Cordão de algodão ou suporte acrílico",
       "Indicado para mesa ou prateleira",
     ],
   },
@@ -73,7 +73,7 @@ export const TAMANHOS: { tamanho: Tamanho; preco: number; descricao: string; det
       "Acabamento envernizado",
       "Acessórios e fundo personalizados inclusos",
       "Inclusão de elementos decorativos",
-      "Cordão de algodão ou suporte não visível",
+      "Cordão de algodão ou suporte acrílico",
       "Indicado para parede ou mesa/prateleira",
     ],
   },

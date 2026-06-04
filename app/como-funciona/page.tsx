@@ -15,38 +15,38 @@ const PASSOS = [
     n: "01",
     titulo: "Envio da fotografia",
     descricao:
-      "O atendimento começa com o envio de uma fotografia do pet pelo WhatsApp. Recomenda-se imagem em luz natural, com o animal em foco e na altura do olhar. Resoluções acima de 2.000 pixels facilitam a captação de detalhes do pelo e da expressão. Fundo da foto não influencia — a composição é recriada na pintura.",
+      "O atendimento começa com o envio de uma fotografia do pet pelo WhatsApp. Recomenda-se imagem em alta resolução, de preferência em luz natural e com o animal em foco. O fundo da foto não influencia — a composição é recriada na pintura.",
     cta: "Iniciar atendimento",
     ctaMessage: "Olá! Gostaria de iniciar o atendimento para uma encomenda.",
-    imagem: "https://placedog.net/700/900?id=20",
+    imagem: "/images/envio-conversa.jpeg",
   },
   {
     n: "02",
     titulo: "Briefing e orçamento",
     descricao:
-      "Definimos juntos a dimensão (14, 18 ou 25 cm), o fundo, os acessórios e os elementos decorativos — incluindo auréolas, em homenagem a pets que já partiram. Você escolhe ainda entre pendurar a peça pelo cordão incluso ou exibi-la em pé com o suporte não visível. Múltiplos pets nos formatos 18 e 25 cm.",
-    imagem: "https://placedog.net/700/900?id=21",
+      "Definimos juntos a dimensão (14, 18 ou 25 cm), o fundo, os acessórios e os elementos decorativos — incluindo auréolas, em homenagem a pets que já partiram. Você escolhe ainda entre pendurar a peça pelo cordão incluso ou exibi-la em pé com o suporte acrílico. Múltiplos pets nos formatos 18 e 25 cm.",
+    imagem: "/images/odin.jpeg",
   },
   {
     n: "03",
     titulo: "Execução da pintura",
     descricao:
       "Após confirmação do pagamento, a peça entra na fila de produção. O prazo padrão é de sete a quinze dias úteis, executado em estúdio próprio. A pintura é feita em tinta acrílica artística profissional, aplicada em camadas sobre a fatia de pinus previamente preparada.",
-    imagem: "https://placedog.net/700/900?id=22",
+    imagem: "/images/processo.jpeg",
   },
   {
     n: "04",
     titulo: "Aprovação prévia",
     descricao:
-      "Antes do envernizamento final, envio fotografias da peça em alta resolução para sua avaliação. Ajustes pontuais — tom de fundo, posicionamento de acessório, refinamento de traço — são incorporados nesta etapa, sem custo adicional. O acabamento só é aplicado após sua aprovação.",
-    imagem: "https://placedog.net/700/900?id=23",
+      "Antes do envernizamento, enviamos uma prévia para conferência. Esta etapa destina-se apenas à validação do que foi aprovado anteriormente, não à solicitação de alterações no projeto.",
+    imagem: "/images/aprovacao-final.jpeg",
   },
   {
     n: "05",
     titulo: "Embalagem e envio",
     descricao:
       "Entrega presencial sem custo em Indaiatuba e Salto. Para demais localidades, despacho via Correios ou transportadora, com frete calculado pelo CEP. A peça é embalada com cuidado minucioso, para que sua experiência seja a melhor possível.",
-    imagem: "https://placedog.net/700/900?id=24",
+    imagem: "/images/embalado.jpeg",
   },
 ];
 
@@ -66,6 +66,11 @@ export default function ComoFuncionaPage() {
         const variant = idx % 2 === 0 ? "bone" : "cream";
         const bgClass =
           variant === "bone" ? "bg-[var(--bg)]" : "bg-[var(--bg-alt)]";
+        // Etapas com foto vertical (print de conversa): mostra a imagem inteira,
+        // sem corte, em proporcao real. aspect-ratio inline evita depender do JIT
+        // do Tailwind a cada troca de imagem com dimensoes novas.
+        const tall = idx === 0 || idx === 3;
+        const tallRatio = idx === 0 ? "934 / 1600" : "933 / 1600";
         return (
           <section key={p.n} className={`${bgClass} border-t border-[var(--border)]`}>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 py-16 sm:py-20 md:py-28">
@@ -95,14 +100,17 @@ export default function ComoFuncionaPage() {
                     </a>
                   )}
                 </div>
-                <div className="reveal lg:col-span-6 relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg)] shadow-[var(--shadow-soft)] zoom-on-hover max-w-md w-full mx-auto lg:max-w-none">
+                <div
+                  className={`reveal lg:col-span-6 relative ${tall ? "max-w-xs mx-auto" : "aspect-[4/5] max-w-md lg:max-w-none"} rounded-2xl overflow-hidden bg-[var(--bg)] shadow-[var(--shadow-soft)] zoom-on-hover w-full mx-auto`}
+                  style={tall ? { aspectRatio: tallRatio } : undefined}
+                >
                   {/* MOCK */}
                   <Image
                     src={p.imagem}
                     alt={p.titulo}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
+                    className={tall ? "object-contain" : "object-cover"}
                   />
                 </div>
               </div>

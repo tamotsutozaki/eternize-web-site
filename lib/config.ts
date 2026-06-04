@@ -1,6 +1,6 @@
 // MOCK — substituir antes de produção. Ver CONFIG.md.
 export const SITE_CONFIG = {
-  whatsappNumber: "5519999999999",
+  whatsappNumber: "5519993122364",
   instagramHandle: "eternize.ilustra",
   instagramUrl: "https://instagram.com/eternize.ilustra",
   email: "contato@eternize.art",

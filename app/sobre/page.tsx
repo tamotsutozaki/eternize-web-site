@@ -15,7 +15,7 @@ export default function SobrePage() {
       {/* Hero pessoal */}
       <section className="bg-[var(--bg)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 pt-12 sm:pt-16 md:pt-24 pb-10 sm:pb-12">
-          <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-end">
+          <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-7 reveal">
               <span className="text-xs uppercase tracking-[0.3em] text-[var(--accent)] font-medium">
                 Sobre a artista
@@ -95,7 +95,7 @@ export default function SobrePage() {
         <blockquote className="reveal max-w-4xl mx-auto text-center">
           <p className="font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] text-[var(--fg)] leading-[1.2]">
             &ldquo;Retratar um pet é registrar a história de uma família.
-            Esse compromisso define o ritmo do estúdio.&rdquo;
+            Esse compromisso se reflete em cada detalhe da peça final.&rdquo;
           </p>
           <footer className="mt-6 sm:mt-8 text-sm uppercase tracking-[0.3em] text-[var(--accent)] font-medium">
             Isabella Rossi

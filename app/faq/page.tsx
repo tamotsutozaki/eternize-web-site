@@ -53,7 +53,7 @@ const FAQS: FaqCategoria[] = [
       },
       {
         q: "Que tipo de fotografia obtém melhor resultado?",
-        a: "Imagem em luz natural (próximo a janelas, durante o dia), com o pet em foco e na altura do olhar. Resolução acima de 2.000 pixels é ideal. O fundo da foto não influencia o resultado — a composição é recriada integralmente na pintura.",
+        a: "Imagem em boa qualidade e em luz natural (próximo a janelas, durante o dia), com o pet em foco e na altura do olhar. O fundo da foto não influencia o resultado — a composição é recriada integralmente na pintura.",
       },
     ],
   },
@@ -83,11 +83,11 @@ const FAQS: FaqCategoria[] = [
     items: [
       {
         q: "E se o resultado não corresponder à expectativa?",
-        a: "Antes do envernizamento final, envio fotografias em alta resolução para aprovação. Ajustes pontuais — tom de fundo, posicionamento de elementos, refinamento de traço — são incorporados sem custo. A finalização só ocorre após aprovação explícita.",
+        a: "Antes do envernizamento final, envio fotografias em alta resolução para conferência. Esta etapa destina-se à validação dos detalhes previamente acordados e aprovados durante o desenvolvimento da arte. Após a confirmação, a peça segue para o acabamento final e envernização.",
       },
       {
         q: "É possível solicitar alterações após a entrega?",
-        a: "Ajustes menores são avaliados individualmente. Alterações estruturais (mudança de fundo, troca de pet retratado) configuram nova encomenda, com novo orçamento.",
+        a: "A aprovação enviada antes da finalização é o momento destinado à validação do projeto. Por esse motivo, solicitações de alterações após a entrega são analisadas caso a caso e podem exigir uma nova produção, sujeita a orçamento complementar.",
       },
     ],
   },

@@ -11,8 +11,8 @@ import { PORTFOLIO, DEPOIMENTOS } from "@/lib/portfolio";
 const PASSOS = [
   { n: "01", titulo: "Envio da referência", desc: "Você envia uma fotografia do pet pelo WhatsApp." },
   { n: "02", titulo: "Briefing e orçamento", desc: "Definimos dimensão, fundo, acessórios e prazo." },
-  { n: "03", titulo: "Execução da pintura", desc: "Sete a quinze dias úteis, em estúdio próprio." },
-  { n: "04", titulo: "Aprovação prévia", desc: "Você revisa a peça antes do acabamento final." },
+  { n: "03", titulo: "Execução da pintura", desc: "Após pagamento, a peça é produzida no período de sete a quinze dias úteis." },
+  { n: "04", titulo: "Aprovação prévia", desc: "Enviamos uma prévia para conferência antes do envernizamento." },
   { n: "05", titulo: "Entrega", desc: "Embalagem reforçada e pronta para fixação na parede." },
 ];
 
@@ -107,7 +107,7 @@ export default function HomePage() {
               { titulo: "Suporte", desc: "Fatia de pinus natural, selecionada manualmente, lixada e tratada para receber a pintura." },
               { titulo: "Pintura", desc: "Tinta acrílica artística profissional, aplicada em camadas, com fidelidade cromática ao referencial." },
               { titulo: "Acabamento", desc: "Verniz protetor de base aquosa, anti-amarelamento, proteção contra umidade leve." },
-              { titulo: "Fixação", desc: "Cordão de algodão natural incluso, pronto para pendurar; suporte não visível opcional para exibição em pé sobre mesa ou prateleira." },
+              { titulo: "Fixação", desc: "Cordão de algodão natural incluso, pronto para pendurar; suporte acrílico opcional para exibição em pé sobre mesa ou prateleira." },
             ].map((item) => (
               <div
                 key={item.titulo}
@@ -199,6 +199,15 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
+          <div className="reveal mt-10 sm:mt-12 flex justify-center">
+            <Link href="/como-funciona" className="btn-solid">
+              Como funciona o processo
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </Section>
 
@@ -280,7 +289,7 @@ export default function HomePage() {
             Solicite sua peça
           </span>
           <h2 className="mt-5 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-[var(--brand-bone)] tracking-tight">
-            Um retrato para permanecer.
+            um retrato para permanecer.
           </h2>
           <p className="mt-5 sm:mt-6 text-[var(--brand-cream)]/80 max-w-xl mx-auto leading-relaxed">
             Envie a fotografia do seu pet pelo WhatsApp. O briefing é
