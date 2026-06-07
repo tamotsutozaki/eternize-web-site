@@ -60,6 +60,8 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
   const payload = {
     from: { postal_code: fromCep },
     to: { postal_code: toCep },
+    // Correios: PAC (1), SEDEX (2), Mini Envios (17). Sem isso a API não retorna nada.
+    services: "1,2,17",
     package: {
       height: pacote.height,
       width: pacote.width,
@@ -107,7 +109,7 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
   }
 
   const opcoes = (Array.isArray(data) ? data : [])
-    .filter((s) => s && !s.error && s.price)
+    .filter((s) => s && !s.error && !s.has_error && s.price)
     .map((s) => ({
       id: s.id as number,
       transportadora: (s.company as { name?: string } | undefined)?.name ?? "",
