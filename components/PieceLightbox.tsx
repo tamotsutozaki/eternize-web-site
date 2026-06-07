@@ -134,7 +134,7 @@ export default function PieceLightbox({
             <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Suporte: pinus natural lixado e tratado</div>
             <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Pintura: tinta acrílica artística</div>
             <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Acabamento: verniz protetor aerossol de base fosca</div>
-            <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Fixação: cordão de algodão natural</div>
+            <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Fixação: {peca.fixacao ?? "cordão de algodão natural"}</div>
           </dl>
 
           <div className="mt-auto pt-8">

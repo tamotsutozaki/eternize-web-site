@@ -8,6 +8,7 @@ export type Peca = {
   imagens: string[];
   descricao?: string;
   multiplosPets?: number;
+  fixacao?: string;
 };
 
 // MOCK — substituir por imagens reais das peças entregues.
@@ -38,6 +39,7 @@ export const PORTFOLIO: Peca[] = [
     imagens: ["/images/portfolio/odin-full.jpg", "/images/portfolio/odin-suporte.jpg"],
     descricao:
       "Formato compacto para mesa, com composição minimalista de círculo verde escuro.",
+    fixacao: "suporte acrílico ou cordão de algodão natural",
   },
   {
     id: "bento",
@@ -48,6 +50,7 @@ export const PORTFOLIO: Peca[] = [
     descricao:
       "Retrato duplo com composição em círculo lilás e acessórios em ambos os pets, trazendo um toque de diversão ao resultado final.",
     multiplosPets: 2,
+    fixacao: "suporte acrílico ou cordão de algodão natural",
   },
 ];
 
