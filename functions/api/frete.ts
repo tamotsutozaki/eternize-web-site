@@ -36,6 +36,7 @@ function json(data: unknown, status = 200) {
 export async function onRequestPost(context: { request: Request; env: Env }) {
   const { request, env } = context;
 
+  try {
   if (!env.SUPERFRETE_TOKEN) {
     return json({ error: "Cálculo de frete ainda não configurado." }, 503);
   }
@@ -85,15 +86,25 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
       },
       body: JSON.stringify(payload),
     });
-  } catch {
-    return json({ error: "Falha ao consultar transportadoras." }, 502);
+  } catch (e) {
+    return json({ error: "Falha de rede ao consultar transportadoras.", detail: String(e) }, 502);
   }
+
+  const raw = await upstream.text();
 
   if (!upstream.ok) {
-    return json({ error: "Falha ao consultar transportadoras." }, 502);
+    return json(
+      { error: "Transportadora retornou erro.", status: upstream.status, detail: raw.slice(0, 400) },
+      502
+    );
   }
 
-  const data = (await upstream.json()) as Array<Record<string, unknown>>;
+  let data: Array<Record<string, unknown>>;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    return json({ error: "Resposta inesperada da transportadora.", detail: raw.slice(0, 400) }, 502);
+  }
 
   const opcoes = (Array.isArray(data) ? data : [])
     .filter((s) => s && !s.error && s.price)
@@ -107,4 +118,7 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
     .sort((a, b) => a.preco - b.preco);
 
   return json({ opcoes });
+  } catch (e) {
+    return json({ error: "Erro interno na cotação.", detail: String(e) }, 500);
+  }
 }
