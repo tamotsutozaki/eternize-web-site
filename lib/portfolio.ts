@@ -72,7 +72,7 @@ export const TAMANHOS: { tamanho: Tamanho; preco: number; descricao: string; det
     preco: 140,
     descricao: "Formato intermediário",
     detalhes: [
-      "Até três animais (acréscimo de R$ 80 por animal extra)",
+      "Até três animais (acréscimo de R$ 50 por animal extra)",
       "Acabamento envernizado",
       "Acessórios e fundo personalizados inclusos",
       "Inclusão de elementos decorativos",
@@ -85,7 +85,7 @@ export const TAMANHOS: { tamanho: Tamanho; preco: number; descricao: string; det
     preco: 190,
     descricao: "Formato destaque",
     detalhes: [
-      "Até cinco animais (acréscimo de R$ 100 por animal extra)",
+      "Até cinco animais (acréscimo de R$ 50 por animal extra)",
       "Acabamento envernizado",
       "Acessórios e fundo personalizados inclusos",
       "Inclusão de elementos decorativos",

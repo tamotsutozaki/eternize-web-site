@@ -45,7 +45,7 @@ const FAQS: FaqCategoria[] = [
       },
       {
         q: "É possível retratar mais de um pet na mesma peça?",
-        a: "Sim, nos formatos 18 cm (acréscimo de R$ 80 por pet adicional) e 25 cm (acréscimo de R$ 100 por pet adicional). O formato 14 cm é dedicado a um único animal, em função da área útil de composição.",
+        a: "Sim, nos formatos 18 cm e 25 cm (acréscimo de R$ 50 por pet adicional). O formato 14 cm é dedicado a um único animal, em função da área útil de composição.",
       },
       {
         q: "É possível escolher o fundo da peça?",
