@@ -57,6 +57,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li><Link href="/portfolio" className="inline-block hover:text-[var(--brand-caramel)] hover:translate-x-1 transition-all">Portfólio</Link></li>
+              <li><Link href="/#tamanhos" className="inline-block hover:text-[var(--brand-caramel)] hover:translate-x-1 transition-all">Valores</Link></li>
               <li><Link href="/processo" className="inline-block hover:text-[var(--brand-caramel)] hover:translate-x-1 transition-all">Processo</Link></li>
               <li><Link href="/sobre" className="inline-block hover:text-[var(--brand-caramel)] hover:translate-x-1 transition-all">Sobre a artista</Link></li>
               <li><Link href="/faq" className="inline-block hover:text-[var(--brand-caramel)] hover:translate-x-1 transition-all">Perguntas frequentes</Link></li>

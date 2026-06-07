@@ -30,21 +30,17 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  // Na home, rola suave para âncoras (/#secao) ou topo (/) e mantém a URL
-  // limpa (sem #) via replaceState. Fora da home, deixa o Link navegar normal.
+  // Fecha o drawer mobile em qualquer clique de nav. Âncoras (/#secao) são
+  // tratadas pelo SmoothScroll (mesma página) ou pelo efeito de rota (vindo
+  // de outra página). Aqui só tratamos o "Início" quando já estamos na home.
   const handleNav = (e: React.MouseEvent, href: string) => {
-    if (pathname !== "/") return;
-    if (href === "/" || href.startsWith("/#")) {
+    setOpen(false);
+    if (pathname === "/" && href === "/") {
       e.preventDefault();
-      if (href.startsWith("/#")) {
-        document
-          .getElementById(href.slice(2))
-          ?.scrollIntoView({ behavior: "smooth" });
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      const lenis = (window as { __lenis?: { scrollTo: (t: number) => void } }).__lenis;
+      if (lenis) lenis.scrollTo(0);
+      else window.scrollTo({ top: 0, behavior: "smooth" });
       window.history.replaceState(null, "", "/");
-      setOpen(false);
     }
   };
 

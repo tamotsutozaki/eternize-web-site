@@ -48,14 +48,22 @@ export default function SmoothScroll() {
       rafId = requestAnimationFrame(raf);
 
       const onAnchorClick = (e: MouseEvent) => {
-        const target = (e.target as HTMLElement)?.closest("a[href^='#']");
+        const target = (e.target as HTMLElement)?.closest("a[href]");
         if (!target) return;
-        const id = target.getAttribute("href");
-        if (!id || id === "#") return;
-        const el = document.querySelector(id);
+        const href = target.getAttribute("href") || "";
+        const i = href.indexOf("#");
+        if (i < 0) return;
+        const hash = href.slice(i); // "#tamanhos"
+        if (hash === "#") return;
+        const linkPath = href.slice(0, i); // "" | "/" | "/rota"
+        // Só trata se a âncora é da página atual; outra rota deixa navegar
+        // (o efeito de troca de rota cuida do scroll ao chegar).
+        if (linkPath !== "" && linkPath !== window.location.pathname) return;
+        const el = document.querySelector(hash);
         if (!el) return;
         e.preventDefault();
         lenis?.scrollTo(el as HTMLElement, { offset: -72 });
+        window.history.replaceState(null, "", window.location.pathname);
       };
       document.addEventListener("click", onAnchorClick);
 
@@ -71,10 +79,28 @@ export default function SmoothScroll() {
     };
   }, []);
 
-  // Reset scroll quando muda de rota
+  // Ao mudar de rota: se a URL tem hash (ex: /#tamanhos vindo de outra
+  // página), rola até a seção; senão volta ao topo.
   useEffect(() => {
     if (typeof window === "undefined") return;
     const lenis = window.__lenis;
+    const hash = window.location.hash;
+
+    if (hash.length > 1) {
+      const el = document.querySelector(hash);
+      if (el) {
+        requestAnimationFrame(() => {
+          if (lenis) {
+            lenis.scrollTo(el as HTMLElement, { offset: -72, immediate: true });
+          } else {
+            (el as HTMLElement).scrollIntoView();
+          }
+          window.history.replaceState(null, "", window.location.pathname);
+        });
+        return;
+      }
+    }
+
     if (lenis) {
       lenis.scrollTo(0, { immediate: true });
     } else {
