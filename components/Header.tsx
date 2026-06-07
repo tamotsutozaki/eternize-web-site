@@ -30,16 +30,20 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  // Links com hash (ex: /#tamanhos): se já estiver na home, rola suave em vez
-  // de depender da navegação (que não dispara scroll na mesma rota).
+  // Na home, rola suave para âncoras (/#secao) ou topo (/) e mantém a URL
+  // limpa (sem #) via replaceState. Fora da home, deixa o Link navegar normal.
   const handleNav = (e: React.MouseEvent, href: string) => {
-    if (href.startsWith("/#")) {
-      if (pathname === "/") {
-        e.preventDefault();
+    if (pathname !== "/") return;
+    if (href === "/" || href.startsWith("/#")) {
+      e.preventDefault();
+      if (href.startsWith("/#")) {
         document
           .getElementById(href.slice(2))
           ?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
+      window.history.replaceState(null, "", "/");
       setOpen(false);
     }
   };
@@ -131,6 +135,7 @@ export default function Header() {
               if (pathname === "/") {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
+                window.history.replaceState(null, "", "/");
               }
             }}
             className="flex items-center transition-opacity hover:opacity-80 md:flex"
@@ -222,6 +227,7 @@ export default function Header() {
                       if (pathname === "/") {
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: "smooth" });
+                        window.history.replaceState(null, "", "/");
                       }
                       setOpen(false);
                     }}
