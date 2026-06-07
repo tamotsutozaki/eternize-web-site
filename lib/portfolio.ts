@@ -35,7 +35,7 @@ export const PORTFOLIO: Peca[] = [
     nomePet: "Odin",
     ano: 2026,
     tamanho: "14cm",
-    imagens: ["/images/portfolio/odin-full.jpg"],
+    imagens: ["/images/portfolio/odin-full.jpg", "/images/portfolio/odin-suporte.jpg"],
     descricao:
       "Formato compacto para mesa, com composição minimalista de círculo verde escuro.",
   },
@@ -44,7 +44,7 @@ export const PORTFOLIO: Peca[] = [
     nomePet: "Tunico e Magoo",
     ano: 2026,
     tamanho: "18cm",
-    imagens: ["/images/portfolio/magoo-tunico-full.jpg"],
+    imagens: ["/images/portfolio/magoo-tunico-full.jpg", "/images/portfolio/magoo-tunico-suporte.jpg"],
     descricao:
       "Retrato duplo com composição em círculo lilás e acessórios em ambos os pets, trazendo um toque de diversão ao resultado final.",
     multiplosPets: 2,

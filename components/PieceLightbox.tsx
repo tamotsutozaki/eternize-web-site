@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Peca } from "@/lib/portfolio";
@@ -12,6 +12,12 @@ export default function PieceLightbox({
   peca: Peca;
   onClose: () => void;
 }) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    setActive(0);
+  }, [peca.id]);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -67,14 +73,42 @@ export default function PieceLightbox({
           </svg>
         </motion.button>
 
-        <div className="relative aspect-square md:aspect-auto md:min-h-[480px] bg-[var(--bg-alt)]">
-          <Image
-            src={peca.imagens[0]}
-            alt={`Retrato — ${peca.nomePet}`}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-          />
+        <div className="flex flex-col bg-[var(--bg-alt)]">
+          <div className="relative aspect-square md:aspect-auto md:flex-1 md:min-h-[420px]">
+            <Image
+              src={peca.imagens[active]}
+              alt={`Retrato — ${peca.nomePet}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          {peca.imagens.length > 1 && (
+            <div className="flex gap-2 p-3 sm:p-4">
+              {peca.imagens.map((img, i) => (
+                <button
+                  key={img}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-label={`Ver imagem ${i + 1}`}
+                  aria-current={i === active}
+                  className={`relative h-16 w-16 sm:h-[72px] sm:w-[72px] shrink-0 overflow-hidden rounded-lg border-2 cursor-pointer transition-colors ${
+                    i === active
+                      ? "border-[var(--accent)]"
+                      : "border-transparent hover:border-[var(--border-strong)]"
+                  }`}
+                >
+                  <Image
+                    src={img}
+                    alt=""
+                    fill
+                    sizes="72px"
+                    className="object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="p-6 sm:p-8 md:p-10 flex flex-col">
@@ -99,7 +133,7 @@ export default function PieceLightbox({
           <dl className="mt-6 space-y-2.5 text-sm text-[var(--fg-mute)]">
             <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Suporte: pinus natural lixado e tratado</div>
             <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Pintura: tinta acrílica artística</div>
-            <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Acabamento: verniz protetor de base aquosa</div>
+            <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Acabamento: verniz protetor aerossol de base fosca</div>
             <div className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[var(--accent)]" /> Fixação: cordão de algodão natural</div>
           </dl>
 

@@ -23,10 +23,22 @@ const HERO_SLIDES: Slide[] = [
     caption: "Odin — 14 cm · fundo verde",
   },
   {
+    src: "/images/portfolio/odin-suporte.jpg",
+    alt: "Retrato do Odin exposto em suporte acrílico sobre mesa",
+    meta: "Exibição em suporte",
+    caption: "Odin — em suporte acrílico",
+  },
+  {
     src: "/images/portfolio/magoo-tunico-full.jpg",
     alt: "Dupla composição do Tunico e Magoo sobre fundo rosa",
     meta: "Composição múltipla",
     caption: "Tunico e Magoo — 18 cm",
+  },
+  {
+    src: "/images/portfolio/magoo-tunico-suporte.jpg",
+    alt: "Retrato do Tunico e Magoo exposto em suporte acrílico sobre mesa",
+    meta: "Exibição em suporte",
+    caption: "Tunico e Magoo — em suporte acrílico",
   },
 ];
 

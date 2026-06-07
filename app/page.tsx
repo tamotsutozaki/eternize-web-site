@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import SectionTitle from "@/components/SectionTitle";
 import PricingTabs from "@/components/PricingTabs";
+import FreteCalculator from "@/components/FreteCalculator";
 import FeaturedGrid from "@/components/FeaturedGrid";
 import { whatsappLink } from "@/lib/config";
 import { PORTFOLIO, DEPOIMENTOS } from "@/lib/portfolio";
@@ -104,10 +105,10 @@ export default function HomePage() {
 
           <div className="reveal lg:col-span-7 grid sm:grid-cols-2 gap-4 sm:gap-6">
             {[
-              { titulo: "Suporte", desc: "Fatia de pinus natural, selecionada manualmente, lixada e tratada para receber a pintura." },
+              { titulo: "Base", desc: "Fatia de pinus natural, selecionada manualmente, lixada e tratada para receber a pintura." },
               { titulo: "Pintura", desc: "Tinta acrílica artística profissional, aplicada em camadas, com fidelidade cromática ao referencial." },
-              { titulo: "Acabamento", desc: "Verniz protetor de base aquosa, anti-amarelamento, proteção contra umidade leve." },
-              { titulo: "Fixação", desc: "Cordão de algodão natural incluso, pronto para pendurar; suporte acrílico opcional para exibição em pé sobre mesa ou prateleira." },
+              { titulo: "Acabamento", desc: "Verniz protetor aerossol de base fosca, anti-amarelamento, proteção contra umidade leve." },
+              { titulo: "Fixação", desc: "Cordão de algodão natural pronto para pendurar ou suporte acrílico para exibição em pé sobre mesa ou prateleira." },
             ].map((item) => (
               <div
                 key={item.titulo}
@@ -131,6 +132,9 @@ export default function HomePage() {
         />
 
         <PricingTabs />
+
+        {/* Cálculo de frete */}
+        <FreteCalculator />
 
         {/* Formas de pagamento */}
         <div className="reveal mt-16 sm:mt-20">

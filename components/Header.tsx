@@ -9,6 +9,7 @@ import { whatsappLink } from "@/lib/config";
 const NAV = [
   { href: "/", label: "Início" },
   { href: "/portfolio", label: "Portfólio" },
+  { href: "/#tamanhos", label: "Valores" },
   { href: "/como-funciona", label: "Processo" },
   { href: "/sobre", label: "Sobre" },
   { href: "/faq", label: "FAQ" },
@@ -28,6 +29,20 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
+  // Links com hash (ex: /#tamanhos): se já estiver na home, rola suave em vez
+  // de depender da navegação (que não dispara scroll na mesma rota).
+  const handleNav = (e: React.MouseEvent, href: string) => {
+    if (href.startsWith("/#")) {
+      if (pathname === "/") {
+        e.preventDefault();
+        document
+          .getElementById(href.slice(2))
+          ?.scrollIntoView({ behavior: "smooth" });
+      }
+      setOpen(false);
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -130,6 +145,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={(e) => handleNav(e, item.href)}
                   className={`nav-link text-[13px] tracking-[0.12em] uppercase ${
                     active
                       ? "text-[var(--accent)]"
@@ -242,6 +258,7 @@ export default function Header() {
                         <motion.div key={item.href} variants={fadeUp}>
                           <Link
                             href={item.href}
+                            onClick={(e) => handleNav(e, item.href)}
                             className={`block px-4 py-3.5 rounded-xl text-base tracking-wide transition-colors ${
                               active
                                 ? "bg-[var(--bg-alt)] text-[var(--accent)] font-medium"

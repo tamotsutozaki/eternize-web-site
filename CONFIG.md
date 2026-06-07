@@ -91,6 +91,40 @@ Em `/public/brand/`:
 
 ---
 
+## 7. Cálculo de frete (SuperFrete)
+
+A home tem uma calculadora de frete (`components/FreteCalculator.tsx`) que chama a
+Pages Function `functions/api/frete.ts`. A Function é um proxy que guarda o token
+no servidor (Cloudflare), nunca no navegador.
+
+> SuperFrete escolhido por usar **token pessoal simples** (sem OAuth/refresh, ao
+> contrário do Melhor Envio). Grátis para cotação; só paga ao comprar etiqueta.
+
+### 7.1 Conta + token
+1. Criar conta grátis em **superfrete.com**.
+2. Completar perfil (CPF/CNPJ, endereço de origem).
+3. Painel → **Configurações / Integração → Token de API** → gerar e copiar o token.
+
+### 7.2 Variáveis de ambiente (Cloudflare Pages → Settings → Environment variables, Production)
+| Variável | Valor |
+|---|---|
+| `SUPERFRETE_TOKEN` | token gerado (obrigatório) |
+| `SUPERFRETE_UA` | `Eternize contato@eternize.art` |
+| `FRETE_FROM_CEP` | CEP de origem (opcional; senão usa o do código) |
+| `SUPERFRETE_BASE` | só pra testar em sandbox: `https://sandbox.superfrete.com` |
+
+Após adicionar/alterar env vars, **fazer um novo deploy** (push ou "Retry deployment")
+pra Function enxergar os valores.
+
+### 7.3 Dados físicos (CRÍTICO — hoje são MOCK)
+Em `functions/api/frete.ts`:
+- `PACOTES` — peso (kg) e dimensões (cm) da embalagem de cada tamanho (14/18/25cm).
+- `FROM_CEP_DEFAULT` — CEP do estúdio em Indaiatuba.
+
+Trocar pelos valores reais, senão a cotação sai imprecisa.
+
+---
+
 ## Checklist final antes de produção
 
 - [ ] WhatsApp number trocado em `lib/config.ts`

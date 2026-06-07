@@ -55,9 +55,7 @@ export const metadata: Metadata = {
     description: "Retratos de pets pintados à mão sobre madeira natural.",
     images: ["/brand/eternize-logo.png"],
   },
-  icons: {
-    icon: "/brand/logo-mark.svg",
-  },
+  // Ícone via convenção: app/icon.png + app/favicon.ico (emblema da logo).
 };
 
 export const viewport: Viewport = {

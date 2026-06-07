@@ -15,7 +15,7 @@ const FAQS: FaqCategoria[] = [
     titulo: "Produto e materiais",
     items: [
       {
-        q: "Qual madeira é utilizada como suporte?",
+        q: "Qual madeira é utilizada como base?",
         a: "Fatias naturais de pinus, selecionadas individualmente, lixadas e tratadas antes da pintura. Cada peça apresenta textura, nós e veios únicos — característica intencional do suporte, não um defeito.",
       },
       {
@@ -28,7 +28,7 @@ const FAQS: FaqCategoria[] = [
       },
       {
         q: "Qual a função do verniz aplicado?",
-        a: "Proteção contra umidade leve, deposição de poeira, oleosidade do toque manual e amarelamento por oxidação. É um verniz de base aquosa, atóxico após cura completa, sem alteração cromática da pintura.",
+        a: "Proteção contra umidade leve, deposição de poeira, oleosidade do toque manual, amarelamento por oxidação, com filtro U.V. e fungicida. É um verniz Aerossol com efeito fosco - mate, sem alteração cromática da pintura.",
       },
     ],
   },
