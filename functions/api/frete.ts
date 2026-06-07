@@ -14,15 +14,15 @@ interface Env {
   FRETE_FROM_CEP?: string;
 }
 
-// MOCK — confirmar com a Isabella. Embalagem por tamanho: dimensões em cm, peso em kg, valor p/ seguro.
+// Embalagem real por tamanho: dimensões em cm, peso em kg (com embalagem), valor p/ seguro.
 const PACOTES: Record<string, { height: number; width: number; length: number; weight: number; valor: number }> = {
-  "14cm": { height: 6, width: 20, length: 20, weight: 0.4, valor: 110 },
-  "18cm": { height: 6, width: 25, length: 25, weight: 0.6, valor: 140 },
-  "25cm": { height: 7, width: 32, length: 32, weight: 1.0, valor: 190 },
+  "14cm": { height: 6, width: 25.5, length: 25.5, weight: 0.225, valor: 110 },
+  "18cm": { height: 6, width: 25.5, length: 25.5, weight: 0.325, valor: 140 },
+  "25cm": { height: 6, width: 30, length: 29.4, weight: 0.625, valor: 190 },
 };
 
-// MOCK — CEP do estúdio em Indaiatuba. Confirmar (pode sobrescrever via env FRETE_FROM_CEP).
-const FROM_CEP_DEFAULT = "13330000";
+// CEP do estúdio em Indaiatuba (origem). Pode sobrescrever via env FRETE_FROM_CEP.
+const FROM_CEP_DEFAULT = "13332496";
 
 const onlyDigits = (s: string) => (s || "").replace(/\D/g, "");
 
