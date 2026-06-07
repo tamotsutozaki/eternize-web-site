@@ -10,7 +10,7 @@ const NAV = [
   { href: "/", label: "Início" },
   { href: "/portfolio", label: "Portfólio" },
   { href: "/#tamanhos", label: "Valores" },
-  { href: "/como-funciona", label: "Processo" },
+  { href: "/processo", label: "Processo" },
   { href: "/sobre", label: "Sobre" },
   { href: "/faq", label: "FAQ" },
   { href: "/contato", label: "Contato" },

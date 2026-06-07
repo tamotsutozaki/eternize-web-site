@@ -50,7 +50,7 @@ export default function HomePage() {
         </ol>
 
         <div className="reveal mt-10 sm:mt-12">
-          <Link href="/como-funciona" className="link-arrow">
+          <Link href="/processo" className="link-arrow">
             Ver processo completo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
@@ -205,7 +205,7 @@ export default function HomePage() {
           </div>
 
           <div className="reveal mt-10 sm:mt-12 flex justify-center">
-            <Link href="/como-funciona" className="btn-solid">
+            <Link href="/processo" className="btn-solid">
               Como funciona o processo
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                 <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
