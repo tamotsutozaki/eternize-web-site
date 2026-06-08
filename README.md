@@ -10,7 +10,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38BDF8?style=flat&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12-0055FF?style=flat&logo=framer&logoColor=white)](https://www.framer.com/motion/)
-[![Vercel](https://img.shields.io/badge/Vercel-deploy-000?style=flat&logo=vercel&logoColor=white)](https://vercel.com)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare%20Pages-deploy-F38020?style=flat&logo=cloudflare&logoColor=white)](https://pages.cloudflare.com)
+
+🌐 **No ar:** [eternize.art](https://eternize.art)
 
 </div>
 
@@ -22,19 +24,20 @@ A Eternize é uma marca real de retratos personalizados: o cliente envia uma fot
 
 Este repositório é o **site institucional**: vitrine, portfólio e ponte para o atendimento direto. O objetivo de UX é simples — apresentar a marca com calor humano, mostrar o trabalho com cuidado editorial e empurrar o usuário pra uma conversa qualificada no WhatsApp.
 
-> Construído com Next.js 16 (App Router + Turbopack), TypeScript, Tailwind v4, Framer Motion e Lenis (smooth scroll). 100% estático, mobile-first, tema claro único respeitando a paleta da marca.
+> Construído com Next.js 16 (App Router + Turbopack), TypeScript, Tailwind v4, Framer Motion e Lenis (smooth scroll). Export **100% estático** servido pela **Cloudflare Pages**, com uma única **Pages Function** para a calculadora de frete. Mobile-first, tema claro único respeitando a paleta da marca.
 
 ---
 
 ## Decisões de design
 
 - **Vitrine, não e-commerce.** Sem carrinho, sem login, sem pagamento integrado. Cada CTA leva pra uma conversa pré-preenchida no WhatsApp. Reduz fricção e mantém o atendimento humano.
+- **Estático + 1 função.** O site é `output: "export"` (HTML estático). A única peça server-side é a Pages Function `functions/api/frete.ts`, um proxy de cotação de frete que mantém o token fora do navegador. Custo zero no free tier da Cloudflare.
 - **Sistema de design próprio.** Sem bibliotecas como shadcn, MUI ou Chakra — todos os componentes são feitos do zero pra preservar a identidade artesanal. Tokens semânticos (`--bg`, `--fg`, `--accent`) regem todo o sistema visual.
 - **Tema claro único.** Paleta calma com `--brand-bone` (#FAF7F2) e `--brand-walnut` (#3D2817). Foco em destacar as obras, não competir com elas.
-- **Smooth scroll com Lenis.** Rolagem suave em desktop e mobile, com respeito a `prefers-reduced-motion`.
+- **Smooth scroll com Lenis.** Rolagem suave em desktop e mobile, com respeito a `prefers-reduced-motion`. Navegação por âncora (botão "Valores" → seção de preços) centralizada no `SmoothScroll`, funcionando tanto na home quanto vindo de outras páginas.
 - **Tipografia híbrida.** Dancing Script no logo, Caveat em headlines/citações emocionais, Inter no corpo. Self-hosted via `next/font` pra zero requests externos.
-- **Performance e SEO.** Build 100% estático (9 rotas pré-renderizadas), `next/image` em tudo, Open Graph configurado, Lighthouse alvo 90+ em todas as métricas.
-- **Animações com propósito.** Framer Motion em microinterações (drawer mobile com stagger, lightbox com spring, cards com tap feedback, lift on hover) — reforçam a sensação de produto cuidado, sem custar performance.
+- **Performance e SEO.** Build estático (8 rotas pré-renderizadas), Open Graph configurado, favicon com o emblema da marca, Lighthouse alvo 90+.
+- **Animações com propósito.** Framer Motion em microinterações (drawer mobile com stagger, lightbox com galeria de miniaturas, cards com tap feedback, lift on hover).
 - **Acessibilidade.** Tap targets ≥ 44px no mobile, `aria-label` em ícones, modal com `role="dialog"`/`aria-modal`, fecha no Esc, body-scroll-lock, suporte a `prefers-reduced-motion`.
 
 ---
@@ -43,24 +46,35 @@ Este repositório é o **site institucional**: vitrine, portfólio e ponte para 
 
 | Rota | Conteúdo |
 |---|---|
-| `/` | Home — hero, processo em 5 passos, galeria preview, tabela de preços (3 cards no desktop, tabs no mobile), apresentação da artista, depoimentos, CTA final |
-| `/portfolio` | Galeria filtrada por tamanho, cards clicáveis abrindo lightbox com detalhe da peça |
-| `/como-funciona` | Passo a passo detalhado, layout zigzag desktop, stack vertical mobile |
-| `/sobre` | Página pessoal da artista em 1ª pessoa, com pull quote em Caveat |
-| `/faq` | 4 categorias × 15 perguntas em accordion animado |
-| `/contato` | WhatsApp em destaque + Instagram + e-mail |
+| `/` | Home — hero com carrossel, processo em 5 passos, galeria preview, tabela de preços (3 cards no desktop, tabs no mobile), **calculadora de frete**, formas de pagamento, apresentação da artista, depoimentos, CTA final. Âncora `#tamanhos` (botão "Valores"). |
+| `/portfolio` | Galeria filtrada por tamanho, cards clicáveis abrindo lightbox com ficha técnica e **galeria de miniaturas** (peça + foto em suporte). |
+| `/processo` | Passo a passo detalhado, layout zigzag desktop, stack vertical mobile. |
+| `/sobre` | Página pessoal da artista em 1ª pessoa, com pull quote em Caveat. |
+| `/faq` | 4 categorias em accordion animado (produto, produção, pagamento/logística, garantia). |
+| `/contato` | WhatsApp em destaque + Instagram + e-mail. |
+
+---
+
+## Cálculo de frete
+
+A home tem uma calculadora (`components/FreteCalculator.tsx`) que consulta a **Pages Function** `functions/api/frete.ts` — um proxy para a API de cotação do **SuperFrete** (Correios PAC/SEDEX/Mini Envios). O token fica em variável de ambiente no servidor, nunca no cliente.
+
+- Peso, dimensões da embalagem e CEP de origem ficam na própria Function (por tamanho de peça).
+- Env vars de produção: `SUPERFRETE_TOKEN`, `SUPERFRETE_UA`. Detalhes em [`CONFIG.md`](./CONFIG.md) (seção 7).
+- **Local:** a Function não roda no `next dev`. Para testar a calculadora localmente use `npx wrangler pages dev out` (com um `.dev.vars` contendo o token).
 
 ---
 
 ## Stack
 
-- **Framework**: Next.js 16 (App Router, Turbopack)
+- **Framework**: Next.js 16 (App Router, Turbopack) — `output: "export"`
 - **Linguagem**: TypeScript estrito
 - **Estilo**: Tailwind CSS v4 com `@theme` API
 - **Animações**: Framer Motion 12 + Lenis (smooth scroll)
 - **Fontes**: Inter, Caveat, Dancing Script (auto-hospedadas via `next/font/google`)
-- **Imagens**: `next/image` com lazy loading + remote patterns
-- **Hospedagem**: Vercel (plano gratuito)
+- **Frete**: SuperFrete via Cloudflare Pages Function
+- **Hospedagem**: Cloudflare Pages (free tier) — domínio `eternize.art`
+- **E-mail**: `contato@eternize.art` via Cloudflare Email Routing (recebimento) + Brevo SMTP (envio com a marca)
 
 ---
 
@@ -69,31 +83,34 @@ Este repositório é o **site institucional**: vitrine, portfólio e ponte para 
 ```
 site/
 ├── app/                       # App Router — rotas
-│   ├── layout.tsx             # root layout (fontes, metadata, providers)
-│   ├── globals.css            # tokens da marca + tema claro/escuro + Tailwind
+│   ├── layout.tsx             # root layout (fontes, metadata)
+│   ├── globals.css            # tokens da marca + Tailwind
+│   ├── icon.png / favicon.ico # emblema da marca
 │   ├── page.tsx               # Home
 │   ├── portfolio/page.tsx
-│   ├── como-funciona/page.tsx
+│   ├── processo/page.tsx
 │   ├── sobre/page.tsx
 │   ├── faq/page.tsx
 │   └── contato/page.tsx
+├── functions/
+│   └── api/frete.ts           # Pages Function — proxy de cotação (SuperFrete)
 ├── components/
 │   ├── BrandLogo.tsx          # logo PNG responsiva
 │   ├── Header.tsx             # nav desktop + drawer mobile animado
 │   ├── Footer.tsx
-│   ├── Hero.tsx
+│   ├── Hero.tsx, HeroSlider.tsx
 │   ├── Section.tsx, SectionTitle.tsx
 │   ├── PriceCard.tsx, PricingTabs.tsx
+│   ├── FreteCalculator.tsx    # calculadora de frete (client)
 │   ├── PortfolioGallery.tsx, FeaturedGrid.tsx
-│   ├── PieceLightbox.tsx      # modal de detalhe da peça
+│   ├── PieceLightbox.tsx      # modal de detalhe + galeria de miniaturas
 │   ├── Accordion.tsx          # FAQ
-│   ├── SmoothScroll.tsx       # Lenis init (client-side)
-│   ├── ScrollReveal.tsx       # IntersectionObserver utility
-│   ├── ScrollTopButton.tsx
+│   ├── SmoothScroll.tsx       # Lenis + scroll de âncora
+│   ├── ScrollReveal.tsx, ScrollTopButton.tsx
 │   └── WhatsAppButton.tsx     # CTA flutuante fixo
 ├── lib/
-│   ├── config.ts              # WhatsApp, Instagram, e-mail (placeholders)
-│   └── portfolio.ts           # dados das peças, tamanhos, depoimentos
+│   ├── config.ts              # WhatsApp, Instagram, e-mail, cidades
+│   └── portfolio.ts           # peças, tamanhos, depoimentos
 └── public/
     ├── brand/                 # SVGs e PNGs da marca
     └── images/                # fotos do portfólio e da artista
@@ -107,18 +124,36 @@ site/
 git clone https://github.com/tamotsutozaki/Eternize.git
 cd Eternize
 npm install
-npm run dev
+npm run dev          # http://localhost:3000
 ```
 
-Abrir [http://localhost:3000](http://localhost:3000).
+> A calculadora de frete depende da Pages Function, que **não** roda no `next dev`. Para testá-la, rode o build e sirva com o Wrangler:
+> ```bash
+> npm run build
+> npx wrangler pages dev out   # http://localhost:8788 (precisa de .dev.vars com SUPERFRETE_TOKEN)
+> ```
 
 Outros scripts:
 
 ```bash
-npm run build   # build de produção
-npm start       # rodar build local
+npm run build   # build estático (gera out/)
 npm run lint    # ESLint + regras Next 16
 ```
+
+---
+
+## Deploy
+
+Hospedado na **Cloudflare Pages**, build automático a cada push na `main`.
+
+| Configuração | Valor |
+|---|---|
+| Build command | `npm run build` |
+| Output directory | `out` |
+| Env var | `NODE_VERSION=20` |
+| Env vars (frete) | `SUPERFRETE_TOKEN`, `SUPERFRETE_UA` |
+
+Domínio `eternize.art` apontado via nameservers Cloudflare. SSL automático.
 
 ---
 
@@ -135,26 +170,18 @@ Paleta bone/walnut/cream/caramel definida em `app/globals.css` via tokens semân
 }
 ```
 
-## Smooth scroll
-
-Implementado com [Lenis](https://github.com/darkroomengineering/lenis) em `components/SmoothScroll.tsx`. Inicializado client-side, com easing customizado e fallback automático para `prefers-reduced-motion`.
-
 ---
 
-## Personalização (placeholders)
+## Pendências de conteúdo
 
-Antes de subir pra produção, trocar os mocks. Tudo está marcado no código com `// MOCK` ou `{/* MOCK */}` — buscar essa string para encontrar todos.
+Itens ainda placeholder (marcados com `// MOCK` / `{/* MOCK */}` no código):
 
-| Onde | O que trocar |
+| Onde | O que falta |
 |---|---|
-| `lib/config.ts` | número WhatsApp, Instagram handle, e-mail |
-| `lib/portfolio.ts` | trocar URLs `placedog.net` por fotos locais em `/public/images/portfolio/` |
-| `app/sobre/page.tsx` | textos da artista (3 blocos + pull quote) |
-| `app/page.tsx` | citação curta no preview da seção Sobre |
-| `lib/portfolio.ts` (DEPOIMENTOS) | substituir os 5 depoimentos placeholder por reais |
-| `components/Hero.tsx` | trocar imagem placedog por foto real da peça destaque |
+| `lib/portfolio.ts` (`DEPOIMENTOS`) | substituir os depoimentos placeholder por reais (com autorização) |
+| `app/sobre/page.tsx` | texto definitivo da artista (3 blocos + pull quote) |
 
-Detalhamento completo em [`CONFIG.md`](./CONFIG.md).
+WhatsApp, Instagram, e-mail, fotos do portfólio e dados de frete já são **reais**. Detalhamento completo em [`CONFIG.md`](./CONFIG.md).
 
 ---
 
