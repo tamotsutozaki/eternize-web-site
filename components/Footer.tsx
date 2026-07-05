@@ -118,14 +118,14 @@ export default function Footer() {
             <span className="inline-flex items-center gap-1.5">
               Site por{" "}
               <a
-                href="https://tomore.co"
+                href="https://tozaki.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-baseline gap-0.5 text-[var(--brand-bone)] hover:text-[var(--brand-caramel)] transition-colors"
-                aria-label="ToMore — tomore.co"
+                aria-label="Pedro Tozaki — tozaki.dev"
               >
-                <span className="text-[var(--brand-cream)]/50 group-hover:text-[var(--brand-caramel)] transition-colors">To</span>
-                <span className="font-semibold tracking-tight">More</span>
+                <span className="text-[var(--brand-cream)]/50 group-hover:text-[var(--brand-caramel)] transition-colors">pedro</span>
+                <span className="font-semibold tracking-tight">tozaki</span>
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden>
                   <path d="M7 17l10-10M7 7h10v10" />
                 </svg>
