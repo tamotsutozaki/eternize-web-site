@@ -18,7 +18,7 @@ export default function BrandLogo({
       aria-label="Eternize"
     >
       <Image
-        src="/brand/eternize-logo-full.png"
+        src="/brand/eternize-logo.webp"
         alt="Eternize"
         fill
         priority={priority}

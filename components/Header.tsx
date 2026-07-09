@@ -79,7 +79,7 @@ export default function Header() {
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           scrolled
-            ? "backdrop-blur-md bg-[color-mix(in_oklab,var(--bg)_88%,transparent)] border-b border-[var(--border)]"
+            ? "bg-[color-mix(in_oklab,var(--bg)_94%,transparent)] border-b border-[var(--border)]"
             : "bg-[var(--bg)]"
         }`}
       >

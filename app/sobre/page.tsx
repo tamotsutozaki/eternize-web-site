@@ -31,7 +31,7 @@ export default function SobrePage() {
             <div className="lg:col-span-5 reveal relative aspect-[4/5] rounded-2xl overflow-hidden shadow-[var(--shadow-soft)] bg-[var(--bg-alt)] zoom-on-hover max-w-md w-full mx-auto lg:max-w-none">
               {/* MOCK */}
               <Image
-                src="/images/isabella-aurora.jpg"
+                src="/images/isabella-aurora.webp"
                 alt="Isabella Rossi"
                 fill
                 priority

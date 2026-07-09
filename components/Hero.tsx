@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { whatsappLink } from "@/lib/config";
 import HeroSlider, { Slide } from "./HeroSlider";
+import { thumb } from "@/lib/portfolio";
 
 const HERO_SLIDES: Slide[] = [
   {
@@ -41,6 +42,13 @@ const HERO_SLIDES: Slide[] = [
     caption: "Tunico e Magoo — em suporte acrílico",
   },
 ];
+
+// O hero usa as miniaturas WebP (o .jpg full fica reservado pro lightbox do
+// portfólio). Miniatura = ~2x menos pixels pra decodificar no autoplay.
+const HERO_SLIDES_THUMBS: Slide[] = HERO_SLIDES.map((s) => ({
+  ...s,
+  src: thumb(s.src),
+}));
 
 export default function Hero() {
   return (
@@ -102,7 +110,7 @@ export default function Hero() {
         </div>
 
         <div className="lg:col-span-5 reveal w-full">
-          <HeroSlider slides={HERO_SLIDES} />
+          <HeroSlider slides={HERO_SLIDES_THUMBS} />
         </div>
       </div>
     </section>

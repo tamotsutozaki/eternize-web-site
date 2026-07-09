@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Peca } from "@/lib/portfolio";
+import { Peca, thumb } from "@/lib/portfolio";
 import { whatsappLink } from "@/lib/config";
 
 export default function PieceLightbox({
@@ -42,7 +42,7 @@ export default function PieceLightbox({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.22, ease: "easeOut" }}
-      className="fixed inset-0 z-[80] bg-[var(--brand-ink)]/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 md:p-10 overflow-y-auto"
+      className="fixed inset-0 z-[80] bg-[var(--brand-ink)]/90 flex items-center justify-center p-3 sm:p-6 md:p-10 overflow-y-auto"
     >
       <motion.div
         onClick={(e) => e.stopPropagation()}
@@ -99,7 +99,7 @@ export default function PieceLightbox({
                   }`}
                 >
                   <Image
-                    src={img}
+                    src={thumb(img)}
                     alt=""
                     fill
                     sizes="72px"

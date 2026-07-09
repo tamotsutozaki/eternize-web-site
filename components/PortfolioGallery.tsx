@@ -2,7 +2,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { Peca, PORTFOLIO, Tamanho } from "@/lib/portfolio";
+import { Peca, PORTFOLIO, Tamanho, thumb } from "@/lib/portfolio";
 import PieceLightbox from "./PieceLightbox";
 
 const FILTROS: ("Todos" | Tamanho)[] = ["Todos", "14cm", "18cm", "25cm"];
@@ -71,14 +71,14 @@ export default function PortfolioGallery({
           >
             <div className="relative aspect-square overflow-hidden">
               <Image
-                src={peca.imagens[0]}
+                src={thumb(peca.imagens[0])}
                 alt={`Retrato — ${peca.nomePet}`}
                 fill
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-ink)]/55 via-[var(--brand-ink)]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="absolute bottom-3 left-3 right-3 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--bg)]/95 backdrop-blur-sm text-[var(--fg)] text-[11px] font-medium tracking-[0.12em] uppercase py-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+              <span className="absolute bottom-3 left-3 right-3 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--bg)]/95 text-[var(--fg)] text-[11px] font-medium tracking-[0.12em] uppercase py-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                 Abrir ficha técnica
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                   <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />

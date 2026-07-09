@@ -11,6 +11,16 @@ export type Peca = {
   fixacao?: string;
 };
 
+/**
+ * Caminho da miniatura WebP de uma imagem de portfólio (grids, hero e
+ * miniaturas do lightbox). Decodifica ~2x menos pixels que o .jpg original,
+ * que fica reservado pra imagem grande do lightbox. As miniaturas são geradas
+ * por scripts/optimize-images.mjs (`npm run images`).
+ */
+export function thumb(src: string): string {
+  return src.replace(/\.(jpe?g|png)$/i, "-thumb.webp");
+}
+
 // MOCK — substituir por imagens reais das peças entregues.
 export const PORTFOLIO: Peca[] = [
   {

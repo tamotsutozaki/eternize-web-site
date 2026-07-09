@@ -18,35 +18,35 @@ const PASSOS = [
       "O atendimento começa com o envio de uma fotografia do pet pelo WhatsApp. Recomenda-se imagem em alta resolução, de preferência em luz natural e com o animal em foco. O fundo da foto não influencia — a composição é recriada na pintura.",
     cta: "Iniciar atendimento",
     ctaMessage: "Olá! Gostaria de iniciar o atendimento para uma encomenda.",
-    imagem: "/images/envio-conversa.jpeg",
+    imagem: "/images/envio-conversa.webp",
   },
   {
     n: "02",
     titulo: "Briefing e orçamento",
     descricao:
       "Definimos juntos a dimensão (14, 18 ou 25 cm), o fundo, os acessórios e os elementos decorativos — incluindo auréolas, em homenagem a pets que já partiram. Você escolhe ainda entre pendurar a peça pelo cordão incluso ou exibi-la em pé com o suporte acrílico. Múltiplos pets nos formatos 18 e 25 cm.",
-    imagem: "/images/odin.jpeg",
+    imagem: "/images/odin.webp",
   },
   {
     n: "03",
     titulo: "Execução da pintura",
     descricao:
       "Após confirmação do pagamento, a peça entra na fila de produção. O prazo padrão é de sete a quinze dias úteis, executado em estúdio próprio. A pintura é feita em tinta acrílica artística profissional, aplicada em camadas sobre a fatia de pinus previamente preparada.",
-    imagem: "/images/processo.jpeg",
+    imagem: "/images/processo.webp",
   },
   {
     n: "04",
     titulo: "Aprovação prévia",
     descricao:
       "Antes do envernizamento, enviamos uma prévia para conferência. Esta etapa destina-se apenas à validação do que foi aprovado anteriormente, não à solicitação de alterações no projeto.",
-    imagem: "/images/aprovacao-final.jpeg",
+    imagem: "/images/aprovacao-final.webp",
   },
   {
     n: "05",
     titulo: "Embalagem e envio",
     descricao:
       "Entrega presencial sem custo em Indaiatuba e Salto. Para demais localidades, despacho via Correios ou transportadora, com frete calculado pelo CEP. A peça é embalada com cuidado minucioso, para que sua experiência seja a melhor possível.",
-    imagem: "/images/embalado.jpeg",
+    imagem: "/images/embalado.webp",
   },
 ];
 

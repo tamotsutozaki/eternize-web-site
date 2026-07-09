@@ -220,7 +220,7 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
           <div className="reveal lg:col-span-5 relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg-alt)] shadow-[var(--shadow-soft)] zoom-on-hover max-w-md w-full mx-auto lg:max-w-none">
             <Image
-              src="/images/isabella-shory.jpg"
+              src="/images/isabella-shory.webp"
               alt="Isabella Rossi, fundadora da Eternize, segurando um retrato de pet pintado à mão"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
